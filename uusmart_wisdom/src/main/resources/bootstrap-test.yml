@@ -1,5 +1,5 @@
 spring.application.name :  uusmart-wisdom-test
-server.port :  8082
+server.port :  9104
 #${random.int[9000,9999]}
 eureka.client.service-url.defaultZone: http://goodtime-iot.com:9001/eureka/
 

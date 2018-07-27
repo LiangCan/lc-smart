@@ -13,7 +13,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @SpringBootApplication
 @EnableEurekaClient
 @EnableAutoConfiguration
-//@EnableTransactionManagement
+@EnableTransactionManagement
 @EnableHystrix
 @EnableFeignClients
 public class UusmartWisdomApplication {

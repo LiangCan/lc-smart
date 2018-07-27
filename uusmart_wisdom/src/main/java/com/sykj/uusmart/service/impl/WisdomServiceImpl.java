@@ -1,7 +1,6 @@
 package com.sykj.uusmart.service.impl;
 
 
-//import com.codingapi.tx.annotation.TxTransaction;
 import com.codingapi.tx.annotation.TxTransaction;
 import com.sykj.uusmart.Constants;
 import com.sykj.uusmart.conf.ServiceConfig;
@@ -44,7 +43,7 @@ import java.util.Map;
  * Created by Liang on 2016/12/23.
  */
 @Service
-//@Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.DEFAULT, rollbackFor = CustomRunTimeException.class)
+@Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.DEFAULT, rollbackFor = CustomRunTimeException.class)
 public class WisdomServiceImpl implements WisdomService {
 
 
@@ -93,8 +92,7 @@ public class WisdomServiceImpl implements WisdomService {
     TestInfoRepository testInfoRepository;
 
     @Override
-//    @TxTransaction
-    @Transactional
+    @TxTransaction
     public ResponseDTO test() {
         TestInfo testInfo = new TestInfo();
         testInfo.setTestName("123");
@@ -287,7 +285,7 @@ public class WisdomServiceImpl implements WisdomService {
     @TxTransaction
     public ResponseDTO userDeleteDeviceWisdom(IdDTO idDTO) {
         Long uid = userInfoService.getUserId(true);
-//        CustomRunTimeException.checkDeviceJurisdiction(nexusUserDeviceRepository.findByUserIdAndDeviceId(uid, idDTO.getId()), true);
+        CustomRunTimeException.checkNull(null, " 测试异常 ");
         List<Long> wids = wisdomConditionRepository.findWidByDid(idDTO.getId());
         for (Long wid : wids) {
             Map<String, String> deleteObjectMsg = MqIotMessageUtils.getDeleteWisdomCondition(wid);

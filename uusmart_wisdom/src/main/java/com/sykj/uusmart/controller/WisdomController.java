@@ -35,7 +35,6 @@ public class WisdomController extends BaseController{
     @ApiOperation(value="test ...")
     @RequestMapping(value="test.do")
     public ResponseDTO test()throws CustomRunTimeException {
-
         return wisdomService.test();
     }
 

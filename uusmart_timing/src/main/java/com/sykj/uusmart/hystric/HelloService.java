@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-@FeignClient(value = "uusmart-wisdom-test", fallback = HelloAPIHystric.class)
+@FeignClient(value = "uusmart-wisdom", fallback = HelloAPIHystric.class)
 public interface HelloService {
 
     @RequestMapping(value = "/auth/wisdom/test.do", method = RequestMethod.POST)
