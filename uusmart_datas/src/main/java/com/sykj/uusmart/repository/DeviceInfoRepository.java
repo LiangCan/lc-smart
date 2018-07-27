@@ -31,7 +31,7 @@ public interface DeviceInfoRepository extends CrudRepository<DeviceInfo, Long>{
 
     @Modifying(clearAutomatically = true)
     @Query("UPDATE DeviceInfo SET deviceStatus =:deviceStatus , useTotalTime = :useTotalTime WHERE  deviceId=:deviceId  ")
-    void updateDeviceStatusAndUseTotalTime(@Param("deviceId") Long deviceId,@Param("useTotalTime")Long useTotalTime, @Param("deviceStatus") Short deviceStatus);
+    void updateDeviceStatusAndUseTotalTime(@Param("deviceId") Long deviceId, @Param("useTotalTime") Long useTotalTime, @Param("deviceStatus") Short deviceStatus);
 
     @Modifying(clearAutomatically = true)
     @Query("UPDATE DeviceInfo SET statusInfo =:statusInfo WHERE deviceId=:deviceId  ")
@@ -40,7 +40,7 @@ public interface DeviceInfoRepository extends CrudRepository<DeviceInfo, Long>{
 
     @Query("UPDATE DeviceInfo SET deviceStatus =:deviceStatus, latelyLoginTime = :latelyLoginTime, versionInfo = :versionInfo WHERE deviceId=:deviceId  ")
     @Modifying(clearAutomatically = true)
-    void updateDeviceStatusAndVersionInfoAndLatelyLoginTime(@Param("deviceId") Long deviceId, @Param("deviceStatus") Short deviceStatus, @Param("latelyLoginTime") Long latelyLoginTime , @Param("versionInfo") String versionInfo);
+    void updateDeviceStatusAndVersionInfoAndLatelyLoginTime(@Param("deviceId") Long deviceId, @Param("deviceStatus") Short deviceStatus, @Param("latelyLoginTime") Long latelyLoginTime, @Param("versionInfo") String versionInfo);
 
     @Query("UPDATE DeviceInfo SET mainDeviceId =:mainDeviceId WHERE deviceId=:deviceId  ")
     @Modifying(clearAutomatically = true)

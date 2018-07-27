@@ -44,9 +44,9 @@ public interface WisdomImplementRepository extends CrudRepository<WisdomImplemen
     void deleteByDid(Long id);
 
     @Query(value = "SELECT i.id,  i.implement_type, i.implement_name, i.implement_value  FROM t_wisdom_implement AS i JOIN t_wisdom_condition AS c ON (c.wid= i.wid) WHERE c.id = :id AND  c.condition_name=:conditionName AND c.appointment='equal' AND  c.condition_type= :conditionType AND c.condition_value= :conditionValue ", nativeQuery=true)
-    List<Object[]> findImplementByCondition(        @Param("id") Long id,
-                                                   @Param("conditionName") String conditionName,
-                                                   @Param("conditionType") Short conditionType,
-                                                   @Param("conditionValue") String conditionValue);
+    List<Object[]> findImplementByCondition(@Param("id") Long id,
+                                            @Param("conditionName") String conditionName,
+                                            @Param("conditionType") Short conditionType,
+                                            @Param("conditionValue") String conditionValue);
 
 }

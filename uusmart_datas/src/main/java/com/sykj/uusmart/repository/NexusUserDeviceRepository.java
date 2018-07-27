@@ -64,12 +64,12 @@ public interface NexusUserDeviceRepository extends CrudRepository<NexusUserDevic
 
     @Modifying(clearAutomatically = true)
     @Query(" UPDATE NexusUserDevice SET deviceIcon=:deviceIcon,remarks=:remarks  WHERE nudId=:nudId ")
-    void updateRemarksAndIcon(@Param("remarks")String remarks, @Param("deviceIcon")String deviceIcon, @Param("nudId")Long nudId);
+    void updateRemarksAndIcon(@Param("remarks") String remarks, @Param("deviceIcon") String deviceIcon, @Param("nudId") Long nudId);
 
 
     @Query("UPDATE NexusUserDevice SET roomId =:roomId WHERE nudId = :nudId  ")
     @Modifying(clearAutomatically = true)
-    void updatDeviceRoomId(@Param("roomId") Long roomId,@Param("nudId") Long nudId);
+    void updatDeviceRoomId(@Param("roomId") Long roomId, @Param("nudId") Long nudId);
 
     @Modifying(clearAutomatically = true)
     @Query("UPDATE  NexusUserDevice SET roomId = ? WHERE roomId = ? ")

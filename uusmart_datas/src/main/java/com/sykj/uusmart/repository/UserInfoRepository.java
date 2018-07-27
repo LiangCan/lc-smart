@@ -35,7 +35,10 @@ public interface UserInfoRepository extends CrudRepository<UserInfo,Long> {
 	@Query(" UPDATE UserInfo SET userName = ?  WHERE userId = ? ")
 	void updateUserNameByUid(String userName, Long userId);
 
+	@Query("FROM UserInfo  WHERE userId = :userId ")
+	UserInfo findUserInfoByUserId(@Param("userId") Long id);
+
 	@Modifying(clearAutomatically = true)
 	@Query(" UPDATE UserInfo SET password = ?  WHERE userId = ? ")
-	void updateUserPasswdByUserId(String password , Long userId );
+	void updateUserPasswdByUserId(String password, Long userId);
 }

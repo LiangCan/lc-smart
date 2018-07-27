@@ -20,9 +20,9 @@ public interface WisdomRepository extends CrudRepository<Wisdom,Long> {
 	List<Wisdom> byUserIdQueryList(@Param("userId") Long userId);
 
 	@Query("FROM Wisdom WHERE userId = :userId AND wid = :wid")
-	Wisdom byUserIdAndWidQuery(@Param("userId") Long userId,@Param("wid") Long wid);
+	Wisdom byUserIdAndWidQuery(@Param("userId") Long userId, @Param("wid") Long wid);
 
 	@Modifying(clearAutomatically = true)
 	@Query("UPDATE Wisdom SET wisdomStatus = :status WHERE  wid = :wid")
-	void updateStatus(@Param("status") Short status,@Param("wid") Long wid);
+	void updateStatus(@Param("status") Short status, @Param("wid") Long wid);
 }

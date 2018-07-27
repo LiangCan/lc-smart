@@ -1,4 +1,4 @@
-//package com.sykj.uusmart.repository.impl;
+package com.sykj.uusmart.repository.impl;//package com.sykj.uusmart.repository.impl;
 //
 //
 //import com.sykj.uusmart.pojo.DeviceVersionInfo;
