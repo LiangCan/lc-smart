@@ -1,0 +1,23 @@
+server:
+  port: 9002
+spring:
+  application:
+    name: uusmart-config
+  cloud:
+    config:
+      label: master
+      server:
+        git:
+          uri: https://github.com/LiangCan/UUSmart
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://172.19.2.122:9001/eureka/,http://172.19.2.121:9001/eureka/
+  instance:
+    lease-renewal-interval-in-seconds: 10
+    lease-expiration-duration-in-seconds: 30
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${spring.application.instance_id:${server.port}}
+#    prefer-ip-address: true
+#    ip-address: 127.0.0.1
+#    hostname: locatest1

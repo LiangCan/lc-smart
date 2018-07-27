@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+						"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sykj.mapper.MemberMapper">
+
+	<sql id="isUserInfo">
+		i.user_id as userId,
+		i.user_email as username,
+		i.password as password
+	</sql>
+
+	<select id="queryByMobile" resultType="com.sykj.model.Member">
+		select 
+		<include refid="isUserInfo" />
+		from
+		t_user_info i  where i.user_email = #{mobile,jdbcType=VARCHAR}
+	</select>
+
+</mapper>

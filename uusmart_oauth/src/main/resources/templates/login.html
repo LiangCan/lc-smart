@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <!--Custom Theme files-->
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta   name="keywords" content="" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href='https://fonts.googleapis.com/css?family=Jura:400,300,500,600' rel='stylesheet' type='text/css'/>
+    <link href="webjars/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" media="screen"/>
+    <link href="../static/css/styles.css" th:href="@{css/styles.css}" rel="stylesheet" media="screen"/>
+
+</head>
+<style type="text/css">
+    input::-ms-input-placeholder {
+        color: #FFFFFF
+    }
+
+    input::-webkit-input-placeholder {
+        color: #FFFFFF
+    }
+
+    input::-moz-placeholder {
+        color: #FFFFFF
+    }
+
+    .form-control22 {
+        display: block;
+        width: 100%;
+        height: 34px;
+        padding: 6px 12px;
+        font-size: 14px;
+        line-height: 1.42857143;
+        color: #555;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+        -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+        -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+        transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s
+    }
+</style>
+<body class="background" style="background-color: #425b93;">
+<div>
+</div>
+<div align="center">
+    <br/>
+    <img src="../img/log.png" style=" width: 100px; height: 100px;"/>
+</div>
+<br/>
+<br/>
+<div class="container" style="width: 90%" th:unless="${param.registration}">
+    <!--<div class="row vertical-offset-100">-->
+        <!--<div class="col-md-4 col-md-offset-4">-->
+        <div class="panel panel-default" style="background-color: #6f82ad;">
+            <div class="panel-heading" align="center" style=" border:none; color:#FFFFFF; background-color: #6f82ad;">
+                <h3 class="panel-title">Please sign in</h3>
+            </div>
+            <div class="panel-body" align="center">
+                <form th:action="@{/login}" method="post">
+                    <fieldset>
+                        <div class="form-group">
+                            <input class="form-control22" style="   background-color: #6f82ad;" placeholder="Username"
+                                   name="username" type="text"/>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control22" style=" background-color: #6f82ad; " placeholder="Password"
+                                   name="password" type="password" value=""/>
+                        </div>
+                        <div class="form-group" th:if="${param.error}">
+                            <div class="alert alert-danger" role="alert">Invalid username and password</div>
+                        </div>
+                        <!--<img src="../img/login.png"  onclick="document.form.submit();" />-->
+                        <br/>
+                        <input style="background-color: rgba(0,0,0,0.0); background-image:url('../img/login.png'); background-size:cover; width: 190px; height: 38px; border:none;"
+                               type="submit" value=""/>
+                        <!--<input onclick="location.href='/login?registration';" type="button" value="Registration" />-->
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+        <!--</div>-->
+    <!--</div>-->
+</div>
+</body>
+</html>

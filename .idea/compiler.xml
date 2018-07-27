@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="mqtt" />
+        <module name="tx-manager" />
+        <module name="uusmart_agreement" />
+        <module name="uusmart_app" />
+        <module name="uusmart_config" />
+        <module name="uusmart_datas" />
+        <module name="uusmart_device" />
+        <module name="uusmart_eureka" />
+        <module name="uusmart_oauth" />
+        <module name="uusmart_timing" />
+        <module name="uusmart_voice" />
+        <module name="uusmart_wisdom" />
+        <module name="uusmart_zuul" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="mqtt" target="1.5" />
+      <module name="transaction-springcloud" target="1.7" />
+      <module name="tx-client" target="1.7" />
+      <module name="tx-manager" target="1.7" />
+      <module name="uusmart_agreement" target="1.8" />
+      <module name="uusmart_app" target="1.8" />
+      <module name="uusmart_config" target="1.8" />
+      <module name="uusmart_datas" target="1.8" />
+      <module name="uusmart_device" target="1.8" />
+      <module name="uusmart_eureka" target="1.8" />
+      <module name="uusmart_oauth" target="1.8" />
+      <module name="uusmart_timing" target="1.8" />
+      <module name="uusmart_voice" target="1.8" />
+      <module name="uusmart_wisdom" target="1.8" />
+      <module name="uusmart_zuul" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

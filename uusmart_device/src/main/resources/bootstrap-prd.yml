@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: uusmart-device
+  cloud:
+    config:
+      label: master
+      profile: prd
+      name: device-bootstrap,uusmart-conf,data-source,redis-config
+      discovery:
+        enabled: true
+        serviceId: uusmart-config
+      fail-fast: true
+spring.aop.auto: true
+server:
+  port: 9103
+  tomcat:
+    accept-count: 2000
+    max-threads: 2000
+    max-connections: 2500
+
+feign:
+  hystrix:
+    enabled: true
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://goodtime-iot.com:9001/eureka/
+

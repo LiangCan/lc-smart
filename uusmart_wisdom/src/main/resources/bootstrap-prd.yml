@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: uusmart-wisdom
+  cloud:
+    config:
+      label: master
+      profile: prd
+      name: wisdom-bootstrap,uusmart-conf,data-source,redis-config
+      discovery:
+        enabled: true
+        serviceId: uusmart-config
+      fail-fast: true
+
+server:
+  port: 9104
+  tomcat:
+    accept-count: 2000
+    max-threads: 2000
+    max-connections: 2500
+
+
+feign:
+  hystrix:
+    enabled: true
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://goodtime-iot.com:9001/eureka/
+

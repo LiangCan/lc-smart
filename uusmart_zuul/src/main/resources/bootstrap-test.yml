@@ -1,0 +1,33 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://172.19.2.122:9001/eureka/
+
+management:
+  security:
+    enabled: false
+spring:
+  application:
+    name: uusmart-zuul
+  cloud:
+   config:
+    label: master
+    profile: prd
+    name: data-source,zuul-bootstrap,uusmart-conf,redis-config
+    discovery:
+      enabled:  true
+      serviceId: uusmart-config
+
+server:
+  port: 9003
+  tomcat:
+    accept-count: 1000
+    max-threads: 1500
+    max-connections: 2000
+
+
+
+
+
+
+

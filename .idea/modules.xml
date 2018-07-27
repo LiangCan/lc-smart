@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/UUSmart.iml" filepath="$PROJECT_DIR$/.idea/UUSmart.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mqttTest/mqtt/mqtt.iml" filepath="$PROJECT_DIR$/mqttTest/mqtt/mqtt.iml" />
+      <module fileurl="file://$PROJECT_DIR$/uusmart-tx-manager/tx-manager.iml" filepath="$PROJECT_DIR$/uusmart-tx-manager/tx-manager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/uusmart_agreement/uusmart_agreement.iml" filepath="$PROJECT_DIR$/uusmart_agreement/uusmart_agreement.iml" />
+      <module fileurl="file://$PROJECT_DIR$/uusmart_app/uusmart_app.iml" filepath="$PROJECT_DIR$/uusmart_app/uusmart_app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/uusmart_config/uusmart_config.iml" filepath="$PROJECT_DIR$/uusmart_config/uusmart_config.iml" />
+      <module fileurl="file://$PROJECT_DIR$/uusmart_datas/uusmart_datas.iml" filepath="$PROJECT_DIR$/uusmart_datas/uusmart_datas.iml" />
+      <module fileurl="file://$PROJECT_DIR$/uusmart_device/uusmart_device.iml" filepath="$PROJECT_DIR$/uusmart_device/uusmart_device.iml" />
+      <module fileurl="file://$PROJECT_DIR$/uusmart_eureka/uusmart_eureka.iml" filepath="$PROJECT_DIR$/uusmart_eureka/uusmart_eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/uusmart_oauth/uusmart_oauth.iml" filepath="$PROJECT_DIR$/uusmart_oauth/uusmart_oauth.iml" />
+      <module fileurl="file://$PROJECT_DIR$/uusmart_timing/uusmart_timing.iml" filepath="$PROJECT_DIR$/uusmart_timing/uusmart_timing.iml" />
+      <module fileurl="file://$PROJECT_DIR$/uusmart_voice/uusmart_voice.iml" filepath="$PROJECT_DIR$/uusmart_voice/uusmart_voice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/uusmart_wisdom/uusmart_wisdom.iml" filepath="$PROJECT_DIR$/uusmart_wisdom/uusmart_wisdom.iml" />
+      <module fileurl="file://$PROJECT_DIR$/uusmart_zuul/uusmart_zuul.iml" filepath="$PROJECT_DIR$/uusmart_zuul/uusmart_zuul.iml" />
+    </modules>
+  </component>
+</project>

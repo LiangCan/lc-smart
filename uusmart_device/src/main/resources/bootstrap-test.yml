@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: uusmart-device
+  cloud:
+    config:
+      label: master
+      profile: prd
+      name: device-bootstrap,uusmart-conf,data-source,redis-config
+      discovery:
+        enabled: true
+        serviceId: uusmart-config
+      fail-fast: true
+spring.aop.auto: true
+server:
+  port: 9103
+  tomcat:
+    accept-count: 2000
+    max-threads: 2000
+    max-connections: 2500
+
+feign:
+  hystrix:
+    enabled: true
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://172.19.2.122:9001/eureka/
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${spring.application.instance_id:${server.port}}
+    lease-renewal-interval-in-seconds: 10
+    lease-expiration-duration-in-seconds: 30

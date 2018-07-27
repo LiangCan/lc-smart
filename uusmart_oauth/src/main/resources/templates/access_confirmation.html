@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Insert title here</title>
+</head>
+<script>
+//        window.onload = function() {
+//            document.getElementById("authorizeAN").click();
+//        }
+</script>
+
+<body style="background-color: #425b93;">
+<h1 align="center">OAuth Approval</h1>
+<p align="center" style="font-size: 2em">Do you authorize to access your protected resources?</p>
+<form id="confirmationForm" name="confirmationForm" action="/oauth/authorize" method="post">
+    <input name="user_oauth_approval" value="true" type="hidden"/>
+
+    <div class="form-group" align="center">
+
+        <div align="center">
+
+            <img src="../img/log.png" style=" width: 100px; height: 100px;"/>
+            <!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+            <!--<img src="../img/tianmao.png" style=" width: 90px; height: 90px;"/>-->
+        </div>
+        <br/>
+        <input type="radio" name="scope.user" value="true" checked="checked" style="width:30px; height:30px"><span
+            style="font-size: 2.2em">Approve</span></input>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="radio" name="scope.user" value="false" style="width:30px; height:30px"><span
+            style="font-size: 2.2em">Deny</span></input>
+    </div>
+    <br/>
+    <br/>
+    <div align="center">
+        <input style="padding: 10px 20px;border-radius: 5px; background-color: #97CD6D; width: 9em; height: 2em; font-size: 2.2em;  border: 1px  #555 solid;  "
+               name="authorize" id="authorizeAN" value="Authorize" type="submit"/>
+    </div>
+</form>
+</body>
+</html>

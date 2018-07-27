@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: uusmart-app
+  cloud:
+    config:
+      label: master
+      profile: prd
+      name: app-bootstrap,uusmart-conf,data-source,redis-config
+      discovery:
+        enabled: true
+        serviceId: uusmart-config
+      fail-fast: true
+
+server:
+  port: 9102
+  tomcat:
+    accept-count: 2000
+    max-threads: 2000
+    max-connections: 2500
+spring.thymeleaf.cache: false
+feign:
+  hystrix:
+    enabled: true
+
+
+multipart:
+  enabled: true
+  max-file-size: 50mb
+  max-request-size: 50mb
+
+eureka:
+  client:
+    #是否将自己注册到eureka服务注册中心，默认为true
+    register-with-eureka: true
+    #是否从服务注册中心获取可用的服务清单，默认为true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: http://goodtime-iot.com:9001/eureka/

@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: uusmart-timing-test
+  cloud:
+    config:
+      label: master
+      profile: test
+      name: timing-bootstrap,uusmart-conf,data-source,redis-config
+      discovery:
+        enabled: true
+        serviceId: uusmart-config
+      fail-fast: true
+#Ribbon的负载均衡策略
+ribbon.NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+ribbon.MaxAutoRetriesNextServer: 0
+hystrix.command.default.execution.isolation.strategy:  SEMAPHORE
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 60000
+
+ribbon:
+    ReadTimeout: 60000
+    ConnectTimeout: 60000
+
+server:
+  port: 9105
+  tomcat:
+    accept-count: 2000
+    max-threads: 2000
+    max-connections: 2500
+
+feign:
+  hystrix:
+    enabled: true
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://goodtime-iot.com:9001/eureka/
+  instance:
+    prefer-ip-address: true
