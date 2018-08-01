@@ -60,6 +60,7 @@ public class GlobalExceptionHandler{
         ResponseDTO responseDTO = new ResponseDTO();
         responseDTO.sethRA(e.getErrorCode());
         responseDTO.sethRD(e.getErrorMsg());
+        responseDTO.sethRC("");
         saveSerLog(responseDTO);
         return responseDTO;
     }

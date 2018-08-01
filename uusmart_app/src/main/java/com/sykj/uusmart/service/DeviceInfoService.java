@@ -1,6 +1,7 @@
 package com.sykj.uusmart.service;
 
 
+import com.sykj.uusmart.http.NameAndIdDTO;
 import com.sykj.uusmart.http.ReqBaseDTO;
 import com.sykj.uusmart.http.ResponseDTO;
 import com.sykj.uusmart.http.IdDTO;
@@ -18,7 +19,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional( propagation= Propagation.REQUIRED, isolation= Isolation.DEFAULT, rollbackFor = CustomRunTimeException.class)
 public interface DeviceInfoService {
     /** API 用户批量添加设备  */
-    ResponseDTO userRisterDevice(UserAddDeviceDTO userAddDeviceDTO, ReqBaseDTO<IdDTO> timingReq);
+    ResponseDTO userRisterDevice(UserAddDeviceDTO userAddDeviceDTO , ReqBaseDTO<IdDTO>timingReq);
 
     /** API 用户修改设备  */
     ResponseDTO userUpdateDevice(UserUpdateDeviceDTO userUpdateDeviceDTO);
@@ -28,5 +29,7 @@ public interface DeviceInfoService {
     ResponseDTO userGetDeviceList(IdDTO idDTO);
 
     /** API 用户删除设备  */
-    ResponseDTO userDelete(IdDTO idDTO);
+    ResponseDTO userDelete(IdDTO idDTO ,ReqBaseDTO<IdDTO> reqDTO );
+
+    ResponseDTO test(ReqBaseDTO<NameAndIdDTO> reqBaseDTO);
 }

@@ -1,8 +1,10 @@
 package com.sykj.uusmart.service.impl;
 
 
+import com.codingapi.tx.annotation.TxTransaction;
 import com.sykj.uusmart.conf.ServiceConfig;
 import com.sykj.uusmart.Constants;
+import com.sykj.uusmart.http.NameAndIdDTO;
 import com.sykj.uusmart.http.ReqBaseDTO;
 import com.sykj.uusmart.http.ResponseDTO;
 import com.sykj.uusmart.http.IdDTO;
@@ -11,17 +13,18 @@ import com.sykj.uusmart.http.req.UserUpdateDeviceDTO;
 import com.sykj.uusmart.http.req.input.AddDeivceDTO;
 import com.sykj.uusmart.http.resp.RespDeviceListDTO;
 import com.sykj.uusmart.exception.CustomRunTimeException;
+import com.sykj.uusmart.hystric.Demo2Client;
 import com.sykj.uusmart.hystric.TimingServiceAPI;
-import com.sykj.uusmart.mqtt.MqIotMessage;
+import com.sykj.uusmart.hystric.WisdomServiceAPI;
 import com.sykj.uusmart.mqtt.MqIotMessageDTO;
 import com.sykj.uusmart.mqtt.MqIotMessageUtils;
 import com.sykj.uusmart.mqtt.MqIotUtils;
-import com.sykj.uusmart.mqtt.cmd.CmdListEnum;
 import com.sykj.uusmart.pojo.*;
 import com.sykj.uusmart.repository.*;
 import com.sykj.uusmart.service.DeviceInfoService;
 import com.sykj.uusmart.service.UserInfoService;
 import com.sykj.uusmart.utils.ExecutorUtils;
+import com.sykj.uusmart.utils.GsonUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,10 +35,7 @@ import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by Liang on 2016/12/23.
@@ -84,7 +84,12 @@ public class DeviceaInfoServiceImpl implements DeviceInfoService {
     @Autowired
     TimingServiceAPI timingServiceAPI;
 
+    @Autowired
+    WisdomServiceAPI wisdomServiceAPI;
+
     @Override
+    @TxTransaction(isStart = true)
+    @Transactional
     public ResponseDTO userRisterDevice(UserAddDeviceDTO userAddDeviceDTO , ReqBaseDTO<IdDTO> timingReq) {
         Long uid =userInfoService.getUserId(true);
 
@@ -94,7 +99,7 @@ public class DeviceaInfoServiceImpl implements DeviceInfoService {
 
         //房间鉴权
         CustomRunTimeException.checkNull(roomInfoRepository.byUserIdAndRoomId(uid, userAddDeviceDTO.getRoomId()),"room");
-
+         Map <Long , MqIotMessageDTO > notifyMap = new HashMap< Long,  MqIotMessageDTO>();
         Map<String,Long> dids = new HashMap<>();
         for(AddDeivceDTO addDeivceDTO : userAddDeviceDTO.getAddDeivceDTOList()){
             DeviceInfo deviceInfo =  deviceInfoRepository.findDeviceInfoByAddress(addDeivceDTO.getDeviceAddress());
@@ -111,20 +116,13 @@ public class DeviceaInfoServiceImpl implements DeviceInfoService {
                         dids.put(addDeivceDTO.getDeviceAddress(), deviceInfo.getDeviceId());
                         continue;
                     }
-                    ExecutorUtils.cachedThreadPool.execute(new Runnable() {
-                        @Override
-                        public void run() {
-                            Map<String , String> natityRefresh = MqIotMessageUtils.getNotifyRefreshCmd("dervice");
-                            MqIotMessageDTO mqIotMessage = MqIotMessageUtils.getNotify( serviceConfig.getMQTT_CLIENT_NAME(),MqIotUtils.getRole(Constants.shortNumber.ONE) + nexusUserDevice.getUserId(), natityRefresh );
-                            mqIotUtils.mqIotPushMsg( mqIotMessage );
-                            IdDTO idDTO = new IdDTO();
-                            idDTO.setId( addDeivceDTO.getMainDeviceId() );
-                            timingReq.sethG( idDTO );
-//                            通知删除设备的定时；
-                            timingServiceAPI.byDeviceDeleteAllTiming( timingReq );
-//                            timingServiceAPI.byDeviceDeleteAllTiming( );
-                        }
-                    });
+
+                    Map<String , String> natityRefresh = MqIotMessageUtils.getNotifyRefreshCmd("dervice");
+                    MqIotMessageDTO mqIotMessage = MqIotMessageUtils.getNotify( serviceConfig.getMQTT_CLIENT_NAME(),MqIotUtils.getRole(Constants.shortNumber.ONE) + nexusUserDevice.getUserId(), natityRefresh );
+//                            mqIotUtils.mqIotPushMsg( mqIotMessage );
+                    notifyMap.put( nexusUserDevice.getUserId() , mqIotMessage);
+//                    删除设备的定时和设备的智能；
+                    deleteWisdomAndTime( deviceInfo.getDeviceId(), timingReq );
 
                     //删除绑定关系
                     nexusUserDeviceRepository.deleteByDeviceId(deviceInfo.getDeviceId());
@@ -160,7 +158,20 @@ public class DeviceaInfoServiceImpl implements DeviceInfoService {
             nexusUserDevic.setRemarks(deviceInfo.getDeviceName());
             nexusUserDeviceRepository.save(nexusUserDevic);
             dids.put(addDeivceDTO.getDeviceAddress(), deviceInfo.getDeviceId());
+
+
         }
+        ExecutorUtils.cachedThreadPool.execute(new Runnable() {
+            @Override
+            public void run() {
+                Iterator<Map.Entry<Long, MqIotMessageDTO>> iterator = notifyMap.entrySet().iterator();
+                while (iterator.hasNext()) {
+                    Map.Entry<Long, MqIotMessageDTO> entry = iterator.next();
+                    mqIotUtils.mqIotPushMsg(  entry.getValue()  );
+                }
+            }
+        });
+
         return new ResponseDTO(dids);
     }
 
@@ -206,7 +217,9 @@ public class DeviceaInfoServiceImpl implements DeviceInfoService {
     }
 
     @Override
-    public ResponseDTO userDelete(IdDTO idDTO) {
+    @TxTransaction(isStart = true)
+    @Transactional
+    public ResponseDTO userDelete(IdDTO idDTO  , ReqBaseDTO<IdDTO> reqDTO) {
         Long uid =userInfoService.getUserId(true);
         NexusUserDevice nexusUserDevice = nexusUserDeviceRepository.findByUserIdAndDeviceId(uid, idDTO.getId());
         CustomRunTimeException.checkNull(nexusUserDevice,"nexus");
@@ -216,6 +229,97 @@ public class DeviceaInfoServiceImpl implements DeviceInfoService {
         }else{
             nexusUserDeviceRepository.delete(nexusUserDevice.getNudId());
         }
+
+//        deleteWisdomAndTime(nexusUserDevice.getDeviceId() , reqDTO );
+
+        reqDTO.sethG( idDTO );
+        //调用删除定时的服务
+//        String result = demo2Client.deleteDeviceTiming( reqDTO );
+//        String result = timingServiceAPI.byDeviceDeleteAllTiming( reqDTO );
+//
+//        result =  wisdomServiceAPI.byDeviceDeleteAllWisdom( reqDTO );
+
+//        ResponseDTO responseDTO = GsonUtils.toObj(result, ResponseDTO.class);
+//        if(responseDTO.gethRA().equals( String.valueOf(Constants.mainStatus.SUCCESS))){
+////            调用删除智能的服务
+//            result =  wisdomServiceAPI.byDeviceDeleteAllWisdom( reqDTO );
+//            responseDTO = GsonUtils.toObj(result, ResponseDTO.class);
+//            if( !responseDTO .gethRA() .equals(  String.valueOf(Constants.mainStatus.SUCCESS) )){
+//                throw new CustomRunTimeException(responseDTO.gethRA(), responseDTO.gethRD() );
+//            }
+//        }else {
+//            throw new CustomRunTimeException(responseDTO.gethRA(), responseDTO.gethRD() );
+//        }
+//       TODO 测试 ！ 2018年7月27日16:56:58 lgf
+        if( uid .equals( 1L ) ){
+            TestInfo testInfo = new TestInfo();
+            testInfo.setTestName("wtf");
+            testInfoRepository.save(testInfo  );
+
+            String wisdomResult = wisdomServiceAPI.test( reqDTO );
+            log.info( wisdomResult );
+
+            log.error( "抛出异常！");
+            String result = timingServiceAPI.test( reqDTO );
+            log.info( result);
+
+
+
+            String voiceResult = demo2Client.voiceTest( reqDTO );
+            log.info( voiceResult );
+//
+//            String wisdomResult = wisdomServiceAPI.test( reqDTO );
+//            log.info( wisdomResult );
+
+            throw new CustomRunTimeException( Constants.resultCode.SYSTEM_ERROR, Constants.systemError.SYSTEM_ERROR );
+        }
         return new ResponseDTO(Constants.mainStatus.REQUEST_SUCCESS);
+    }
+
+    @Autowired
+    TestInfoRepository testInfoRepository;
+
+
+    @Autowired
+    Demo2Client demo2Client;
+
+    @Override
+    @TxTransaction(isStart = true)
+    @Transactional
+    public ResponseDTO test(ReqBaseDTO reqBaseDTO) {
+
+        TestInfo testInfo = new TestInfo();
+        testInfo.setTestName("wtf");
+        testInfoRepository.save(testInfo  );
+
+
+        log.error( "抛出异常！");
+        String result = timingServiceAPI.test( reqBaseDTO );
+        log.info( result);
+//        String result = demo2Client.voiceTest( reqBaseDTO );
+//        log.info( result );
+
+        String wisdomResult = wisdomServiceAPI.test( reqBaseDTO );
+        log.info( wisdomResult );
+
+//        CustomRunTimeException.checkNull(null, "Nexus");
+        return new ResponseDTO(Constants.mainStatus.REQUEST_SUCCESS);
+    }
+
+    public void  deleteWisdomAndTime(Long devId , ReqBaseDTO reqBaseDTO ){
+        IdDTO idDTO  = new IdDTO();
+        idDTO.setId(devId );
+        reqBaseDTO.sethG( idDTO );
+        String result = timingServiceAPI.byDeviceDeleteAllTiming( reqBaseDTO );
+        ResponseDTO responseDTO = GsonUtils.toObj(result, ResponseDTO.class);
+        if(responseDTO.gethRA().equals( String.valueOf(Constants.mainStatus.SUCCESS))){
+            result =  wisdomServiceAPI.byDeviceDeleteAllWisdom( reqBaseDTO );
+            responseDTO = GsonUtils.toObj(result, ResponseDTO.class);
+            if( !responseDTO .gethRA() .equals(  String.valueOf(Constants.mainStatus.SUCCESS) )){
+                throw new CustomRunTimeException(responseDTO.gethRA(), responseDTO.gethRD() );
+            }
+        }else {
+            throw new CustomRunTimeException(responseDTO.gethRA(), responseDTO.gethRD() );
+        }
     }
 }

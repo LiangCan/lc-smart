@@ -4,7 +4,7 @@ spring:
   cloud:
     config:
       label: master
-      profile: prd
+      profile: test
       name: app-bootstrap,uusmart-conf,data-source,redis-config
       discovery:
         enabled: true
