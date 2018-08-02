@@ -59,11 +59,7 @@ public class DeviceController extends BaseController{
     @RequestMapping(value="/user/delete.do", method = RequestMethod.POST)
     public String userDelete(@RequestBody  ReqBaseDTO<IdDTO> reqBaseDTO, BindingResult bindingResult)throws CustomRunTimeException {
         validataBind(bindingResult,reqBaseDTO.gethG());
-
-        Gson gs = new Gson();
-        String listStr = gs.toJson( reqBaseDTO );
-        ReqBaseDTO<IdDTO> reqDTO = gs.fromJson(listStr, ReqBaseDTO.class);
-        return GsonUtils.toJSON(deviceInfoService.userDelete(reqBaseDTO.gethG() , reqDTO  ) );
+        return GsonUtils.toJSON(deviceInfoService.userDelete(reqBaseDTO.gethG() , reqBaseDTO));
     }
 
     @ApiOperation(value="test")

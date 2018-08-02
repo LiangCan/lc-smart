@@ -24,12 +24,10 @@ public interface DeviceInfoService {
     /** API 用户修改设备  */
     ResponseDTO userUpdateDevice(UserUpdateDeviceDTO userUpdateDeviceDTO);
 
-
     /** API 用户获取设备列表  */
     ResponseDTO userGetDeviceList(IdDTO idDTO);
 
     /** API 用户删除设备  */
     ResponseDTO userDelete(IdDTO idDTO ,ReqBaseDTO<IdDTO> reqDTO );
 
-    ResponseDTO test(ReqBaseDTO<NameAndIdDTO> reqBaseDTO);
 }
