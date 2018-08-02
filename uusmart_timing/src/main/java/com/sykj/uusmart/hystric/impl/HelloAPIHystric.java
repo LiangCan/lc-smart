@@ -10,7 +10,7 @@ public class HelloAPIHystric implements HelloService {
 
 
     @Override
-    public ResponseDTO hello(ReqBaseDTO reqBaseDTO) {
+    public ResponseDTO hello() {
         System.out.println(" -----  >  进 熔断器了啦！！" );
         return new ResponseDTO();
     }

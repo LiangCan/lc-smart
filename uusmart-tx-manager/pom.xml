@@ -32,11 +32,11 @@
 
     <dependencies>
 
-        <dependency>
-            <groupId>com.sykj.uusmart</groupId>
-            <artifactId>uusmart_agreement</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.sykj.uusmart</groupId>-->
+            <!--<artifactId>uusmart_agreement</artifactId>-->
+            <!--<version>0.0.1-SNAPSHOT</version>-->
+        <!--</dependency>-->
 
         <dependency>
             <groupId>com.github.1991wangliang</groupId>

@@ -35,5 +35,3 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://goodtime-iot.com:9001/eureka/
-  instance:
-    prefer-ip-address: true

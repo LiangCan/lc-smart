@@ -23,8 +23,8 @@ import com.lorne.core.framework.utils.thread.IExecute;
 import com.codingapi.tm.netty.model.TxInfo;
 
 
-import com.sykj.uusmart.http.ResponseDTO;
-import com.sykj.uusmart.utils.GsonUtils;
+//import com.sykj.uusmart.http.ResponseDTO;
+//import com.sykj.uusmart.utils.GsonUtils;
 import io.netty.channel.Channel;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -228,17 +228,17 @@ public class TxManagerSenderServiceImpl implements TxManagerSenderService {
         return sendMsg(model, newCmd.toJSONString(), configReader.getRedisSaveMaxTime());
     }
 
-    @Override
-    public ResponseDTO checkMsg(String model, String msg, int delay) {
-        ResponseDTO responseDTO = GsonUtils.toObj(msg, ResponseDTO.class);
-
-
-        if(!"1".equals(responseDTO.gethRA())){
-            return new ResponseDTO(com.sykj.uusmart.Constants.resultCode.SERVER_ERROR, com.sykj.uusmart.Constants.systemError.SERVER_ERROR);
-        }
-
-        return new ResponseDTO(com.sykj.uusmart.Constants.mainStatus.REQUEST_SUCCESS);
-    }
+//    @Override
+//    public ResponseDTO checkMsg(String model, String msg, int delay) {
+//        ResponseDTO responseDTO = GsonUtils.toObj(msg, ResponseDTO.class);
+//
+//
+//        if(!"1".equals(responseDTO.gethRA())){
+//            return new ResponseDTO(com.sykj.uusmart.Constants.resultCode.SERVER_ERROR, com.sykj.uusmart.Constants.systemError.SERVER_ERROR);
+//        }
+//
+//        return new ResponseDTO(com.sykj.uusmart.Constants.mainStatus.REQUEST_SUCCESS);
+//    }
 
     @Override
     public String sendMsg(final String model,final String msg, int delay) {

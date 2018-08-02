@@ -62,10 +62,10 @@ public class DeviceController extends BaseController{
         return GsonUtils.toJSON(deviceInfoService.userDelete(reqBaseDTO.gethG() , reqBaseDTO));
     }
 
-    @ApiOperation(value="test")
-    @RequestMapping(value="/test.do", method = RequestMethod.POST)
-    public String test(@RequestBody ReqBaseDTO<NameAndIdDTO> reqBaseDTO, BindingResult bindingResult)throws CustomRunTimeException {
-        validataBind(bindingResult, reqBaseDTO.gethG());
-        return GsonUtils.toJSON(deviceInfoService.test(reqBaseDTO));
-    }
+//    @ApiOperation(value="test")
+//    @RequestMapping(value="/test.do", method = RequestMethod.POST)
+//    public String test(@RequestBody ReqBaseDTO<NameAndIdDTO> reqBaseDTO, BindingResult bindingResult)throws CustomRunTimeException {
+//        validataBind(bindingResult, reqBaseDTO.gethG());
+//        return GsonUtils.toJSON(deviceInfoService.userDelete(reqBaseDTO.gethG()));
+//    }
 }

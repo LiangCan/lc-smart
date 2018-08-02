@@ -1,10 +1,12 @@
 package com.codingapi.tm.listener;
 
 import com.codingapi.tm.Constants;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.embedded.EmbeddedServletContainerInitializedEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Component;
 
+import javax.validation.Valid;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
@@ -19,18 +21,19 @@ public class ApplicationStartListener implements ApplicationListener<EmbeddedSer
     public void onApplicationEvent(EmbeddedServletContainerInitializedEvent event) {
         int serverPort = event.getEmbeddedServletContainer().getPort();
         String ip = getIp();
-        Constants.address = ip+":"+serverPort;
+        Constants.address = ip + ":" + serverPort;
     }
 
+    @Value("${tm.socket.host}")
+    String host;
 
-
-    private String getIp(){
-        String host = null;
-        try {
-            host = InetAddress.getLocalHost().getHostAddress();
-        } catch (UnknownHostException e) {
-            e.printStackTrace();
-        }
+    private String getIp() {
+//        String host = null;
+////        try {
+//        host = InetAddress.getLocalHost().getHostAddress();
+////        } catch (UnknownHostException e) {
+////            e.printStackTrace();
+////        }
         return host;
     }
 }

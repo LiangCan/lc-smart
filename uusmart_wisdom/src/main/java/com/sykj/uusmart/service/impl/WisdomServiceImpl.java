@@ -93,10 +93,46 @@ public class WisdomServiceImpl implements WisdomService {
 
     @Override
     @TxTransaction
-    public ResponseDTO test() {
+    public ResponseDTO testDelete(IdDTO idDTO) {
         TestInfo testInfo = new TestInfo();
-        testInfo.setTestName("123");
+        testInfo.setTestName(""+idDTO.getId());
         testInfoRepository.save(testInfo);
+        return new ResponseDTO(Constants.mainStatus.REQUEST_SUCCESS);
+    }
+
+    @Override
+    @TxTransaction
+    public ResponseDTO userDeleteDeviceWisdom(IdDTO idDTO) {
+       userInfoService.getUserId(true);
+        List<Long> wids = wisdomConditionRepository.findWidByDid(idDTO.getId());
+        for (Long wid : wids) {
+            Map<String, String> deleteObjectMsg = MqIotMessageUtils.getDeleteWisdomCondition(wid);
+            MqIotMessage mqIotMessage = new MqIotMessage(CmdListEnum.deleteObject, serviceConfig.getMQTT_CLIENT_NAME(), Constants.role.DEVICE + Constants.specialSymbol.URL_SEPARATE + idDTO.getId(), deleteObjectMsg);
+            mqIotMessage.setCache(true);
+            ExecutorUtils.cachedThreadPool.execute(new Runnable() {
+                @Override
+                public void run() {
+                    mqIotUtils.mqIotPushMsgAndGetResult(mqIotMessage);
+                }
+            });
+            wisdomRepository.updateStatus(Constants.shortNumber.NINE, wid);
+        }
+        wisdomConditionRepository.deleteByDid(idDTO.getId());
+
+        wids = wisdomImplementRepository.findWidByDid(idDTO.getId());
+        for (Long wid : wids) {
+            Map<String, String> deleteObjectMsg = MqIotMessageUtils.getDeleteWisdomImplement(wid);
+            MqIotMessage mqIotMessage = new MqIotMessage(CmdListEnum.deleteObject, serviceConfig.getMQTT_CLIENT_NAME(), Constants.role.DEVICE + Constants.specialSymbol.URL_SEPARATE + idDTO.getId(), deleteObjectMsg);
+            mqIotMessage.setCache(true);
+            ExecutorUtils.cachedThreadPool.execute(new Runnable() {
+                @Override
+                public void run() {
+                    mqIotUtils.mqIotPushMsgAndGetResult(mqIotMessage);
+                }
+            });
+            wisdomRepository.updateStatus(Constants.shortNumber.NINE, wid);
+        }
+        wisdomImplementRepository.deleteByDid(idDTO.getId());
         return new ResponseDTO(Constants.mainStatus.REQUEST_SUCCESS);
     }
 
@@ -281,42 +317,7 @@ public class WisdomServiceImpl implements WisdomService {
         return new ResponseDTO(Constants.mainStatus.REQUEST_SUCCESS);
     }
 
-    @Override
-    @TxTransaction
-    public ResponseDTO userDeleteDeviceWisdom(IdDTO idDTO) {
-        Long uid = userInfoService.getUserId(true);
-        CustomRunTimeException.checkNull(null, " 测试异常 ");
-        List<Long> wids = wisdomConditionRepository.findWidByDid(idDTO.getId());
-        for (Long wid : wids) {
-            Map<String, String> deleteObjectMsg = MqIotMessageUtils.getDeleteWisdomCondition(wid);
-            MqIotMessage mqIotMessage = new MqIotMessage(CmdListEnum.deleteObject, serviceConfig.getMQTT_CLIENT_NAME(), Constants.role.DEVICE + Constants.specialSymbol.URL_SEPARATE + idDTO.getId(), deleteObjectMsg);
-            mqIotMessage.setCache(true);
-            ExecutorUtils.cachedThreadPool.execute(new Runnable() {
-                @Override
-                public void run() {
-                    mqIotUtils.mqIotPushMsgAndGetResult(mqIotMessage);
-                }
-            });
-            wisdomRepository.updateStatus(Constants.shortNumber.NINE, wid);
-        }
-        wisdomConditionRepository.deleteByDid(idDTO.getId());
 
-        wids = wisdomImplementRepository.findWidByDid(idDTO.getId());
-        for (Long wid : wids) {
-            Map<String, String> deleteObjectMsg = MqIotMessageUtils.getDeleteWisdomImplement(wid);
-            MqIotMessage mqIotMessage = new MqIotMessage(CmdListEnum.deleteObject, serviceConfig.getMQTT_CLIENT_NAME(), Constants.role.DEVICE + Constants.specialSymbol.URL_SEPARATE + idDTO.getId(), deleteObjectMsg);
-            mqIotMessage.setCache(true);
-            ExecutorUtils.cachedThreadPool.execute(new Runnable() {
-                @Override
-                public void run() {
-                    mqIotUtils.mqIotPushMsgAndGetResult(mqIotMessage);
-                }
-            });
-            wisdomRepository.updateStatus(Constants.shortNumber.NINE, wid);
-        }
-        wisdomImplementRepository.deleteByDid(idDTO.getId());
-        return new ResponseDTO(Constants.mainStatus.REQUEST_SUCCESS);
-    }
 
     @Override
     public void notifyWisdom(String msg, Long wid) {

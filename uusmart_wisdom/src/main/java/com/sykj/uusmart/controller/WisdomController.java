@@ -34,10 +34,16 @@ public class WisdomController extends BaseController{
 
     @ApiOperation(value="test ...")
     @RequestMapping(value="test.do")
-    public ResponseDTO test()throws CustomRunTimeException {
-        return wisdomService.test();
+    public String test(@RequestBody @Valid ReqBaseDTO<IdDTO> reqBaseDTO, BindingResult bindingResult)throws CustomRunTimeException {
+        validataBind(bindingResult,reqBaseDTO.gethG());
+        return GsonUtils.toJSON(wisdomService.testDelete(reqBaseDTO.gethG()));
     }
-
+    @ApiOperation(value="用户删除某个设备的智能")
+    @RequestMapping(value="user/delete/device.do")
+    public String userDeleteDeviceWisdom(@RequestBody @Valid ReqBaseDTO<IdDTO> reqBaseDTO , BindingResult bindingResult)throws CustomRunTimeException {
+        validataBind(bindingResult,reqBaseDTO.gethG());
+        return GsonUtils.toJSON(wisdomService.userDeleteDeviceWisdom(reqBaseDTO.gethG()));
+    }
 
     @ApiOperation(value="用户创建一个智能")
     @RequestMapping(value="user/add.do")
@@ -63,12 +69,7 @@ public class WisdomController extends BaseController{
     }
 
 
-    @ApiOperation(value="用户删除某个设备的智能")
-    @RequestMapping(value="user/delete/device.do")
-    public String userDeleteDeviceWisdom(@RequestBody @Valid ReqBaseDTO<IdDTO> reqBaseDTO , BindingResult bindingResult)throws CustomRunTimeException {
-        validataBind(bindingResult,reqBaseDTO.gethG());
-        return GsonUtils.toJSON(wisdomService.userDeleteDeviceWisdom(reqBaseDTO.gethG()));
-    }
+
 
     @ApiOperation(value="用户修改某个智能消息")
     @RequestMapping(value="user/update/info.do")

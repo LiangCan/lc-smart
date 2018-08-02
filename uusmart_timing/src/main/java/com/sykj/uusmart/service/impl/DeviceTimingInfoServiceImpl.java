@@ -76,9 +76,9 @@ public class DeviceTimingInfoServiceImpl implements DeviceTimingInfoService {
     Demo2Client demo2Client;
 
     @Override
-    @TxTransaction(isStart = true)
+//    @TxTransaction(isStart = true)
     public ResponseDTO test(ReqBaseDTO reqBaseDTO) {
-        ResponseDTO responseDTO =  helloService.hello(reqBaseDTO);
+        ResponseDTO responseDTO =  helloService.hello();
         CustomRunTimeException.checkNull(null, "Nexus");
         return responseDTO;
     }

@@ -14,7 +14,7 @@ import com.sykj.uusmart.utils.MessageUtils;
  */
 public interface WisdomService {
     /** API  测试事务接口*/
-    ResponseDTO test();
+    ResponseDTO testDelete(IdDTO idDTO);
 
     /** API  用户添加*/
     ResponseDTO userAddWisdom(UserAddWisdomDTO userAddWisdomDTO);

@@ -9,6 +9,7 @@ import com.sykj.uusmart.pojo.ServiceLog;
 import com.sykj.uusmart.pojo.redis.UserLogin;
 import com.sykj.uusmart.service.ServiceLogService;
 import com.sykj.uusmart.service.UserInfoService;
+import com.sykj.uusmart.utils.ExecutorUtils;
 import com.sykj.uusmart.utils.GsonUtils;
 import com.sykj.uusmart.utils.MessageUtils;
 import org.apache.commons.logging.Log;
@@ -27,11 +28,12 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.Locale;
+import java.util.concurrent.CountDownLatch;
 
 @Aspect
 @Component
 public class WebLogAspect {
-    Log log= LogFactory.getLog(WebLogAspect.class);
+    Log log = LogFactory.getLog(WebLogAspect.class);
 
     @Autowired
     ServiceLogService serviceLogService;
@@ -42,6 +44,7 @@ public class WebLogAspect {
     @Autowired
     ServiceConfig serviceConfig;
 
+    private CountDownLatch latch;
 
     @Pointcut("execution(public * com.sykj.uusmart.controller..*.*(..))")
     public void reqLog() {
@@ -56,9 +59,9 @@ public class WebLogAspect {
         //设置语言
         String lang = request.getHeader("Accept-Languag");
         String Languag = MessageConfig.map.get("zh");
-        if(!TextUtils.isEmpty(lang)){
+        if (!TextUtils.isEmpty(lang)) {
             Languag = MessageConfig.map.get(lang);
-        }else{
+        } else {
             lang = "zh";
         }
         MessageUtils.setLanguage(new Locale(lang, Languag));
@@ -78,15 +81,21 @@ public class WebLogAspect {
         serviceLog.setOs(reqBaseDTO.gethE());
         serviceLog.setReqData(joinPoint.getArgs()[0].toString());
         serviceLog.setKey(String.valueOf(reqBaseDTO.gethA()));
-
+        latch = new CountDownLatch(1);
         //获取用户token
-        if(!TextUtils.isEmpty(reqBaseDTO.gethC())){
-            UserLogin userLogin = userInfoService.getTokenInfo(reqBaseDTO.gethC(), false);
-            if(userLogin != null){
-                serviceLog.setUserId(userLogin.getUserId());
-            }
+        if (!TextUtils.isEmpty(reqBaseDTO.gethC())) {
+            ExecutorUtils.cachedThreadPool.execute(new Runnable() {
+                @Override
+                public void run() {
+                    UserLogin userLogin = userInfoService.getTokenInfo(reqBaseDTO.gethC(), false);
+                    if (userLogin != null) {
+                        serviceLog.setUserId(userLogin.getUserId());
+                    }
+                    latch.countDown();
+                }
+            });
         }
-
+        latch.await();
         request.setAttribute(serviceConfig.getSERVICE_LOG(), serviceLog);
     }
 
@@ -94,7 +103,7 @@ public class WebLogAspect {
      * 返回正常 用于拦截service层记录异常日志
      */
     @AfterReturning(returning = "ret", pointcut = "reqLog()")
-    public void doAfterReturning (Object ret){
+    public void doAfterReturning(Object ret) {
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         HttpServletRequest request = attributes.getRequest();
         ServiceLog serviceLog = (ServiceLog) request.getAttribute(serviceConfig.getSERVICE_LOG());
@@ -102,6 +111,11 @@ public class WebLogAspect {
         serviceLog.setReturnData(ret.toString());
         serviceLog.setReturnTime(System.currentTimeMillis());
         log.info(serviceLog.getItfName() + "\n RESPONSE :\n " + ret);
-        serviceLogService.addServiceLog(serviceLog);
+        ExecutorUtils.cachedThreadPool.execute(new Runnable() {
+            @Override
+            public void run() {
+                serviceLogService.addServiceLog(serviceLog);
+            }
+        });
     }
 }
