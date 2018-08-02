@@ -3,6 +3,7 @@ package com.sykj.uusmart.controller;
 
 import com.google.gson.Gson;
 import com.sykj.uusmart.http.IdDTO;
+import com.sykj.uusmart.http.NameAndIdDTO;
 import com.sykj.uusmart.http.ReqBaseDTO;
 import com.sykj.uusmart.http.req.UserAddDeviceDTO;
 import com.sykj.uusmart.exception.CustomRunTimeException;
@@ -33,7 +34,7 @@ public class DeviceController extends BaseController{
     @RequestMapping(value="/user/add/list.do", method = RequestMethod.POST)
     public String userAddDeviceList(@RequestBody ReqBaseDTO<UserAddDeviceDTO> reqBaseDTO, BindingResult bindingResult)throws CustomRunTimeException {
         validataBind(bindingResult,reqBaseDTO.gethG());
-        Gson gs = new Gson();  //需要下载Google的gson包  需要源码包的
+        Gson gs = new Gson();
         String listStr = gs.toJson( reqBaseDTO );
         ReqBaseDTO<IdDTO> timingReq = gs.fromJson(listStr, ReqBaseDTO.class);
 
@@ -58,6 +59,17 @@ public class DeviceController extends BaseController{
     @RequestMapping(value="/user/delete.do", method = RequestMethod.POST)
     public String userDelete(@RequestBody  ReqBaseDTO<IdDTO> reqBaseDTO, BindingResult bindingResult)throws CustomRunTimeException {
         validataBind(bindingResult,reqBaseDTO.gethG());
-        return GsonUtils.toJSON(deviceInfoService.userDelete(reqBaseDTO.gethG()));
+
+        Gson gs = new Gson();
+        String listStr = gs.toJson( reqBaseDTO );
+        ReqBaseDTO<IdDTO> reqDTO = gs.fromJson(listStr, ReqBaseDTO.class);
+        return GsonUtils.toJSON(deviceInfoService.userDelete(reqBaseDTO.gethG() , reqDTO  ) );
+    }
+
+    @ApiOperation(value="test")
+    @RequestMapping(value="/test.do", method = RequestMethod.POST)
+    public String test(@RequestBody ReqBaseDTO<NameAndIdDTO> reqBaseDTO, BindingResult bindingResult)throws CustomRunTimeException {
+        validataBind(bindingResult, reqBaseDTO.gethG());
+        return GsonUtils.toJSON(deviceInfoService.test(reqBaseDTO));
     }
 }

@@ -27,6 +27,7 @@ import com.sykj.uusmart.repository.RoomInfoRepository;
 import com.sykj.uusmart.repository.UserHomeInfoRepository;
 import com.sykj.uusmart.repository.UserInfoRepository;
 import com.sykj.uusmart.service.UserInfoService;
+import com.sykj.uusmart.utils.TimeUtils;
 import org.apache.http.util.TextUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -318,16 +319,15 @@ public class UserInfoServiceImpl   implements UserInfoService  {
     public ResponseDTO updatePassword(UserUpdatePasswdDTO userUpdatePasswdDTO) {
 //        userInfoRepository.findUserInfoByEmailAndPassword( "", userUpdatePasswdDTO.getOldPassword() );
         Long userId = getUserId(true);
-        UserInfo  userInfo = userInfoRepository.findOne( userId );
+        UserInfo  userInfo = userInfoRepository.findUserInfoByUserId( userId );
 //      如果输入密码和数据库密码一致，则修改；
         String oldPasswd =  MD5Utils.toMD5( userUpdatePasswdDTO.getOldPassword() );
         String newPasswd =  MD5Utils.toMD5( userUpdatePasswdDTO.getNewPassword() );
-        if ( userInfo.getPassword() .equals( oldPasswd )){
-            userInfoRepository.updateUserPasswdByUserId( newPasswd , userId );
-            return new ResponseDTO(Constants.mainStatus.REQUEST_SUCCESS);
-        }else {
-            return new ResponseDTO(Constants.resultCode.PARAM_VALUE_INVALID , Constants.systemError.PARAM_VALUE_INVALID);
+        if ( !userInfo.getPassword() .equals( oldPasswd )){
+            throw new CustomRunTimeException(Constants.resultCode.PARAM_VALUE_INVALID , Constants.systemError.PARAM_VALUE_INVALID, new Object[]{" Password "});
         }
+        userInfoRepository.updateUserPasswdByUserId( newPasswd , userId );
+        return new ResponseDTO(Constants.mainStatus.REQUEST_SUCCESS);
     }
 
     @Override

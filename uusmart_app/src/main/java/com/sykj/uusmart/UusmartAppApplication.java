@@ -10,15 +10,22 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.netflix.feign.EnableFeignClients;
 import org.springframework.cloud.netflix.hystrix.EnableHystrix;
+import org.springframework.context.ApplicationEvent;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Import;
+import org.springframework.context.event.ContextClosedEvent;
+import org.springframework.context.event.EventListener;
+import org.springframework.context.event.SimpleApplicationEventMulticaster;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import java.util.UUID;
+import java.util.concurrent.Executors;
 
 
 @SpringBootApplication
 @EnableEurekaClient
 @EnableAutoConfiguration
+//@EnableTransactionManagement
 @EnableHystrix
 @EnableFeignClients
 @Import(FdfsClientConfig.class)

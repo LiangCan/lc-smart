@@ -36,3 +36,13 @@ eureka:
     fetch-registry: true
     serviceUrl:
       defaultZone: http://goodtime-iot.com:9001/eureka/
+
+#Ribbon的负载均衡策略
+ribbon.NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+ribbon.MaxAutoRetriesNextServer: 0
+hystrix.command.default.execution.isolation.strategy:  SEMAPHORE
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 60000
+
+ribbon:
+    ReadTimeout: 60000
+    ConnectTimeout: 60000
