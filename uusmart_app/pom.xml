@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.uusmart.app</groupId>
@@ -25,9 +25,35 @@
 		<java.version>1.8</java.version>
 		<spring-cloud.version>Edgware.SR3</spring-cloud.version>
 		<docker.image.prefix>registry.cn-shenzhen.aliyuncs.com/sykj/${project.artifactId}</docker.image.prefix>
+		<lcn.last.version>4.1.0</lcn.last.version>
 	</properties>
 
 	<dependencies>
+
+		<dependency>
+			<groupId>com.codingapi</groupId>
+			<artifactId>transaction-springcloud</artifactId>
+			<version>${lcn.last.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>*</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>com.codingapi</groupId>
+			<artifactId>tx-plugins-db</artifactId>
+			<version>${lcn.last.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>*</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
 		<dependency>
 			<groupId>com.sykj.uusmart</groupId>
 			<artifactId>uusmart_agreement</artifactId>
@@ -39,7 +65,6 @@
 			<artifactId>uusmart_datas</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-
 
 		<!-- thymeleaf模板插件 -->
 		<dependency>
@@ -72,8 +97,7 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-hystrix</artifactId>
 		</dependency>
-
-
+		
 
 		<!--spring could, config client, eureka client 依赖的jar -->
 		<dependency>
@@ -88,20 +112,6 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-eureka-server</artifactId>
 		</dependency>
-
-		<!--&lt;!&ndash; mqtt  启动依赖&ndash;&gt;-->
-		<!--<dependency>-->
-		<!--<groupId>org.springframework.integration</groupId>-->
-		<!--<artifactId>spring-integration-mqtt</artifactId>-->
-		<!--</dependency>-->
-		<!--<dependency>-->
-		<!--<groupId>org.springframework.integration</groupId>-->
-		<!--<artifactId>spring-integration-stream</artifactId>-->
-		<!--</dependency>-->
-		<!--<dependency>-->
-		<!--<groupId>org.springframework.boot</groupId>-->
-		<!--<artifactId>spring-boot-starter-integration</artifactId>-->
-		<!--</dependency>-->
 
 		<!-- bus  启动依赖-->
 		<dependency>
@@ -121,7 +131,6 @@
 			<version>1.1.8</version>
 			<classifier>jar-with-dependencies</classifier>
 		</dependency>
-
 
 	</dependencies>
 
