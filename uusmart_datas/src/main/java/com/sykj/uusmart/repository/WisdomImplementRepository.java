@@ -19,7 +19,7 @@ public interface WisdomImplementRepository extends CrudRepository<WisdomImplemen
     @Query(" FROM WisdomImplement WHERE wid = ? ")
     List<WisdomImplement> findAllByWid(Long wid);
 
-    @Query(" FROM WisdomImplement WHERE wid = ?  AND id = ? AND implementType = 2 ")
+    @Query(" FROM WisdomImplement WHERE wid = ?  AND id = ? AND implementType = 2 AND implementStatus = 1")
     List<WisdomImplement>  findAllByWidAndId(Long wid, Long did);
 
     @Query("SELECT NEW WisdomImplement(id, wiid, implementType) FROM WisdomImplement WHERE wid = ? ")
