@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-@FeignClient(value = "uusmart-timing-test",fallback = TimingServiceAPIHystric.class)
+@FeignClient(value = "uusmart-timing",fallback = TimingServiceAPIHystric.class)
 public interface TimingServiceAPI {
 
     @RequestMapping(value = "/auth/timing/user/by/device/delete.do",method = RequestMethod.POST)

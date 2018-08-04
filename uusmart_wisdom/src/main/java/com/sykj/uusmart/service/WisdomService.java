@@ -5,8 +5,13 @@ import com.sykj.uusmart.http.IdDTO;
 import com.sykj.uusmart.http.NameAndIdDTO;
 import com.sykj.uusmart.http.ResponseDTO;
 import com.sykj.uusmart.http.req.UserAddWisdomDTO;
+import com.sykj.uusmart.mqtt.MqIotMessage;
 import com.sykj.uusmart.mqtt.MqIotMessageDTO;
+import com.sykj.uusmart.mqtt.cmd.MqIotSysObjectDTO;
+import com.sykj.uusmart.pojo.DeviceInfo;
 import com.sykj.uusmart.utils.MessageUtils;
+
+import java.util.Map;
 
 
 /**
@@ -30,5 +35,8 @@ public interface WisdomService {
 
     /** SERVER  情景指令通知*/
     void notifyWisdom(String msg, Long wid);
+
+    /** SERVER 同步智能 */
+    void synWisdom(MqIotSysObjectDTO mqIotSysObjectDTO, DeviceInfo deviceInfo);
 
 }

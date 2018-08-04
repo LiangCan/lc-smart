@@ -164,6 +164,14 @@ public class CustomRunTimeException extends RuntimeException {
             throw new CustomRunTimeException(Constants.resultCode.API_DATA_IS_NULL, Constants.systemError.API_DATA_IS_NULL, new Object[]{objName});
         }
     }
+
+    /**
+     * 参数错误
+     * @param objName
+     */
+    public static void parameterError(String objName){
+        throw new CustomRunTimeException(Constants.resultCode.PARAM_VALUE_INVALID, Constants.systemError.PARAM_VALUE_INVALID, new Object[]{objName});
+    }
     /**
      * 校验数据是否为空
      * @param object

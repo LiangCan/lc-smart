@@ -41,6 +41,9 @@ public class WisdomCondition {
     @Column(name="condition_value", columnDefinition=" varchar(32) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL COMMENT '条件值' ")
     private String conditionValue;
 
+//    @Column(name="update_num",columnDefinition=" bigint(4)   COMMENT '修改次数' ")
+//    private int updateNum;
+
     public WisdomCondition() {
     }
 
@@ -49,6 +52,14 @@ public class WisdomCondition {
         this.id = id;
         this.conditionType = conditionType;
     }
+
+//    public int getUpdateNum() {
+//        return updateNum;
+//    }
+//
+//    public void setUpdateNum(int updateNum) {
+//        this.updateNum = updateNum;
+//    }
 
     public Long getWid() {
         return wid;

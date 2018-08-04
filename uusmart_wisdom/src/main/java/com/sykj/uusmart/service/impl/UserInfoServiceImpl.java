@@ -89,7 +89,7 @@ public class UserInfoServiceImpl implements UserInfoService  {
         ServiceLog serviceLog = (ServiceLog) request.getAttribute(serviceConfig.getSERVICE_LOG());
         CustomRunTimeException.checkNull(serviceLog,"serviceLog");
         if(checkNull){
-            if(serviceLog.getUserId() == null){
+            if(serviceLog.getUserId() == null || serviceLog.getUserId() <1){
                 throw new CustomRunTimeException(Constants.resultCode.API_LOGIN_TOKEN_INVALID, Constants.systemError.API_LOGIN_TOKEN_INVALID);
             }
         }

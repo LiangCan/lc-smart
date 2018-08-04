@@ -106,9 +106,11 @@ public class DeviceaInfoServiceImpl implements DeviceInfoService {
                 NexusUserDevice nexusUserDevice = nexusUserDeviceRepository.findDeviceIdAndRoleQueryUserId(deviceInfo.getDeviceId(), (short) 1);
                 //判断设备用户绑定关系是否存在
                 if (nexusUserDevice != null) {
+
+                    // 删除设备的定时和设备的智能；
+                    deleteWisdomAndTime(deviceInfo.getDeviceId(), timingReq);
+
                     //判断是被自己绑定
-//                    使用 “==” 造成的bug， == 会去判断 对象的内存位置。改用equals  lgf ，2018年7月20日14:00:27
-//                    if (nexusUserDevice.getUserId()  == uid && nexusUserDevice.getHid() == hid) {
                     if (nexusUserDevice.getUserId().equals(uid) && nexusUserDevice.getHid().equals(hid)) {
                         dids.put(addDeivceDTO.getDeviceAddress(), deviceInfo.getDeviceId());
                         continue;
@@ -116,15 +118,11 @@ public class DeviceaInfoServiceImpl implements DeviceInfoService {
 
                     Map<String, String> natityRefresh = MqIotMessageUtils.getNotifyRefreshCmd("dervice");
                     MqIotMessageDTO mqIotMessage = MqIotMessageUtils.getNotify(serviceConfig.getMQTT_CLIENT_NAME(), MqIotUtils.getRole(Constants.shortNumber.ONE) + nexusUserDevice.getUserId(), natityRefresh);
-//                            mqIotUtils.mqIotPushMsg( mqIotMessage );
                     notifyMap.put(nexusUserDevice.getUserId(), mqIotMessage);
-//                    删除设备的定时和设备的智能；
-                    deleteWisdomAndTime(deviceInfo.getDeviceId(), timingReq);
 
                     //删除绑定关系
                     nexusUserDeviceRepository.deleteByDeviceId(deviceInfo.getDeviceId());
 
-//                    NoticeUtils.pushDataRefresh(nexusUserDevice.getUserId(), 2);
                 }
             } else {
                 deviceInfo = new DeviceInfo();

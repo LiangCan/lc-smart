@@ -19,6 +19,9 @@ public interface WisdomImplementRepository extends CrudRepository<WisdomImplemen
     @Query(" FROM WisdomImplement WHERE wid = ? ")
     List<WisdomImplement> findAllByWid(Long wid);
 
+    @Query(" FROM WisdomImplement WHERE wid = ?  AND id = ? AND implementType = 2 ")
+    List<WisdomImplement>  findAllByWidAndId(Long wid, Long did);
+
     @Query("SELECT NEW WisdomImplement(id, wiid, implementType) FROM WisdomImplement WHERE wid = ? ")
     List<WisdomImplement> findIdsAllByWid(Long wid);
 
@@ -29,6 +32,12 @@ public interface WisdomImplementRepository extends CrudRepository<WisdomImplemen
     @Modifying(clearAutomatically = true)
     @Query("UPDATE  WisdomImplement  SET implementStatus = ? WHERE id = ? AND wid = ? ")
     void updateStatusByIdAndWid(short status, Long id, Long wid);
+
+
+    @Modifying(clearAutomatically = true)
+    @Query("UPDATE  WisdomImplement  SET implementStatus = ? WHERE id = ? AND implementType = 2 ")
+    void updateStatusByDId(short status, Long id);
+
 
     /**
      * 查找设备的所有相关的WID

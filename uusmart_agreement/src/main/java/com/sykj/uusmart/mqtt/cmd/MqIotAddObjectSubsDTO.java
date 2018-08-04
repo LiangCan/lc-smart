@@ -32,9 +32,19 @@ public class MqIotAddObjectSubsDTO {
     @NotNull( message = Constants.systemError.PARAM_MISS)
     private String combModel;
 
+    private int updateNum;
+
     //条件
     @NotNull( message = Constants.systemError.PARAM_MISS)
     private Map<String, String> trigger;
+
+    public int getUpdateNum() {
+        return updateNum;
+    }
+
+    public void setUpdateNum(int updateNum) {
+        this.updateNum = updateNum;
+    }
 
     public String getCombModel() {
         return combModel;

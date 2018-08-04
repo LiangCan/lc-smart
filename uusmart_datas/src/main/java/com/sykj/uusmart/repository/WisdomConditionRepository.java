@@ -20,12 +20,14 @@ public interface WisdomConditionRepository extends CrudRepository<WisdomConditio
     @Query(" FROM WisdomCondition WHERE wid = ? ")
     List<WisdomCondition> findAllByWid(Long wid);
 
+    @Query(" FROM WisdomCondition WHERE wid = ? AND id = ? AND conditionType = 2 AND conditionStatus = 1")
+    List<WisdomCondition> findAllByWidAndId(Long wid, Long id);
+
     /**
      * 查找设备的所有相关的WID
      */
     @Query("SELECT DISTINCT(wid) FROM WisdomCondition WHERE id = ? AND conditionType = 2")
     List<Long> findWidByDid(Long did);
-
 
 
     @Query("SELECT   NEW WisdomCondition(id, wcid, conditionType) FROM WisdomCondition WHERE wid = ? ")
@@ -34,6 +36,7 @@ public interface WisdomConditionRepository extends CrudRepository<WisdomConditio
     @Modifying(clearAutomatically = true)
     @Query("DELETE FROM WisdomCondition WHERE id = ? AND wid = ? ")
     void deleteByIdAndWid(Long id, Long wid);
+
 
     /**
      * 删除设备的所有相关的条件
@@ -45,4 +48,8 @@ public interface WisdomConditionRepository extends CrudRepository<WisdomConditio
     @Modifying(clearAutomatically = true)
     @Query("UPDATE  WisdomCondition  SET conditionStatus = ? WHERE id = ? AND wid = ? ")
     void updateStatusByIdAndWid(short status, Long id, Long wid);
+
+    @Modifying(clearAutomatically = true)
+    @Query("UPDATE  WisdomCondition  SET conditionStatus = ? WHERE id = ? AND conditionType = 2 ")
+    void updateStatusByDId(short status, Long did);
 }

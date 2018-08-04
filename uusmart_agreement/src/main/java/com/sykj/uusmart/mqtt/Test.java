@@ -3,6 +3,8 @@ package com.sykj.uusmart.mqtt;
 import com.google.gson.Gson;
 import com.sykj.uusmart.mqtt.cmd.CmdListEnum;
 import com.sykj.uusmart.mqtt.push.impl.MqIotMsgCallBackImpl;
+import com.sykj.uusmart.pojo.DeviceInfo;
+import com.sykj.uusmart.pojo.UserInfo;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -16,17 +18,24 @@ import java.util.concurrent.TimeUnit;
  */
 public class Test {
     public static void main(String[] args) {
-//        Gson gson = new Gson();
-//        Map<String,String> map = new HashMap<>();
-//        map.put("eventCode", "d/1,123");
-//        MqIotMessageDTO mqIotMessageDTO1 = new MqIotMessageDTO(CmdListEnum.upgrade,
-//                "s/derSer",
-//                "d/1",
-//                map, null);
-////        mqIotMessageDTO1.setMqIotMsgCallBack(new MqIotMsgCallBackImpl());
-//        String ss = gson.toJson(mqIotMessageDTO1);
-//        System.out.print(ss);
-
+        UserInfo userInfo = new UserInfo();
+        userInfo.setUserId(128L);
+        Long uid = 128L;
+//        DeviceInfo deviceInfo = new DeviceInfo();
+//        deviceInfo.setDeviceId(1L);
+        if(userInfo.getUserId() == uid){
+            System.out.println(" true ");
+        }else{
+            System.out.println(" false ");
+        }
+//        Long i = 12L;
+//        Long j = 12L;
+//        Long m = 195L;
+//        Long n = 195L;
+//        System.out.println(i==j);//true
+//        System.out.println(m==n);//false
+//        System.out.println(i.equals(j));//true
+//        System.out.println(m.equals(n));//true
 
     }
 }

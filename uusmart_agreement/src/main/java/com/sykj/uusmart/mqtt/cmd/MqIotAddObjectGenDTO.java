@@ -24,9 +24,21 @@ public class MqIotAddObjectGenDTO {
     @NotNull( message = Constants.systemError.PARAM_MISS)
     private String combModel;
 
+    //修改次数
+    private int updateNum;
+
     //条件
     @NotNull( message = Constants.systemError.PARAM_MISS)
     private List<MqIotConditionDTO> condition;
+
+
+    public int getUpdateNum() {
+        return updateNum;
+    }
+
+    public void setUpdateNum(int updateNum) {
+        this.updateNum = updateNum;
+    }
 
     public String getCombModel() {
         return combModel;

@@ -50,6 +50,10 @@ public class ServiceConfig {
     @Value("${diy.http.agreement.version}")
     private  String HTTP_VERSION;
 
+    //0.0.1
+    @Value("${diy.tcp.agreement.version}")
+    private  String TCP_VERSION;
+
     @Value("${mqtt.urls}")
     private String MQTT_URL;
 
@@ -60,6 +64,10 @@ public class ServiceConfig {
 
     @Value("${mqtt.client.topic}")
     private  String[] SUB_MQTT_TOPIC ;
+
+    public String getTCP_VERSION() {
+        return TCP_VERSION;
+    }
 
     public Integer getMQTT_PUSH_MSG_TIMEOUT() {
         return MQTT_PUSH_MSG_TIMEOUT;

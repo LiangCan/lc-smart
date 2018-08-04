@@ -140,18 +140,14 @@ public class DeviceTimingInfoServiceImpl implements DeviceTimingInfoService {
     @Override
     @TxTransaction
     public ResponseDTO userDeleteDeviceTimingAll(IdDTO idDTO) {
-        Long userId = userInfoService.getUserId(true);
-//        CustomRunTimeException.checkDeviceJurisdiction(nexusUserDeviceRepository.findByUserIdAndDeviceId(userId, idDTO.getId()), true);
+        userInfoService.getUserId(true);
         List<DeviceTimingInfo> list = deviceTimingInfoRepository.queryByDeviceId(idDTO.getId());
         for (DeviceTimingInfo deviceTimingInfo : list) {
             MqIotAddTimingBaseDTO mqIotTimerTaskDTO = MqIotMessageUtils.getDeleteimingBody(deviceTimingInfo.getDtid(), ROLE);
             MqIotMessageDTO mqIotMessageDTO = MqIotMessageUtils.getDeletebject(serviceConfig.getMQTT_CLIENT_NAME(), Constants.role.DEVICE + Constants.specialSymbol.URL_SEPARATE + idDTO.getId(), mqIotTimerTaskDTO);
-            MqIotMessage mqIotMessage = new MqIotMessage(mqIotMessageDTO);
-            mqIotMessage.setCache(true);
-            mqIotUtils.mqIotPushMsgAndGetResult(mqIotMessage);
+            mqIotUtils.mqIotPushMsg(mqIotMessageDTO);
         }
         deviceTimingInfoRepository.deleteByDeviceId(idDTO.getId());
-
         return new ResponseDTO(Constants.mainStatus.REQUEST_SUCCESS);
     }
 }

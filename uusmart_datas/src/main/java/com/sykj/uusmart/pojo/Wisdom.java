@@ -38,7 +38,18 @@ public class Wisdom {
     @Column(name="wisdom_type", columnDefinition=" smallint(2)   COMMENT '类型：1' ")
     private Short wisdomType;
 
+    @Column(name="update_num",columnDefinition=" bigint(4)   COMMENT '修改次数' ")
+    private Integer updateNum;
+
     public Wisdom() {
+    }
+
+    public Integer getUpdateNum() {
+        return updateNum;
+    }
+
+    public void setUpdateNum(Integer updateNum) {
+        this.updateNum = updateNum;
     }
 
     public Short getAndOr() {

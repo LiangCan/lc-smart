@@ -11,11 +11,9 @@ import javax.validation.constraints.NotNull;
  */
 public class MqIotConditionDTO {
 
-    //设备类型
     @NotNull( message = Constants.systemError.PARAM_MISS)
     private String name;
 
-    //重发次数
     @NotNull( message = Constants.systemError.PARAM_MISS)
     private String compModel;
 

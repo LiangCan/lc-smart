@@ -8,9 +8,11 @@ import com.sykj.uusmart.mqtt.cmd.resp.MqIotRespCodeDTO;
 import com.sykj.uusmart.mqtt.push.MqIotMsgCallBack;
 import com.sykj.uusmart.mqtt.push.impl.MqIotMsgCallBackImpl;
 import com.sykj.uusmart.pojo.CacheMessage;
+import com.sykj.uusmart.pojo.DeviceInfo;
 import com.sykj.uusmart.pojo.DeviceMesgLog;
 import com.sykj.uusmart.pojo.DeviceVersionInfo;
 import com.sykj.uusmart.repository.CacheMessageRepository;
+import com.sykj.uusmart.repository.DeviceInfoRepository;
 import com.sykj.uusmart.repository.DeviceMesgLogRepository;
 import com.sykj.uusmart.repository.DeviceVersionInfoRepository;
 import com.sykj.uusmart.utils.ExecutorUtils;
@@ -45,6 +47,9 @@ public class MqIotUtils {
 
     @Autowired
     DeviceMesgLogRepository deviceMesgLogRepository;
+
+    @Autowired
+    DeviceInfoRepository deviceInfoRepository;
 
     @Autowired
     MqIotMsgCallBackImpl mqIotMsgCallBackImpl;
@@ -361,6 +366,41 @@ public class MqIotUtils {
         mqIotMessageDTO.setBody(body);
 //        ValidatorUtils.validata(mqIotMessageDTO.getBody(), mqIotMessageDTO);
         return body;
+    }
+
+
+    /**
+     * 1处理请求的headr, 转换body
+     */
+    public MqIotMessage handReq(MqIotMessageDTO mqIotMessageDTO, String mqIotVersion, String clientName) throws CustomRunTimeException {
+        MqIotMessage result = new MqIotMessage();
+        String[] srcs = mqIotMessageDTO.getHeader().getSourceId().split(Constants.specialSymbol.URL_SEPARATE);
+
+        //判断发送者是否 是设备端,如果不是，将不会处理 抛出异常保存日志，
+        if (!Constants.role.DEVICE.equals(srcs[0])) {
+            throw new CustomRunTimeException(Constants.resultCode.PARAM_VALUE_INVALID, Constants.systemError.PARAM_VALUE_INVALID, new Object[]{"SourceId"}, mqIotMessageDTO);
+        }
+
+        //获取处理的Device
+        Long did = Long.parseLong(srcs[1]);
+        DeviceInfo deviceInfo = deviceInfoRepository.findOne(did);
+        if (deviceInfo == null) {
+            throw new CustomRunTimeException(Constants.resultCode.API_DATA_IS_NULL, Constants.systemError.API_DATA_IS_NULL, new Object[]{"Device Info"}, mqIotMessageDTO);
+        }
+        result.setDeviceInfo(deviceInfo);
+
+        //判断版本是否过低 推送设备升级,并且抛出异常保存日志
+        if (mqIotMessageDTO.getHeader().getVersion().compareTo(mqIotVersion) < 0) {
+            DeviceVersionInfo deviceVersionInfo = createUpDeviceCMD(deviceInfo.getProductId());
+
+            MqIotMessageDTO mqIotMessageDTO1 = new MqIotMessageDTO(CmdListEnum.upgrade, clientName, mqIotMessageDTO.getHeader().getSourceId(), deviceVersionInfo);
+            setRespDestId(mqIotMessageDTO1);
+            mqIotPushMsg(mqIotMessageDTO1);
+            throw new CustomRunTimeException(Constants.resultCode.PARAM_AGREEMENT_ERROR, Constants.systemError.PARAM_AGREEMENT_ERROR, new Object[]{"tcp"}, mqIotMessageDTO);
+        }
+
+        result.setMqIotMessageDTO(mqIotMessageDTO);
+        return result;
     }
 
     /**

@@ -232,8 +232,8 @@ public class UserInfoServiceImpl   implements UserInfoService  {
         if(stringRedisTemplate.hasKey(redisEmil)){
             String checkCodeStr = stringRedisTemplate.opsForValue().get(redisEmil);
             UserCheckCode userCheckCode = GsonUtils.toObj(checkCodeStr,UserCheckCode.class);
-            if(userCheckCode.getCodeType() != Constants.shortNumber.ONE){
-                CustomRunTimeException.checkNull(null,"check_code");
+            if(!userCheckCode.getCodeType().equals(Constants.shortNumber.ONE) ){
+                CustomRunTimeException.parameterError("check_code");
             }else{
                 stringRedisTemplate.delete(redisEmil);
             }
@@ -341,9 +341,9 @@ public class UserInfoServiceImpl   implements UserInfoService  {
         //校验校验码
         if(stringRedisTemplate.hasKey(redisEmil)){
             String checkCodeStr = stringRedisTemplate.opsForValue().get(redisEmil);
-            UserCheckCode userCheckCode = GsonUtils.toObj(checkCodeStr,UserCheckCode.class);
-            if(userCheckCode.getCodeType() != Constants.shortNumber.TWO){
-                CustomRunTimeException.checkNull(null,"check_code");
+            UserCheckCode userCheckCode = GsonUtils.toObj(checkCodeStr, UserCheckCode.class);
+            if(!userCheckCode.getCodeType().equals(Constants.shortNumber.TWO)){
+                CustomRunTimeException.parameterError("check_code");
             }else{
                 stringRedisTemplate.delete(redisEmil);
             }

@@ -41,6 +41,11 @@ public class WisdomImplement {
     @Column(name="implement_value", columnDefinition=" varchar(32) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL COMMENT '执行的值' ")
     private String implementValue;
 
+//    @Column(name="update_num",columnDefinition=" bigint(4)   COMMENT '修改次数' ")
+//    private int updateNum;
+
+
+
     public WisdomImplement() {
     }
 
@@ -56,6 +61,14 @@ public class WisdomImplement {
         this.implementName = implementName;
         this.implementValue = implementValue;
     }
+
+//    public int getUpdateNum() {
+//        return updateNum;
+//    }
+//
+//    public void setUpdateNum(int updateNum) {
+//        this.updateNum = updateNum;
+//    }
 
     public Long getWid() {
         return wid;

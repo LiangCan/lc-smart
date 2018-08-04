@@ -2,16 +2,17 @@ package com.sykj.uusmart.mqtt;
 
 import com.sykj.uusmart.Constants;
 import com.sykj.uusmart.mqtt.cmd.CmdListEnum;
+import com.sykj.uusmart.mqtt.cmd.MqIotAddObjectGenDTO;
+import com.sykj.uusmart.mqtt.cmd.MqIotAddObjectSubsDTO;
 import com.sykj.uusmart.mqtt.cmd.MqIotDeviceControllerTO;
+import com.sykj.uusmart.mqtt.cmd.input.MqIotConditionDTO;
 import com.sykj.uusmart.mqtt.cmd.timing.MqIotAddTimingBaseDTO;
 import com.sykj.uusmart.mqtt.cmd.timing.input.MqIotTimerTaskDTO;
 import com.sykj.uusmart.utils.GsonUtils;
 import org.apache.http.util.TextUtils;
 import org.springframework.stereotype.Component;
 
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by Administrator on 2018/6/4 0004.
@@ -36,6 +37,27 @@ public class MqIotMessageUtils {
     }
     public static MqIotMessageDTO getAddObject(String sourceId, String destId, Object parmMaps) {
         return  new MqIotMessageDTO(CmdListEnum.addObject, sourceId, destId, parmMaps);
+    }
+
+    public static MqIotAddObjectSubsDTO getAddObjectSubsCmd(String orAnd, List<String> eventCodeS, Map<String,String> trigger){
+        MqIotAddObjectSubsDTO mqIotAddObjectSubsDTO = new MqIotAddObjectSubsDTO();
+        mqIotAddObjectSubsDTO.setCombModel(orAnd);
+        mqIotAddObjectSubsDTO.setEventCode(eventCodeS);
+        mqIotAddObjectSubsDTO.setUpdateNum(0);
+        mqIotAddObjectSubsDTO.setRole(Constants.wisdomRole.WISDOM_SUBS);
+        mqIotAddObjectSubsDTO.setTrigger(trigger);
+        return mqIotAddObjectSubsDTO;
+    }
+
+    public static MqIotAddObjectGenDTO getAddObjectGenCmd(String orAnd, String eventCode,List<MqIotConditionDTO> conditionDTOS){
+        MqIotAddObjectGenDTO mqIotAddObjectGenDTO = new MqIotAddObjectGenDTO();
+        mqIotAddObjectGenDTO.setUpdateNum(0);
+        mqIotAddObjectGenDTO.setCombModel(orAnd);
+        mqIotAddObjectGenDTO.setCondition(new ArrayList<>());
+        mqIotAddObjectGenDTO.setCondition(conditionDTOS);
+        mqIotAddObjectGenDTO.setEventCode(eventCode);
+        mqIotAddObjectGenDTO.setRole(Constants.wisdomRole.WISDOM_GEN);
+        return mqIotAddObjectGenDTO;
     }
 
     public static MqIotMessageDTO getNotify(String sourceId, String destId, Object parmMaps) {
@@ -100,6 +122,12 @@ public class MqIotMessageUtils {
         return parmMap;
     }
 
+    public static Map<String, String> getDeleteWisdomCmd(Long  wid, String role){
+        Map<String, String> parmMap =  new HashMap<>();
+        parmMap.put("eventCode", "*/*," + wid);
+        parmMap.put("role", role);
+        return parmMap;
+    }
 
     public static Map<String, String> getDeleteWisdomCondition(Long  wid){
         Map<String, String> parmMap =  new HashMap<>();

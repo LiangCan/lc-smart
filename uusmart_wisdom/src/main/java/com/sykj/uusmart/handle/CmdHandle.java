@@ -6,13 +6,12 @@ import com.sykj.uusmart.exception.CustomRunTimeException;
 import com.sykj.uusmart.mqtt.MqIotMessage;
 import com.sykj.uusmart.mqtt.MqIotMessageDTO;
 import com.sykj.uusmart.mqtt.MqIotUtils;
-import com.sykj.uusmart.mqtt.cmd.CmdListEnum;
 import com.sykj.uusmart.mqtt.cmd.MqIotDeviceLoginDTO;
+import com.sykj.uusmart.mqtt.cmd.MqIotSysObjectDTO;
 import com.sykj.uusmart.mqtt.cmd.resp.MqIotRespDeviceLoginDTO;
 import com.sykj.uusmart.pojo.DeviceInfo;
-import com.sykj.uusmart.pojo.DeviceVersionInfo;
-import com.sykj.uusmart.service.DeviceService;
-import com.sykj.uusmart.service.UserService;
+import com.sykj.uusmart.pojo.Wisdom;
+import com.sykj.uusmart.service.WisdomService;
 import com.sykj.uusmart.utils.ConfigGetUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -32,38 +31,20 @@ public class CmdHandle {
     MqIotUtils mqIotUtils;
 
     @Autowired
-    DeviceService deviceService;
-
-    @Autowired
-    UserService userService;
-
-    @Autowired
     ServiceConfig serviceConfig;
+
+    @Autowired
+    WisdomService wisdomService;
 
     //第一步解析
     public MqIotMessage handle(MqIotMessageDTO mqIotMessageDTO) throws CustomRunTimeException {
 
-        //处理透传
-        if (Constants.shortNumber.ONE == mqIotMessageDTO.getHeader().getTransferType()) {
-            mqIotUtils.pushDeviceTransferMsg(mqIotMessageDTO);
-            return new MqIotMessage(mqIotMessageDTO);
-        }
-
         MqIotMessage mqIotMessage = mqIotUtils.handReq(mqIotMessageDTO ,serviceConfig.getTCP_VERSION(), ConfigGetUtils.serviceConfig.getMQTT_CLIENT_NAME());
         //业务处理
         switch (mqIotMessageDTO.getHeader().getActionType()) {
-            case login:
-                userService.pushDeviceAllUser(mqIotMessage);
-                MqIotRespDeviceLoginDTO mqIotRespDeviceLoginDTO = deviceService.handelDeviceLogin(mqIotUtils.toObj(mqIotMessage.getMqIotMessageDTO(), MqIotDeviceLoginDTO.class));
-                handResp(mqIotMessage, mqIotRespDeviceLoginDTO);
-                break;
-            case inform:
-                userService.isPushDeviceStatus(mqIotMessage);
-                deviceService.handelDeviceInform(mqIotMessage);
-                break;
-            case disconn:
-                deviceService.handelDeviceDiscontrol(mqIotMessage);
-                userService.pushDeviceAllUser(mqIotMessage);
+            case syn :
+                MqIotSysObjectDTO mqIotSysObjectDTO = mqIotUtils.toObj(mqIotMessageDTO, MqIotSysObjectDTO.class);
+                wisdomService.synWisdom(mqIotSysObjectDTO, mqIotMessage.getDeviceInfo());
                 break;
             default:
                 return mqIotMessage;

@@ -8,7 +8,7 @@ import java.util.concurrent.*;
 public class Test {
     public static void main(String[] args) {
         MQTTUtils.init( "tcp://goodtime-iot.com:1883", "test123213",new CallBack(),"s/test"  );
-        pressureTest();
+        deviceSyn();
         MQTTUtils.disConnect();
     }
 
@@ -25,5 +25,9 @@ public class Test {
 
     public static void deviceLogin(){
         MQTTUtils.push("s/deviceSer","{\"header\":{\"transferType\":0,\"packetType\":0,\"tokenId\":10001,\"sourceId\":\"d/1\",\"destId\":\"s/deviceSer\",\"encryptType\":0,\"msgSeqId\":1,\"timestamp\":\"0000000009000\",\"version\":\"0.0.1\",\"actionType\":\"login\"},\"body\":{\"productClass\":0,\"retryCount\":1,\"mac\":\"5CCF7FF79DCF\",\"swVer\":\"1.0.2\",\"hwVer\":\"1.0.2\"},\"append\":{\"value\":\"from device\"}}");
+    }
+
+    public static void deviceSyn(){
+        MQTTUtils.push("s/wisdomTest","{\"header\":{\"transferType\":0,\"packetType\":0,\"tokenId\":10001,\"sourceId\":\"d/252\",\"destId\":\"s/deviceSer\",\"encryptType\":0,\"msgSeqId\":1,\"timestamp\":\"0000000009000\",\"version\":\"0.0.1\",\"actionType\":\"syn\"},\"body\":{\"role\":\"gen\",\"datas\":{\"25\":0}}}");
     }
 }
