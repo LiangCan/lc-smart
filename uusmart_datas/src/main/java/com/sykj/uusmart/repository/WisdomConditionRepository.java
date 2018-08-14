@@ -37,6 +37,9 @@ public interface WisdomConditionRepository extends CrudRepository<WisdomConditio
     @Query("DELETE FROM WisdomCondition WHERE id = ? AND wid = ? ")
     void deleteByIdAndWid(Long id, Long wid);
 
+    @Modifying(clearAutomatically = true)
+    @Query("DELETE FROM WisdomCondition WHERE  wid = ? ")
+    void deleteByWid( Long wid);
 
     /**
      * 删除设备的所有相关的条件

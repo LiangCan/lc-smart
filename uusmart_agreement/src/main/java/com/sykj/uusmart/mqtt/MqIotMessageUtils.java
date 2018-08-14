@@ -7,6 +7,7 @@ import com.sykj.uusmart.mqtt.cmd.MqIotAddObjectSubsDTO;
 import com.sykj.uusmart.mqtt.cmd.MqIotDeviceControllerTO;
 import com.sykj.uusmart.mqtt.cmd.input.MqIotConditionDTO;
 import com.sykj.uusmart.mqtt.cmd.timing.MqIotAddTimingBaseDTO;
+import com.sykj.uusmart.mqtt.cmd.timing.MqIotDeleteTimingBaseDTO;
 import com.sykj.uusmart.mqtt.cmd.timing.input.MqIotTimerTaskDTO;
 import com.sykj.uusmart.utils.GsonUtils;
 import org.apache.http.util.TextUtils;
@@ -39,6 +40,10 @@ public class MqIotMessageUtils {
         return  new MqIotMessageDTO(CmdListEnum.addObject, sourceId, destId, parmMaps);
     }
 
+    public static MqIotMessageDTO getFactoryReset(String sourceId, String destId) {
+        return  new MqIotMessageDTO(CmdListEnum.factoryReset, sourceId, destId, null);
+    }
+
     public static MqIotAddObjectSubsDTO getAddObjectSubsCmd(String orAnd, List<String> eventCodeS, Map<String,String> trigger){
         MqIotAddObjectSubsDTO mqIotAddObjectSubsDTO = new MqIotAddObjectSubsDTO();
         mqIotAddObjectSubsDTO.setCombModel(orAnd);
@@ -68,7 +73,7 @@ public class MqIotMessageUtils {
         return  new MqIotMessageDTO(CmdListEnum.deleteObject, sourceId, destId, parmMaps);
     }
 
-    public static MqIotAddTimingBaseDTO getAddTimingBody(String days, Long id, String mode, LinkedHashMap onStr, LinkedHashMap offStr, String role){
+    public static MqIotAddTimingBaseDTO getAddTimingBody(String days, Long id, String mode, LinkedHashMap onStr, LinkedHashMap offStr, String role, Integer updateNum){
         MqIotAddTimingBaseDTO mqIotAddTimingBaseDTO = new MqIotAddTimingBaseDTO();
 
         MqIotTimerTaskDTO mqIotTimerTaskDTO = new MqIotTimerTaskDTO();
@@ -76,6 +81,7 @@ public class MqIotMessageUtils {
         mqIotTimerTaskDTO.setMode(mode);
         mqIotTimerTaskDTO.setDays(days);
         mqIotTimerTaskDTO.setStart(onStr);
+        mqIotTimerTaskDTO.setUpdateNum(updateNum);
         if(offStr != null){
             mqIotTimerTaskDTO.setFinish(offStr);
         }
@@ -84,13 +90,13 @@ public class MqIotMessageUtils {
         return mqIotAddTimingBaseDTO;
     }
 
-    public static MqIotAddTimingBaseDTO getDeleteimingBody(Long id, String role){
-        MqIotAddTimingBaseDTO mqIotAddTimingBaseDTO = new MqIotAddTimingBaseDTO();
+    public static MqIotDeleteTimingBaseDTO getDeleteTimingBody(Long id, String role){
+        MqIotDeleteTimingBaseDTO mqIotDeleteTimingBaseDTO = new MqIotDeleteTimingBaseDTO();
         MqIotTimerTaskDTO mqIotTimerTaskDTO = new MqIotTimerTaskDTO();
         mqIotTimerTaskDTO.setId(id);
-        mqIotAddTimingBaseDTO.setRole(role);
-        mqIotAddTimingBaseDTO.setTimertask(mqIotTimerTaskDTO);
-        return mqIotAddTimingBaseDTO;
+        mqIotDeleteTimingBaseDTO.setRole(role);
+        mqIotDeleteTimingBaseDTO.setTimertask(mqIotTimerTaskDTO);
+        return mqIotDeleteTimingBaseDTO;
     }
 
     public static Map<String, String> getOnOffCmd(String value){
@@ -187,7 +193,10 @@ public class MqIotMessageUtils {
         WIND_SPEED = new HashMap<>();
         WIND_SPEED.put("low","1");
         WIND_SPEED.put("medium","3");
-        WIND_SPEED.put("high","4");
+        WIND_SPEED.put("high","6");
+        WIND_SPEED.put("六档","6");
+        WIND_SPEED.put("五档","5");
+        WIND_SPEED.put("四档","4");
 
     }
 

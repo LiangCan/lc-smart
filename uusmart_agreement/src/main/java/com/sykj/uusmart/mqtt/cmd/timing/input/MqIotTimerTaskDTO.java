@@ -11,6 +11,15 @@ public class MqIotTimerTaskDTO {
     private String days;
     private LinkedHashMap start;
     private LinkedHashMap finish;
+    private Integer updateNum;
+
+    public Integer getUpdateNum() {
+        return updateNum;
+    }
+
+    public void setUpdateNum(Integer updateNum) {
+        this.updateNum = updateNum;
+    }
 
     public String getDays() {
         return days;

@@ -191,6 +191,11 @@ public interface Constants
         String WISDOM_SUBS = "subs";
     }
 
+    /**
+     * 定时角色
+     */
+    String TIMING_ROLE = "task";
+
     interface deviceErrorCode{
         /**
          * 设备返回的格式错误

@@ -26,6 +26,10 @@ public class ServiceConfig {
     @Value("${mqtt.client.topic}")
     private  String[] SUB_MQTT_TOPIC ;
 
+    //0.0.1
+    @Value("${diy.tcp.agreement.version}")
+    private  String TCP_VERSION;
+
     //3 天
     @Value("${diy.redis.token.validit.time}")
     private Long LONG_TOKEN_INVALID_TIME ;
@@ -33,6 +37,10 @@ public class ServiceConfig {
     //app:login:token
     @Value("${diy.redis.prefix.login.token}")
     private String REDIS_USER_LOGIN_TOKEN;
+
+    public String getTCP_VERSION() {
+        return TCP_VERSION;
+    }
 
     public Long getLONG_TOKEN_INVALID_TIME() {
         return LONG_TOKEN_INVALID_TIME;

@@ -198,6 +198,7 @@ public class CustomRunTimeException extends RuntimeException {
 
     /**
      * 校验设备是否离线
+     * 如果不校验离线就校验设备是否存在
      */
     public static void checkDeviceIsOffLine(DeviceInfo deviceInfo, boolean checkOffline){
 

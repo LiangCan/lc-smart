@@ -4,6 +4,9 @@ import com.sykj.uusmart.http.IdDTO;
 import com.sykj.uusmart.http.ReqBaseDTO;
 import com.sykj.uusmart.http.ResponseDTO;
 import com.sykj.uusmart.http.req.UserAddDeviceTimingDTO;
+import com.sykj.uusmart.http.req.UserUpdateDeviceTimingDTO;
+import com.sykj.uusmart.mqtt.cmd.MqIotSysObjectDTO;
+import com.sykj.uusmart.pojo.DeviceInfo;
 
 import java.util.List;
 
@@ -21,4 +24,7 @@ public interface DeviceTimingInfoService {
 
      ResponseDTO userDeleteDeviceTimingAll(IdDTO idDTO);
 
+     ResponseDTO userUpdateDeviceTiming(UserUpdateDeviceTimingDTO userUpdateDeviceTimingDTO);
+
+     void synTiming(MqIotSysObjectDTO mqIotSysObjectDTO, DeviceInfo deviceInfo);
 }

@@ -8,6 +8,7 @@ import com.sykj.uusmart.http.ReqBaseDTO;
 import com.sykj.uusmart.http.ResponseDTO;
 import com.sykj.uusmart.http.req.UserAddDeviceDTO;
 import com.sykj.uusmart.http.req.UserAddDeviceTimingDTO;
+import com.sykj.uusmart.http.req.UserUpdateDeviceTimingDTO;
 import com.sykj.uusmart.http.tianmao.ReqTianMaoBaseDTO;
 import com.sykj.uusmart.service.DeviceTimingInfoService;
 import com.sykj.uusmart.utils.GsonUtils;
@@ -51,6 +52,14 @@ public class TimingController extends BaseController{
     public String userAddDeviceTiming(@RequestBody ReqBaseDTO<UserAddDeviceTimingDTO> reqBaseDTO, BindingResult bindingResult)throws CustomRunTimeException {
         validataBind(bindingResult, reqBaseDTO.gethG());
         return GsonUtils.toJSON(deviceTimingInfoService.userAddDeviceTiming(reqBaseDTO.gethG()));
+    }
+
+
+    @ApiOperation(value="用户修改设备的定时， 开关状态")
+    @RequestMapping(value="/user/update.do", method = RequestMethod.POST)
+    public String userUpdateDeviceTiming(@RequestBody ReqBaseDTO<UserUpdateDeviceTimingDTO> reqBaseDTO, BindingResult bindingResult)throws CustomRunTimeException {
+        validataBind(bindingResult, reqBaseDTO.gethG());
+        return GsonUtils.toJSON(deviceTimingInfoService.userUpdateDeviceTiming(reqBaseDTO.gethG()));
     }
 
     @ApiOperation(value="用户查看设备的定时")

@@ -1,18 +1,18 @@
 server:
-  port: 9002
+  port: 9005
 spring:
   application:
-    name: uusmart-config
+    name: lcs-config
   cloud:
     config:
       label: master
       server:
         git:
-          uri: https://github.com/LiangCan/UUSmart
+          uri: https://github.com/LiangCan/Lc-SpringCloud
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://172.19.2.122:9001/eureka/,http://172.19.2.121:9001/eureka/
+      defaultZone: http://localhost:9001/eureka/
   instance:
     lease-renewal-interval-in-seconds: 10
     lease-expiration-duration-in-seconds: 30

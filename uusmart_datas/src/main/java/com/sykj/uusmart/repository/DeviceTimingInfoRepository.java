@@ -20,6 +20,9 @@ public interface DeviceTimingInfoRepository extends CrudRepository<DeviceTimingI
     @Query(" FROM DeviceTimingInfo WHERE deviceId = ? ")
     List<DeviceTimingInfo> queryByDeviceId(Long deviceId);
 
+    @Query(" FROM DeviceTimingInfo WHERE deviceId = ? AND dtStatus = ?")
+    List<DeviceTimingInfo> queryByDeviceIdAndDtStatus(Long deviceId, Short DtStatus);
+
     @Query(" FROM DeviceTimingInfo WHERE userId = ? AND dtId = ? ")
     DeviceTimingInfo queryByUserIdAndDtid(Long userId, Long dtId);
 

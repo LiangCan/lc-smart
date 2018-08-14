@@ -1,10 +1,10 @@
 spring:
   application:
-    name: uusmart-app
+    name: uusmart-app-test
   cloud:
     config:
       label: master
-      profile: test
+      profile: prd
       name: app-bootstrap,uusmart-conf,data-source,redis-config
       discovery:
         enabled: true

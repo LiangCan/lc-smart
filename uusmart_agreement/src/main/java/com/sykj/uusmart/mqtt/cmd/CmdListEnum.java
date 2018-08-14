@@ -48,6 +48,7 @@ public enum CmdListEnum {
     //同步消息
     syn("syn"),
 
+
     //离线处理
     disconn("disconn"),
 

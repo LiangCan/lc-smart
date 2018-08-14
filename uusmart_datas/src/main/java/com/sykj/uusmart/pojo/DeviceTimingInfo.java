@@ -36,7 +36,22 @@ public class DeviceTimingInfo {
     private Long deviceId;
 
     @Column(name="dt_status", columnDefinition=" smallint(2) DEFAULT NULL COMMENT ' 任务的状态 ' ")
-    private short dtStatus;
+    private Short dtStatus;
+
+    @Column(name="update_num", columnDefinition=" bigint(4) DEFAULT NULL COMMENT ' 任务定时 ' ")
+    private Integer updateNum;
+
+    public void setDtStatus(Short dtStatus) {
+        this.dtStatus = dtStatus;
+    }
+
+    public Integer getUpdateNum() {
+        return updateNum;
+    }
+
+    public void setUpdateNum(Integer updateNum) {
+        this.updateNum = updateNum;
+    }
 
     public String getDtDays() {
         return dtDays;

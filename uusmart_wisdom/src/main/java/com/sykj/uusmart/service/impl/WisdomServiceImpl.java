@@ -9,6 +9,7 @@ import com.sykj.uusmart.http.IdDTO;
 import com.sykj.uusmart.http.NameAndIdDTO;
 import com.sykj.uusmart.http.ResponseDTO;
 import com.sykj.uusmart.http.req.UserAddWisdomDTO;
+import com.sykj.uusmart.http.req.UserUpdateWisdomDTO;
 import com.sykj.uusmart.http.req.input.AddWisdomConditionDTO;
 import com.sykj.uusmart.http.req.input.AddWisdomImplementDTO;
 import com.sykj.uusmart.http.resp.RespQueryWisdomListDTO;
@@ -102,6 +103,80 @@ public class WisdomServiceImpl implements WisdomService {
     }
 
     @Override
+    public ResponseDTO userUpdateWisdom(UserUpdateWisdomDTO userUpdateWisdomDTO) {
+        Long uid = userInfoService.getUserId(true);
+        //鉴权
+        CustomRunTimeException.checkNull(userHomeInfoRepository.byUserIdAndHidQueryOne(uid, userUpdateWisdomDTO.getId()), "home");
+
+        Wisdom wisdom = wisdomRepository.findOne(userUpdateWisdomDTO.getWisdomId());
+        CustomRunTimeException.checkNull(wisdom, " Wisdom ");
+
+        wisdomConditionRepository.deleteByWid(userUpdateWisdomDTO.getWisdomId());
+        wisdomImplementRepository.deleteByWid(userUpdateWisdomDTO.getWisdomId());
+        wisdomRepository.delete(userUpdateWisdomDTO.getWisdomId());
+
+        //递归校验是否创建了闭环智能
+        checkWisdomFollowTheBad(userUpdateWisdomDTO.getWisdomImplementDTOList(), userUpdateWisdomDTO.getWisdomConditionDTOList(), userUpdateWisdomDTO.getAndOrRun());
+        wisdom.setUserId(uid);
+        wisdom.setHid(userUpdateWisdomDTO.getId());
+        wisdom.setUpdateNum(wisdom.getUpdateNum().intValue() + Constants.shortNumber.ONE);
+        wisdom.setCreateTime(System.currentTimeMillis());
+        wisdom.setWisdomName(userUpdateWisdomDTO.getName());
+        wisdom.setWisdomStatus(userUpdateWisdomDTO.getWisdomStatus());
+        wisdom.setWisdomType(userUpdateWisdomDTO.getType());
+        wisdom.setWisdomIcon(userUpdateWisdomDTO.getWisdomIcon());
+        wisdom.setAndOr(userUpdateWisdomDTO.getAndOrRun());
+        wisdomRepository.save(wisdom);
+
+        List<WisdomCondition> conditionIds = new ArrayList();
+        List<WisdomImplement> implementIds = new ArrayList();
+        handelWisdomCI(conditionIds, implementIds, wisdom, userUpdateWisdomDTO.getWisdomConditionDTOList(), userUpdateWisdomDTO.getWisdomImplementDTOList());
+        int result = pushAddObjectDTO(wisdom, conditionIds, implementIds);
+        //判断发送是否成功
+        if (result != Constants.mainStatus.SUCCESS) {
+            throw new CustomRunTimeException(Constants.resultCode.PUSH_MSG_ERROR, Constants.systemError.PUSH_MSG_ERROR);
+        }
+        return new ResponseDTO(new RespQueryWisdomListDTO(wisdom, conditionIds, implementIds));
+
+    }
+
+    /**
+     * 处理条件
+     */
+    public void handelWisdomCI(List<WisdomCondition> conditionIds, List<WisdomImplement> implementIds, Wisdom wisdom, List<AddWisdomConditionDTO> wisdomConditionDTOList, List<AddWisdomImplementDTO> wisdomImplementDTOList) {
+        //处理条件
+        for (AddWisdomConditionDTO wisdomConditionDTO : wisdomConditionDTOList) {
+            WisdomCondition wisdomCondition = new WisdomCondition();
+            wisdomCondition.setWid(wisdom.getWid());
+            wisdomCondition.setConditionStatus(Constants.shortNumber.NINE);
+            wisdomCondition.setAppointment(wisdomConditionDTO.getAppointment());
+            wisdomCondition.setConditionType(wisdomConditionDTO.getConditionType());
+            wisdomCondition.setConditionName(wisdomConditionDTO.getConditionName());
+            wisdomCondition.setCreateTime(System.currentTimeMillis());
+            wisdomCondition.setConditionValue(wisdomConditionDTO.getConditionValue());
+            wisdomCondition.setUserId(wisdom.getUserId());
+            wisdomCondition.setId(wisdomConditionDTO.getId());
+            wisdomConditionRepository.save(wisdomCondition);
+            conditionIds.add(wisdomCondition);
+        }
+
+        //处理执行
+        for (AddWisdomImplementDTO wisdomImplementDTO : wisdomImplementDTOList) {
+            WisdomImplement wisdomImplement = new WisdomImplement();
+            wisdomImplement.setWid(wisdom.getWid());
+            wisdomImplement.setImplementStatus(Constants.shortNumber.ONE);
+            wisdomImplement.setImplementType(wisdomImplementDTO.getImplementType());
+            wisdomImplement.setImplementName(wisdomImplementDTO.getImplementName());
+            wisdomImplement.setCreateTime(System.currentTimeMillis());
+            wisdomImplement.setImplementValue(wisdomImplementDTO.getImplementValue());
+            wisdomImplement.setUserId(wisdom.getUserId());
+            wisdomImplement.setId(wisdomImplementDTO.getId());
+            wisdomImplementRepository.save(wisdomImplement);
+            implementIds.add(wisdomImplement);
+        }
+    }
+
+    @Override
     @TxTransaction
     public ResponseDTO userDeleteDeviceWisdom(IdDTO idDTO) {
         userInfoService.getUserId(true);
@@ -136,10 +211,10 @@ public class WisdomServiceImpl implements WisdomService {
     @Override
     public ResponseDTO userAddWisdom(UserAddWisdomDTO userAddWisdomDTO) {
         Long uid = userInfoService.getUserId(true);
-        //递归校验是否创建了闭环智能
-        checkWisdomFollowTheBad(userAddWisdomDTO.getWisdomImplementDTOList(), userAddWisdomDTO.getWisdomConditionDTOList(), userAddWisdomDTO.getAndOrRun());
         //鉴权
         CustomRunTimeException.checkNull(userHomeInfoRepository.byUserIdAndHidQueryOne(uid, userAddWisdomDTO.getId()), "home");
+        //递归校验是否创建了闭环智能
+        checkWisdomFollowTheBad(userAddWisdomDTO.getWisdomImplementDTOList(), userAddWisdomDTO.getWisdomConditionDTOList(), userAddWisdomDTO.getAndOrRun());
         Wisdom wisdom = new Wisdom();
         wisdom.setUserId(uid);
         wisdom.setHid(userAddWisdomDTO.getId());
@@ -152,38 +227,9 @@ public class WisdomServiceImpl implements WisdomService {
         wisdom.setAndOr(userAddWisdomDTO.getAndOrRun());
         wisdomRepository.save(wisdom);
 
-        //处理条件
         List<WisdomCondition> conditionIds = new ArrayList();
-        for (AddWisdomConditionDTO wisdomConditionDTO : userAddWisdomDTO.getWisdomConditionDTOList()) {
-            WisdomCondition wisdomCondition = new WisdomCondition();
-            wisdomCondition.setWid(wisdom.getWid());
-            wisdomCondition.setConditionStatus(Constants.shortNumber.NINE);
-            wisdomCondition.setAppointment(wisdomConditionDTO.getAppointment());
-            wisdomCondition.setConditionType(wisdomConditionDTO.getConditionType());
-            wisdomCondition.setConditionName(wisdomConditionDTO.getConditionName());
-            wisdomCondition.setCreateTime(System.currentTimeMillis());
-            wisdomCondition.setConditionValue(wisdomConditionDTO.getConditionValue());
-            wisdomCondition.setUserId(uid);
-            wisdomCondition.setId(wisdomConditionDTO.getId());
-            wisdomConditionRepository.save(wisdomCondition);
-            conditionIds.add(wisdomCondition);
-        }
-
-        //处理执行
         List<WisdomImplement> implementIds = new ArrayList();
-        for (AddWisdomImplementDTO wisdomImplementDTO : userAddWisdomDTO.getWisdomImplementDTOList()) {
-            WisdomImplement wisdomImplement = new WisdomImplement();
-            wisdomImplement.setWid(wisdom.getWid());
-            wisdomImplement.setImplementStatus(Constants.shortNumber.NINE);
-            wisdomImplement.setImplementType(wisdomImplementDTO.getImplementType());
-            wisdomImplement.setImplementName(wisdomImplementDTO.getImplementName());
-            wisdomImplement.setCreateTime(System.currentTimeMillis());
-            wisdomImplement.setImplementValue(wisdomImplementDTO.getImplementValue());
-            wisdomImplement.setUserId(uid);
-            wisdomImplement.setId(wisdomImplementDTO.getId());
-            wisdomImplementRepository.save(wisdomImplement);
-            implementIds.add(wisdomImplement);
-        }
+        handelWisdomCI(conditionIds, implementIds, wisdom, userAddWisdomDTO.getWisdomConditionDTOList(), userAddWisdomDTO.getWisdomImplementDTOList());
 
         int result = pushAddObjectDTO(wisdom, conditionIds, implementIds);
         //判断发送是否成功
@@ -288,9 +334,9 @@ public class WisdomServiceImpl implements WisdomService {
                     @Override
                     public void run() {
                         Map<String, String> deleteObjectMsg = MqIotMessageUtils.getDeleteWisdomCondition(wisdom.getWid());
-                        MqIotMessage mqIotMessage = new MqIotMessage(CmdListEnum.deleteObject, serviceConfig.getMQTT_CLIENT_NAME(), Constants.role.DEVICE + Constants.specialSymbol.URL_SEPARATE + condition.getId(), deleteObjectMsg);
-                        mqIotMessage.setCache(true);
-                        mqIotUtils.mqIotPushMsgAndGetResult(mqIotMessage);
+                        MqIotMessageDTO mqIotMessage = new MqIotMessageDTO(CmdListEnum.deleteObject, serviceConfig.getMQTT_CLIENT_NAME(), Constants.role.DEVICE + Constants.specialSymbol.URL_SEPARATE + condition.getId(), deleteObjectMsg);
+//                        mqIotMessage.setCache(true);
+                        mqIotUtils.mqIotPushMsg(mqIotMessage);
                     }
                 });
             }
@@ -303,9 +349,8 @@ public class WisdomServiceImpl implements WisdomService {
                     @Override
                     public void run() {
                         Map<String, String> deleteObjectMsg = MqIotMessageUtils.getDeleteWisdomImplement(wisdom.getWid());
-                        MqIotMessage mqIotMessage = new MqIotMessage(CmdListEnum.deleteObject, serviceConfig.getMQTT_CLIENT_NAME(), MqIotUtils.getRole(wisdomImplement.getImplementType()) + wisdomImplement.getId(), deleteObjectMsg);
-                        mqIotMessage.setCache(true);
-                        mqIotUtils.mqIotPushMsgAndGetResult(mqIotMessage);
+                        MqIotMessageDTO mqIotMessage = new MqIotMessageDTO(CmdListEnum.deleteObject, serviceConfig.getMQTT_CLIENT_NAME(), MqIotUtils.getRole(wisdomImplement.getImplementType()) + wisdomImplement.getId(), deleteObjectMsg);
+                        mqIotUtils.mqIotPushMsg(mqIotMessage);
                     }
                 });
             }
@@ -321,6 +366,7 @@ public class WisdomServiceImpl implements WisdomService {
         if (wisdom != null) {
             List<WisdomImplement> implementList = wisdomImplementRepository.findIdsAllByWid(wisdom.getWid());
             for (WisdomImplement wisdomImplement : implementList) {
+
                 MQTTUtils.push(MqIotUtils.getRole(wisdomImplement.getImplementType()) + wisdomImplement.getId(), msg);
             }
         }
@@ -343,7 +389,7 @@ public class WisdomServiceImpl implements WisdomService {
                 }
             }
 
-         //补偿设备没有的订阅者 指令智能
+            //补偿设备没有的订阅者 指令智能
         } else if (Constants.wisdomRole.WISDOM_SUBS.equals(mqIotSysObjectDTO.getRole())) {
             wids = wisdomImplementRepository.findWidByDid(deviceInfo.getDeviceId());
             for (Long wid : wids) {
@@ -364,7 +410,7 @@ public class WisdomServiceImpl implements WisdomService {
 
 
             //没有这个ID 的智能,就发送删除
-            if (wisdom == null || !wids.contains(wid) ) {
+            if (wisdom == null || !wids.contains(wid)) {
                 Map<String, String> deleteWisdomBody = MqIotMessageUtils.getDeleteWisdomCmd(wid, mqIotSysObjectDTO.getRole());
                 MqIotMessageDTO deleteWisdom = new MqIotMessageDTO(CmdListEnum.deleteObject, serviceConfig.getMQTT_CLIENT_NAME(), Constants.role.DEVICE + Constants.specialSymbol.URL_SEPARATE + deviceInfo.getDeviceId(), deleteWisdomBody, wid);
                 pushMsgs.add(deleteWisdom);
@@ -401,7 +447,7 @@ public class WisdomServiceImpl implements WisdomService {
         orAndS.put(Constants.shortNumber.TWO, "or");
     }
 
-    public void getWisdomEventCodes(List<String> eventCodes, Long wid){
+    public void getWisdomEventCodes(List<String> eventCodes, Long wid) {
         List<WisdomCondition> conditions = wisdomConditionRepository.findIdsAllByWid(wid);
         for (WisdomCondition wisdomCondition : conditions) {
             eventCodes.add(getEventCode(wisdomCondition.getConditionType(), wisdomCondition.getId(), wisdomCondition.getWid()));

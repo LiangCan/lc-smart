@@ -232,7 +232,7 @@ public class UserInfoServiceImpl   implements UserInfoService  {
         if(stringRedisTemplate.hasKey(redisEmil)){
             String checkCodeStr = stringRedisTemplate.opsForValue().get(redisEmil);
             UserCheckCode userCheckCode = GsonUtils.toObj(checkCodeStr,UserCheckCode.class);
-            if(!userCheckCode.getCodeType().equals(Constants.shortNumber.ONE) ){
+            if(!userCheckCode.getCodeType().equals(Constants.shortNumber.ONE) || !userCheckCode.getCheckCode().equals(registerDTO.getCheckCode())){
                 CustomRunTimeException.parameterError("check_code");
             }else{
                 stringRedisTemplate.delete(redisEmil);
@@ -342,7 +342,7 @@ public class UserInfoServiceImpl   implements UserInfoService  {
         if(stringRedisTemplate.hasKey(redisEmil)){
             String checkCodeStr = stringRedisTemplate.opsForValue().get(redisEmil);
             UserCheckCode userCheckCode = GsonUtils.toObj(checkCodeStr, UserCheckCode.class);
-            if(!userCheckCode.getCodeType().equals(Constants.shortNumber.TWO)){
+            if(!userCheckCode.getCodeType().equals(Constants.shortNumber.TWO) || !userCheckCode.getCheckCode().equals(userResetPasswdDTO.getCheckCode())){
                 CustomRunTimeException.parameterError("check_code");
             }else{
                 stringRedisTemplate.delete(redisEmil);

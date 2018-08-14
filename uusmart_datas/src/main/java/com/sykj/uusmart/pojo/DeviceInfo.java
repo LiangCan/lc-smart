@@ -46,6 +46,9 @@ public class DeviceInfo {
     @Column(name="main_device_id", columnDefinition=" bigint(16)  COMMENT '主Id' ")
     private Long mainDeviceId;
 
+    @Column(name="loca_did", columnDefinition=" bigint(16)  COMMENT '本地Id' ")
+    private Long locaDid;
+
     @Column(name="hid", columnDefinition=" bigint(16)   COMMENT '所属家庭ID' ")
     private Long hid;
 
@@ -54,6 +57,14 @@ public class DeviceInfo {
     private Long productId;
 
     public DeviceInfo() {
+    }
+
+    public Long getLocaDid() {
+        return locaDid;
+    }
+
+    public void setLocaDid(Long locaDid) {
+        this.locaDid = locaDid;
     }
 
     public String getStatusInfo() {

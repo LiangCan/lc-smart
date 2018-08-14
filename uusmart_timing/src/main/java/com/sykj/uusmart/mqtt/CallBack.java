@@ -3,6 +3,7 @@ package com.sykj.uusmart.mqtt;
 
 import com.sykj.uusmart.Constants;
 import com.sykj.uusmart.exception.CustomRunTimeException;
+import com.sykj.uusmart.handle.CmdHandle;
 import com.sykj.uusmart.mqtt.cmd.resp.MqIotErrorRespBodyDTO;
 import com.sykj.uusmart.utils.ConfigGetUtils;
 import com.sykj.uusmart.utils.ExecutorUtils;
@@ -38,8 +39,8 @@ public class CallBack implements MqttCallback {
 
     @Autowired
     MqIotUtils mqIotUtils;
-
-
+    @Autowired
+    CmdHandle cmdHandle;
 
     @Override
     public void messageArrived(final String topic, final MqttMessage message) throws Exception {
@@ -47,20 +48,22 @@ public class CallBack implements MqttCallback {
         ExecutorUtils.cachedThreadPool.execute(new Runnable() {
             @Override
             public void run() {
-                if (ConfigGetUtils.serviceConfig.getMQTT_CLIENT_NAME().equals(topic)) {
-                    log.info(topic + " ==> " + message.toString());
 
-                    MqIotMessageDTO mqIotMessageDTO = GsonUtils.toObj(message.toString(), MqIotMessageDTO.class);
+                log.info(topic + " ==> " + message.toString());
+                MqIotMessageDTO mqIotMessageDTO = GsonUtils.toObj(message.toString(), MqIotMessageDTO.class);
+
+                if (ConfigGetUtils.serviceConfig.getMQTT_CLIENT_NAME().equals(topic)) {
+
                     //判断是否要回调函数处理的参数
-                    if(mqIotUtils.handleCallBack(mqIotMessageDTO)){
+                    if (mqIotUtils.handleCallBack(mqIotMessageDTO)) {
                         return;
                     }
 
-                    String [] desID = mqIotMessageDTO.getHeader().getDestId().split(Constants.specialSymbol.URL_SEPARATE);
-                    //判断是否要处理的数据
-                    if(Constants.role.WISDOM.equals(desID[0])){
-//                        wisdomService.notifyWisdom(message.toString(),Long.parseLong(desID[1]));
-                    }
+                    cmdHandle.handle(mqIotMessageDTO);
+                }
+                //判断是否要处理的数据
+                if (Constants.role.TIMING.equals(mqIotMessageDTO.getHeader().getDestId().split(Constants.specialSymbol.URL_SEPARATE)[0])) {
+
                 }
             }
         });
@@ -80,7 +83,7 @@ public class CallBack implements MqttCallback {
         ExecutorUtils.cachedThreadPool.execute(new Runnable() {
             @Override
             public void run() {
-                MQTTUtils.init(ConfigGetUtils.serviceConfig.getMQTT_URL(), ConfigGetUtils.serviceConfig.getMQTT_CLIENT_NAME(),  ConfigGetUtils.callBack, ConfigGetUtils.serviceConfig.getSUB_MQTT_TOPIC());
+                MQTTUtils.init(ConfigGetUtils.serviceConfig.getMQTT_URL(), ConfigGetUtils.serviceConfig.getMQTT_CLIENT_NAME(), ConfigGetUtils.callBack, ConfigGetUtils.serviceConfig.getSUB_MQTT_TOPIC());
             }
         });
     }

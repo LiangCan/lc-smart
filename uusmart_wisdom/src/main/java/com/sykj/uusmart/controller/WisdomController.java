@@ -8,6 +8,7 @@ import com.sykj.uusmart.http.NameAndIdDTO;
 import com.sykj.uusmart.http.ReqBaseDTO;
 import com.sykj.uusmart.http.ResponseDTO;
 import com.sykj.uusmart.http.req.UserAddWisdomDTO;
+import com.sykj.uusmart.http.req.UserUpdateWisdomDTO;
 import com.sykj.uusmart.service.WisdomService;
 import com.sykj.uusmart.utils.GsonUtils;
 import io.swagger.annotations.Api;
@@ -69,13 +70,11 @@ public class WisdomController extends BaseController{
     }
 
 
-
-
     @ApiOperation(value="用户修改某个智能消息")
     @RequestMapping(value="user/update/info.do")
-    public String useUpdateWisdom(@RequestBody @Valid ReqBaseDTO<UserAddWisdomDTO> reqBaseDTO, BindingResult bindingResult)throws CustomRunTimeException {
+    public String useUpdateWisdom(@RequestBody @Valid ReqBaseDTO<UserUpdateWisdomDTO> reqBaseDTO, BindingResult bindingResult)throws CustomRunTimeException {
         validataBind(bindingResult);
-        return GsonUtils.toJSON(new ResponseDTO(Constants.mainStatus.REQUEST_SUCCESS));
+        return GsonUtils.toJSON(wisdomService.userUpdateWisdom(reqBaseDTO.gethG()));
     }
 
 }

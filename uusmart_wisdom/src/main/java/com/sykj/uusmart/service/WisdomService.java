@@ -5,6 +5,7 @@ import com.sykj.uusmart.http.IdDTO;
 import com.sykj.uusmart.http.NameAndIdDTO;
 import com.sykj.uusmart.http.ResponseDTO;
 import com.sykj.uusmart.http.req.UserAddWisdomDTO;
+import com.sykj.uusmart.http.req.UserUpdateWisdomDTO;
 import com.sykj.uusmart.mqtt.MqIotMessage;
 import com.sykj.uusmart.mqtt.MqIotMessageDTO;
 import com.sykj.uusmart.mqtt.cmd.MqIotSysObjectDTO;
@@ -20,6 +21,9 @@ import java.util.Map;
 public interface WisdomService {
     /** API  测试事务接口*/
     ResponseDTO testDelete(IdDTO idDTO);
+
+    /** API  用户修改智能*/
+    ResponseDTO userUpdateWisdom(UserUpdateWisdomDTO userUpdateWisdomDTO);
 
     /** API  用户添加*/
     ResponseDTO userAddWisdom(UserAddWisdomDTO userAddWisdomDTO);

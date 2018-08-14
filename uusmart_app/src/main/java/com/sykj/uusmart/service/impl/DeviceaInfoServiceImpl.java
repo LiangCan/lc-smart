@@ -103,7 +103,7 @@ public class DeviceaInfoServiceImpl implements DeviceInfoService {
 
             //判断设备是否存在
             if (deviceInfo != null) {
-                NexusUserDevice nexusUserDevice = nexusUserDeviceRepository.findDeviceIdAndRoleQueryUserId(deviceInfo.getDeviceId(), (short) 1);
+                NexusUserDevice nexusUserDevice = nexusUserDeviceRepository.findDeviceIdAndRoleQueryUserId(deviceInfo.getDeviceId(), Constants.shortNumber.ONE);
                 //判断设备用户绑定关系是否存在
                 if (nexusUserDevice != null) {
 
@@ -113,6 +113,19 @@ public class DeviceaInfoServiceImpl implements DeviceInfoService {
                     //判断是被自己绑定
                     if (nexusUserDevice.getUserId().equals(uid) && nexusUserDevice.getHid().equals(hid)) {
                         dids.put(addDeivceDTO.getDeviceAddress(), deviceInfo.getDeviceId());
+                        deviceInfo.setCreateTime(System.currentTimeMillis());
+                        deviceInfo.setDeviceAddress(addDeivceDTO.getDeviceAddress());
+                        deviceInfo.setDeviceName(addDeivceDTO.getName());
+                        deviceInfo.setVersionInfo(addDeivceDTO.getDeviceVersion());
+                        deviceInfo.setUserId(uid);
+                        deviceInfo.setMainDeviceId(addDeivceDTO.getMainDeviceId());
+                        deviceInfo.setLocaDid(addDeivceDTO.getLocaDid());
+                        deviceInfo.setDeviceStatus(Constants.shortNumber.ZERO);
+                        deviceInfo.setDeviceWifiSSID(userAddDeviceDTO.getDeviceWifiSSID());
+                        deviceInfo.setProductId(addDeivceDTO.getPid());
+                        deviceInfo.setClassification(userAddDeviceDTO.getClassification());
+                        deviceInfo.setHid(hid);
+                        deviceInfoRepository.save(deviceInfo);
                         continue;
                     }
 
@@ -132,6 +145,8 @@ public class DeviceaInfoServiceImpl implements DeviceInfoService {
             deviceInfo.setDeviceName(addDeivceDTO.getName());
             deviceInfo.setVersionInfo(addDeivceDTO.getDeviceVersion());
             deviceInfo.setUserId(uid);
+            deviceInfo.setMainDeviceId(addDeivceDTO.getMainDeviceId());
+            deviceInfo.setLocaDid(addDeivceDTO.getLocaDid());
             deviceInfo.setDeviceStatus(Constants.shortNumber.ZERO);
             deviceInfo.setDeviceWifiSSID(userAddDeviceDTO.getDeviceWifiSSID());
             deviceInfo.setProductId(addDeivceDTO.getPid());
@@ -224,11 +239,11 @@ public class DeviceaInfoServiceImpl implements DeviceInfoService {
             nexusUserDeviceRepository.delete(nexusUserDevice.getNudId());
         }
         deleteWisdomAndTime(nexusUserDevice.getDeviceId(), reqDTO);
+        MqIotMessageDTO mqIotMessageDTO = MqIotMessageUtils.getFactoryReset(serviceConfig.getMQTT_CLIENT_NAME(), MqIotUtils.getRole(Constants.shortNumber.TWO) + nexusUserDevice.getDeviceId());
+        mqIotUtils.mqIotPushMsg(mqIotMessageDTO);
         return new ResponseDTO(Constants.mainStatus.REQUEST_SUCCESS);
     }
 
-    @Autowired
-    TestInfoRepository testInfoRepository;
 
 
     public void deleteWisdomAndTime(Long devId, ReqBaseDTO reqBaseDTO) {
