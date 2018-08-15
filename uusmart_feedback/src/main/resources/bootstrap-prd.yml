@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: uusmart-feedback
+  cloud:
+    config:
+      label: master
+      profile: prd
+      name: feedback-bootstrap,uusmart-conf,data-source,redis-config
+      discovery:
+        enabled: true
+        serviceId: uusmart-config
+      fail-fast: true
+
+server:
+  port: 9106
+  tomcat:
+    accept-count: 2000
+    max-threads: 2000
+    max-connections: 2500
+spring.thymeleaf.cache: false
+feign:
+  hystrix:
+    enabled: true
+
+
+multipart:
+  enabled: true
+  max-file-size: 50mb
+  max-request-size: 50mb
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://goodtime-iot.com:9001/eureka/
