@@ -8,7 +8,7 @@ import java.util.Map;
 /**
  * Created by Administrator on 2017/11/25 0025.
  */
-public class TMDevice {
+public class TMDevice  implements Cloneable  {
     String deviceId;
     String deviceName;
     String deviceType="outlet";
@@ -25,7 +25,16 @@ public class TMDevice {
         map.put("value","Red");
         properties.add(map);
     }
-
+    @Override
+    public TMDevice clone() {
+        TMDevice stu = null;
+        try{
+            stu = (TMDevice)super.clone();
+        }catch(CloneNotSupportedException e) {
+            e.printStackTrace();
+        }
+        return stu;
+    }
     public String getDeviceId() {
         return deviceId;
     }

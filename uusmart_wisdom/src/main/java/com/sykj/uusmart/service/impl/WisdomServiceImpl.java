@@ -366,7 +366,6 @@ public class WisdomServiceImpl implements WisdomService {
         if (wisdom != null) {
             List<WisdomImplement> implementList = wisdomImplementRepository.findIdsAllByWid(wisdom.getWid());
             for (WisdomImplement wisdomImplement : implementList) {
-
                 MQTTUtils.push(MqIotUtils.getRole(wisdomImplement.getImplementType()) + wisdomImplement.getId(), msg);
             }
         }

@@ -102,11 +102,11 @@ public class ToBaiDuServiceImpl implements ToBaiDuService {
         Map<String, String> body = new HashMap<>();
         String headerName = "TurnOnConfirmation";
         if ("TurnOnRequest".equals(msgBeanDTO.getHeader().getName())) {
-            body = MqIotMessageUtils.getOnOffCmd("on");
+            body = MqIotMessageUtils.getOnOffCmd("on", null);
         }
 
         if ("TurnOffRequest".equals(msgBeanDTO.getHeader().getName())) {
-            body = MqIotMessageUtils.getOnOffCmd("off");
+            body = MqIotMessageUtils.getOnOffCmd("off", null);
             headerName = "TurnOffConfirmation";
         }
 

@@ -99,9 +99,15 @@ public class MqIotMessageUtils {
         return mqIotDeleteTimingBaseDTO;
     }
 
-    public static Map<String, String> getOnOffCmd(String value){
+    public static Map<String, String> getOnOffCmd(String value, String isfanlight){
         Map<String, String> parmMap = new HashMap<>();
-        parmMap.put("onoff", value);
+        if(TextUtils.isEmpty(isfanlight)){
+            parmMap.put("onoff", value);
+        }else if(isfanlight.equals("l")){
+            parmMap.put("light_ctrl", value);
+        }else if(isfanlight.equals("f")){
+            parmMap.put("wind_speed", value);
+        }
         return parmMap;
     }
 
@@ -194,9 +200,12 @@ public class MqIotMessageUtils {
         WIND_SPEED.put("low","1");
         WIND_SPEED.put("medium","3");
         WIND_SPEED.put("high","6");
-        WIND_SPEED.put("六档","6");
-        WIND_SPEED.put("五档","5");
-        WIND_SPEED.put("四档","4");
+        WIND_SPEED.put("六挡","6");
+        WIND_SPEED.put("五挡","5");
+        WIND_SPEED.put("四挡","4");
+        WIND_SPEED.put("三挡","3");
+        WIND_SPEED.put("二挡","2");
+        WIND_SPEED.put("一挡","1");
 
     }
 

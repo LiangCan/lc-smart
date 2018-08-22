@@ -75,7 +75,6 @@ public class DeviceaInfoServiceImpl implements DeviceInfoService {
     @Autowired
     ProductInfoRepository productInfoRepository;
 
-
     @Autowired
     MqIotUtils mqIotUtils;
 
@@ -96,9 +95,10 @@ public class DeviceaInfoServiceImpl implements DeviceInfoService {
 
         //房间鉴权
         CustomRunTimeException.checkNull(roomInfoRepository.byUserIdAndRoomId(uid, userAddDeviceDTO.getRoomId()), "room");
-        Map<Long, MqIotMessageDTO> notifyMap = new HashMap<Long, MqIotMessageDTO>();
+        Map<DeviceInfo, MqIotMessageDTO> notifyMap = new HashMap<DeviceInfo, MqIotMessageDTO>();
         Map<String, Long> dids = new HashMap<>();
-        for (AddDeivceDTO addDeivceDTO : userAddDeviceDTO.getAddDeivceDTOList()) {
+        for (AddDeivceDTO addDeivceDTO : userAddDeviceDTO.getAddDeviceDTOList()) {
+            String deviceIcon = productInfoRepository.queryProductIconById(addDeivceDTO.getPid());
             DeviceInfo deviceInfo = deviceInfoRepository.findDeviceInfoByAddress(addDeivceDTO.getDeviceAddress());
 
             //判断设备是否存在
@@ -126,12 +126,24 @@ public class DeviceaInfoServiceImpl implements DeviceInfoService {
                         deviceInfo.setClassification(userAddDeviceDTO.getClassification());
                         deviceInfo.setHid(hid);
                         deviceInfoRepository.save(deviceInfo);
+
+
+                        nexusUserDevice.setDeviceId(deviceInfo.getDeviceId());
+                        nexusUserDevice.setUserId(uid);
+                        nexusUserDevice.setCreateTime(System.currentTimeMillis());
+                        nexusUserDevice.setNudStatus(Constants.shortNumber.ONE);
+                        nexusUserDevice.setHid(hid);
+                        nexusUserDevice.setDeviceIcon(deviceIcon);
+                        nexusUserDevice.setRoomId(userAddDeviceDTO.getRoomId());
+                        nexusUserDevice.setRole(Constants.shortNumber.ONE);
+                        nexusUserDevice.setRemarks(deviceInfo.getDeviceName());
+                        nexusUserDeviceRepository.save(nexusUserDevice);
                         continue;
                     }
 
                     Map<String, String> natityRefresh = MqIotMessageUtils.getNotifyRefreshCmd("dervice");
                     MqIotMessageDTO mqIotMessage = MqIotMessageUtils.getNotify(serviceConfig.getMQTT_CLIENT_NAME(), MqIotUtils.getRole(Constants.shortNumber.ONE) + nexusUserDevice.getUserId(), natityRefresh);
-                    notifyMap.put(nexusUserDevice.getUserId(), mqIotMessage);
+                    notifyMap.put(deviceInfo, mqIotMessage);
 
                     //删除绑定关系
                     nexusUserDeviceRepository.deleteByDeviceId(deviceInfo.getDeviceId());
@@ -154,7 +166,7 @@ public class DeviceaInfoServiceImpl implements DeviceInfoService {
             deviceInfo.setHid(hid);
             deviceInfoRepository.save(deviceInfo);
 
-            String deviceIcon = productInfoRepository.queryProductIconById(addDeivceDTO.getPid());
+
 
             NexusUserDevice nexusUserDevic = new NexusUserDevice();
             nexusUserDevic.setDeviceId(deviceInfo.getDeviceId());
@@ -169,15 +181,14 @@ public class DeviceaInfoServiceImpl implements DeviceInfoService {
             nexusUserDeviceRepository.save(nexusUserDevic);
             dids.put(addDeivceDTO.getDeviceAddress(), deviceInfo.getDeviceId());
 
-
         }
         ExecutorUtils.cachedThreadPool.execute(new Runnable() {
             @Override
             public void run() {
-                Iterator<Map.Entry<Long, MqIotMessageDTO>> iterator = notifyMap.entrySet().iterator();
+                Iterator<Map.Entry<DeviceInfo, MqIotMessageDTO>> iterator = notifyMap.entrySet().iterator();
                 while (iterator.hasNext()) {
-                    Map.Entry<Long, MqIotMessageDTO> entry = iterator.next();
-                    mqIotUtils.mqIotPushMsg(entry.getValue());
+                    Map.Entry<DeviceInfo, MqIotMessageDTO> entry = iterator.next();
+                    mqIotUtils.mqIotPushMsg(entry.getKey(),entry.getValue());
                 }
             }
         });
@@ -230,6 +241,7 @@ public class DeviceaInfoServiceImpl implements DeviceInfoService {
     @TxTransaction(isStart = true)
     public ResponseDTO userDelete(IdDTO idDTO, ReqBaseDTO<IdDTO> reqDTO) {
         Long uid = userInfoService.getUserId(true);
+        DeviceInfo deviceInfo = deviceInfoRepository.findOne(idDTO.getId());
         NexusUserDevice nexusUserDevice = nexusUserDeviceRepository.findByUserIdAndDeviceId(uid, idDTO.getId());
         CustomRunTimeException.checkNull(nexusUserDevice, "nexus");
 
@@ -240,7 +252,7 @@ public class DeviceaInfoServiceImpl implements DeviceInfoService {
         }
         deleteWisdomAndTime(nexusUserDevice.getDeviceId(), reqDTO);
         MqIotMessageDTO mqIotMessageDTO = MqIotMessageUtils.getFactoryReset(serviceConfig.getMQTT_CLIENT_NAME(), MqIotUtils.getRole(Constants.shortNumber.TWO) + nexusUserDevice.getDeviceId());
-        mqIotUtils.mqIotPushMsg(mqIotMessageDTO);
+        mqIotUtils.mqIotPushMsg(deviceInfo, mqIotMessageDTO);
         return new ResponseDTO(Constants.mainStatus.REQUEST_SUCCESS);
     }
 

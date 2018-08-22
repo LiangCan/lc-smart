@@ -5,6 +5,11 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/UUSmart.iml" filepath="$PROJECT_DIR$/.idea/UUSmart.iml" />
       <module fileurl="file://$PROJECT_DIR$/mqttTest/mqtt/mqtt.iml" filepath="$PROJECT_DIR$/mqttTest/mqtt/mqtt.iml" />
       <module fileurl="file://$PROJECT_DIR$/uusmart-tx-manager/tx-manager.iml" filepath="$PROJECT_DIR$/uusmart-tx-manager/tx-manager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/uusmart-admin.iml" filepath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/uusmart-admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/uusmart-web-parent/uusmart-core/uusmart-core.iml" filepath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/uusmart-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/uusmart-web-parent/uusmart-generator/uusmart-generator.iml" filepath="$PROJECT_DIR$/uusmart-web-parent/uusmart-generator/uusmart-generator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/uusmart-web-parent/uusmart-rest/uusmart-rest.iml" filepath="$PROJECT_DIR$/uusmart-web-parent/uusmart-rest/uusmart-rest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/uusmart-web-parent/uusmart-web-parent.iml" filepath="$PROJECT_DIR$/uusmart-web-parent/uusmart-web-parent.iml" />
       <module fileurl="file://$PROJECT_DIR$/uusmart_agreement/uusmart_agreement.iml" filepath="$PROJECT_DIR$/uusmart_agreement/uusmart_agreement.iml" />
       <module fileurl="file://$PROJECT_DIR$/uusmart_app/uusmart_app.iml" filepath="$PROJECT_DIR$/uusmart_app/uusmart_app.iml" />
       <module fileurl="file://$PROJECT_DIR$/uusmart_config/uusmart_config.iml" filepath="$PROJECT_DIR$/uusmart_config/uusmart_config.iml" />

@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
-    <file url="file://$PROJECT_DIR$/uusmart-tx-client" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/uusmart-tx-manager" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/uusmart-web-parent" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/uusmart-web-parent/uusmart-admin" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/uusmart-web-parent/uusmart-core" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/uusmart-web-parent/uusmart-generator" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/uusmart-web-parent/uusmart-rest" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/uusmart_agreement" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/uusmart_app" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/uusmart_config" charset="UTF-8" />

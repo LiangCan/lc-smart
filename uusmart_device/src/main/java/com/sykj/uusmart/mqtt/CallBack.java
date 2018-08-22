@@ -96,7 +96,7 @@ public class CallBack implements MqttCallback {
                             MqIotErrorRespBodyDTO mqIotErrorRespBodyDTO = new MqIotErrorRespBodyDTO(Integer.parseInt(e.getErrorCode()), e.getErrorMsg());
                             errorRespMsg.setBody(mqIotErrorRespBodyDTO);
                             mqIotUtils.setRespDestId(errorRespMsg);
-                            mqIotUtils.mqIotPushMsg(errorRespMsg);
+                            mqIotUtils.mqIotPushMsg(new MqIotMessage(errorRespMsg));
                         }
                     }
 

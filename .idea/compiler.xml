@@ -8,6 +8,10 @@
         <outputRelativeToContentRoot value="true" />
         <module name="mqtt" />
         <module name="tx-manager" />
+        <module name="uusmart-admin" />
+        <module name="uusmart-core" />
+        <module name="uusmart-generator" />
+        <module name="uusmart-rest" />
         <module name="uusmart_agreement" />
         <module name="uusmart_app" />
         <module name="uusmart_config" />
@@ -26,6 +30,11 @@
       <module name="transaction-springcloud" target="1.7" />
       <module name="tx-client" target="1.7" />
       <module name="tx-manager" target="1.7" />
+      <module name="uusmart-admin" target="1.8" />
+      <module name="uusmart-core" target="1.8" />
+      <module name="uusmart-generator" target="1.8" />
+      <module name="uusmart-rest" target="1.8" />
+      <module name="uusmart-web-parent" target="1.8" />
       <module name="uusmart_agreement" target="1.8" />
       <module name="uusmart_app" target="1.8" />
       <module name="uusmart_config" target="1.8" />
