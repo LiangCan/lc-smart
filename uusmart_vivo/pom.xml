@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.sykj.uusmart</groupId>
-	<artifactId>uusmart_vivo_cloud</artifactId>
+	<artifactId>uusmart_vivo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>uusmart_vivo_cloud</name>
+	<name>uusmart_vivo</name>
 	<description>VivoCloud</description>
 
 	<parent>
