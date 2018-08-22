@@ -111,8 +111,11 @@ public class WisdomServiceImpl implements WisdomService {
         Wisdom wisdom = wisdomRepository.findOne(userUpdateWisdomDTO.getWisdomId());
         CustomRunTimeException.checkNull(wisdom, " Wisdom ");
 
+        //删除情景执行条件
         wisdomConditionRepository.deleteByWid(userUpdateWisdomDTO.getWisdomId());
+//      删除情景控制的设备
         wisdomImplementRepository.deleteByWid(userUpdateWisdomDTO.getWisdomId());
+//        删除情景
         wisdomRepository.delete(userUpdateWisdomDTO.getWisdomId());
 
         //递归校验是否创建了闭环智能
@@ -126,7 +129,9 @@ public class WisdomServiceImpl implements WisdomService {
         wisdom.setWisdomType(userUpdateWisdomDTO.getType());
         wisdom.setWisdomIcon(userUpdateWisdomDTO.getWisdomIcon());
         wisdom.setAndOr(userUpdateWisdomDTO.getAndOrRun());
-        wisdomRepository.save(wisdom);
+
+//      赋值给wisdom ，否则会导致 wisdom 的id 是上面findOne 的id（因为上面已经delete了情景，所以用旧id会导致条件和执行搜索不到）。
+        wisdom = wisdomRepository.save(wisdom);
 
         List<WisdomCondition> conditionIds = new ArrayList();
         List<WisdomImplement> implementIds = new ArrayList();
@@ -256,9 +261,9 @@ public class WisdomServiceImpl implements WisdomService {
     /**
      * 校验智能是否会造成闭环
      *
-     * @param addWisdomImplementDTOS
-     * @param addWisdomConditionDTOS
-     * @param andOrRun
+     * @param addWisdomImplementDTOS 执行list
+     * @param addWisdomConditionDTOS 条件list
+     * @param andOrRun  与，或
      */
     public void checkWisdomFollowTheBad(List<AddWisdomImplementDTO> addWisdomImplementDTOS, List<AddWisdomConditionDTO> addWisdomConditionDTOS, Short andOrRun) {
         List<AddWisdomConditionDTO> wisdomConditionlist = new ArrayList<>(addWisdomConditionDTOS);

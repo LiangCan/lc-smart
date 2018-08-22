@@ -41,4 +41,7 @@ public interface UserInfoRepository extends CrudRepository<UserInfo,Long> {
 	@Modifying(clearAutomatically = true)
 	@Query(" UPDATE UserInfo SET password = ?  WHERE userId = ? ")
 	void updateUserPasswdByUserId(String password, Long userId);
+
+	@Query(" FROM UserInfo  WHERE vivo_open_id = :vivoOpenId   ")
+	UserInfo findUserInfoByVivoOpenId(@Param("vivoOpenId") String vivoOpenId);
 }

@@ -47,6 +47,10 @@ public class ProductInfo {
     @Column(name="baidu_type_name", columnDefinition=" varchar(32) DEFAULT NULL COMMENT ' 百度的类型名称 ' ")
     private String baiDuTypeName;
 
+    @Column(name="support_vivo", columnDefinition=" tinyint(1) DEFAULT NULL COMMENT '是否支持VIVO' ")
+    private boolean supportVivo;
+
+
     public String getTiamMaoTypeName() {
         return tiamMaoTypeName;
     }
@@ -150,5 +154,14 @@ public class ProductInfo {
 
     public void setToTiamMao(boolean toTiamMao) {
         isToTiamMao = toTiamMao;
+    }
+
+
+    public boolean isSupportVivo() {
+        return supportVivo;
+    }
+
+    public void setSupportVivo(boolean supportVivo) {
+        this.supportVivo = supportVivo;
     }
 }

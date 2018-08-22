@@ -1,0 +1,54 @@
+spring:
+  application:
+    name: uusmart-voice
+  cloud:
+    config:
+      label: master
+      profile: prd
+      name: voice-bootstrap,uusmart-conf,data-source,redis-config
+      discovery:
+        enabled: true
+        serviceId: uusmart-config
+      fail-fast: true
+  redis:
+    database: 1
+
+server:
+  port: 9107
+  tomcat:
+    accept-count: 2000
+    max-threads: 2000
+    max-connections: 2500
+
+feign:
+  hystrix:
+    enabled: true
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://goodtime-iot.com:9001/eureka/
+
+Sykj:
+  vivo:
+    publicKey: 305c300d06092a864886f70d0101010500034b00304802410093538ff138e1aaa7abd394279079cde92fb117a4d5466b4d03e63362ecec66f5d47688df0ac76546f138b9fbc7f95adf3caa3d70577d5b927a0384c7f7d38fc90203010001
+    clientId: 100000009
+    clientSecret: bd153afbc08de203449dc4a36ca7d9d6
+    appId: 8559240518239140180
+    appKey: e8e07d98054d47b5bd96b3f6b8751d80
+    redisAccessTokenName: vivo:token:accessToken
+    redisRefreshTokenName: vivo:token:refreshToken
+#    两个小时 （单位：秒）
+    accessTokenExpireIn: 21600
+#    三十天 （单位：秒）
+    refreshTokenExpireIn: 2592000
+#Ribbon的负载均衡策略
+ribbon.NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+ribbon.MaxAutoRetriesNextServer: 0
+hystrix.command.default.execution.isolation.strategy:  SEMAPHORE
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 60000
+
+ribbon:
+    ReadTimeout: 60000
+    ConnectTimeout: 60000
+

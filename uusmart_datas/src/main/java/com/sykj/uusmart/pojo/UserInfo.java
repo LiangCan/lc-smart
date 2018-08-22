@@ -53,6 +53,11 @@ public class UserInfo {
     @Column(name="icon_url",columnDefinition=" varchar(1024) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL COMMENT '用户头像地址' ")
     private String iconUrl;
 
+    /**
+     * 用户头像地址
+     */
+    @Column(name="vivo_open_id",columnDefinition=" varchar(36) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL COMMENT 'Vivo用户id' ")
+    private String vivoOpenId;
 
     public UserInfo() {
     }
@@ -112,5 +117,13 @@ public class UserInfo {
 
     public void setIconUrl(String iconUrl) {
         this.iconUrl = iconUrl;
+    }
+
+    public String getVivoOpenId() {
+        return vivoOpenId;
+    }
+
+    public void setVivoOpenId(String vivoOpenId) {
+        this.vivoOpenId = vivoOpenId;
     }
 }
