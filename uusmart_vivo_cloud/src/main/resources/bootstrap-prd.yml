@@ -1,11 +1,11 @@
 spring:
   application:
-    name: uusmart-voice
+    name: uusmart-vivo
   cloud:
     config:
       label: master
       profile: prd
-      name: voice-bootstrap,uusmart-conf,data-source,redis-config
+      name: vivo-bootstrap,uusmart-conf,data-source,redis-config
       discovery:
         enabled: true
         serviceId: uusmart-config

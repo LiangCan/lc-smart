@@ -34,7 +34,6 @@ public class UserAddDeviceDTO extends IdDTO {
     @ApiModelProperty(example = "1", required=true, value = "房间ID,L(1~16)")
     private Long roomId;
 
-    @Valid
     @NotNull(message = Constants.systemError.PARAM_MISS)
     @ApiModelProperty( required=true, value = "添加的集合,L(1~64)")
     List<AddDeivceDTO> addDeviceDTOList;
