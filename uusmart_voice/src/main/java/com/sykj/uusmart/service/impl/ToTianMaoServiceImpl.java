@@ -77,12 +77,22 @@ public class ToTianMaoServiceImpl implements ToTiamMaoService {
         UserHomeInfo homeInfo = userHomeInfoRepository.byUserIdQueryUseOne(userId);
 
         String cmdType = reqTianMaoBaseDTO.getHeader().getNamespace();
+
         //处理发现设备
         if (TiamMaoCmdListEmun.discovery.getValue().equals(cmdType)) {
             return handleDiscoveryDevice(userId, homeInfo.getHid(), reqTianMaoBaseDTO);
         }
 
-        Long deviceId = Long.parseLong(reqTianMaoBaseDTO.getPayload().get("deviceId").toString());
+        String didStr = reqTianMaoBaseDTO.getPayload().get("deviceId").toString();
+        //针对风扇灯做处理
+        Long deviceId;
+        String isfanlight = null;
+        if(didStr.indexOf("/")> -1){
+            deviceId = Long.parseLong(didStr.split("/")[1]);
+            isfanlight = didStr.split("/")[0];
+        }else{
+            deviceId = Long.parseLong(didStr);
+        }
         DeviceInfo deviceInfo = deviceInfoRepository.findOne(deviceId);
         ProductInfo productInfo = productInfoRepository.findOne(deviceInfo.getProductId());
         if (!productInfo.isToTiamMao()) {
@@ -96,7 +106,7 @@ public class ToTianMaoServiceImpl implements ToTiamMaoService {
 
         //处理控制设备
         if (TiamMaoCmdListEmun.controller.getValue().equals(cmdType)) {
-            return hanleDeviceController(userId, deviceInfo, reqTianMaoBaseDTO);
+            return hanleDeviceController(userId, deviceInfo, reqTianMaoBaseDTO, isfanlight);
         }
 
         return new TMDiscoveryRespDTO(reqTianMaoBaseDTO.getHeader(), null);
@@ -131,6 +141,15 @@ public class ToTianMaoServiceImpl implements ToTiamMaoService {
             if(!productInfo.isToTiamMao()){
                 continue;
             }
+            // 风扇灯的处理
+            if(deviceInfo.getProductId() == Constants.shortNumber.THREE){
+                TMDevice tmDevice_2 = tmDevice.clone();
+                tmDevice_2.setDeviceType("light");
+                tmDevice_2.setIcon("http://goodtime-iot.com/deviceIcon/2.png");
+                tmDevice_2.setDeviceId("l/" + nexusUserDevice.getDeviceId());
+                ltmd.add(tmDevice_2);
+                tmDevice.setDeviceId("f/" + nexusUserDevice.getDeviceId());
+            }
             tmDevice.setDeviceType(productInfo.getTiamMaoTypeName());
             tmDevice.setIcon(productInfo.getProductIcon());
             ltmd.add(tmDevice);
@@ -142,7 +161,7 @@ public class ToTianMaoServiceImpl implements ToTiamMaoService {
         return new TMDiscoveryRespDTO(reqTianMaoBaseDTO.getHeader(), lsl);
     }
 
-    private TMDiscoveryRespDTO hanleDeviceController(Long userId, DeviceInfo deviceInfo, ReqTianMaoBaseDTO reqTianMaoBaseDTO) {
+    private TMDiscoveryRespDTO hanleDeviceController(Long userId, DeviceInfo deviceInfo, ReqTianMaoBaseDTO reqTianMaoBaseDTO, String isfanlight) {
         MqIotMessageDTO mqIotMessageDTO = null;
         Map<String, String> body = null;
 
@@ -155,7 +174,7 @@ public class ToTianMaoServiceImpl implements ToTiamMaoService {
         } else if ("TurnOff".equals(reqTianMaoBaseDTO.getHeader().getName()) || "TurnOn".equals(reqTianMaoBaseDTO.getHeader().getName())) {
 
             String cmd = reqTianMaoBaseDTO.getPayload().get("value").toString();
-            body = MqIotMessageUtils.getOnOffCmd(getOnOff.get(cmd));
+            body = MqIotMessageUtils.getOnOffCmd(getOnOff.get(cmd), isfanlight);
 
         } else if("SetWindSpeed".equals(reqTianMaoBaseDTO.getHeader().getName())){
             body = MqIotMessageUtils.getSetWindSpeedCmd(reqTianMaoBaseDTO.getPayload().get("value").toString());

@@ -93,7 +93,7 @@ public class ToDingDongerviceImpl implements ToDingDongService {
         CustomRunTimeException.checkDeviceIsOffLine(deviceInfo, true);
 
 
-        Map contBody = MqIotMessageUtils.getOnOffCmd(this.getOnOff.get(dingDongPushCmdDTO.getSlots().getCmd()));
+        Map contBody = MqIotMessageUtils.getOnOffCmd(this.getOnOff.get(dingDongPushCmdDTO.getSlots().getCmd()),null);
         MqIotMessageDTO mqIotMessageDTO = MqIotMessageUtils.getControllor(serviceConfig.getMQTT_CLIENT_NAME(), MqIotUtils.getRole(Constants.shortNumber.TWO) + deviceInfo.getDeviceId(), contBody);
         mqIotUtils.mqIotPushMsg(mqIotMessageDTO);
 

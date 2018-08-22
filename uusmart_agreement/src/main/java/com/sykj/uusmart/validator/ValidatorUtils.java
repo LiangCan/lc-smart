@@ -36,8 +36,11 @@ public class ValidatorUtils {
         }
     }
 
-    public static <T>  void validata(List<T> list) throws CustomRunTimeException{
+    public static <T>  void validata(List<T> list ,String objcetName) throws CustomRunTimeException{
         Validator validator = factory.getValidator();
+        if(list == null || list.size() < 1){
+            throw new CustomRunTimeException(Constants.resultCode.PARAM_MISS, objcetName);
+        }
         for(T t : list){
             Set<ConstraintViolation<Object>> constraintViolations = validator.validate(t);
             for (ConstraintViolation<Object> constraintViolation : constraintViolations) {

@@ -49,9 +49,9 @@ public class WisdomController extends BaseController{
     @ApiOperation(value="用户创建一个智能")
     @RequestMapping(value="user/add.do")
     public String userAddWisdom(@RequestBody @Valid ReqBaseDTO<UserAddWisdomDTO> reqBaseDTO , BindingResult bindingResult)throws CustomRunTimeException {
-        validataBind(bindingResult,reqBaseDTO.gethG());
-        validata(reqBaseDTO.gethG().getWisdomConditionDTOList());
-        validata(reqBaseDTO.gethG().getWisdomImplementDTOList());
+        validataBind(bindingResult, reqBaseDTO.gethG());
+        validata(reqBaseDTO.gethG().getWisdomConditionDTOList(),"WisdomConditionDTOList");
+        validata(reqBaseDTO.gethG().getWisdomImplementDTOList(),"WisdomImplementDTOList");
         return GsonUtils.toJSON(wisdomService.userAddWisdom(reqBaseDTO.gethG()));
     }
 

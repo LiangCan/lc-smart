@@ -34,10 +34,9 @@ public class UserAddDeviceDTO extends IdDTO {
     @ApiModelProperty(example = "1", required=true, value = "房间ID,L(1~16)")
     private Long roomId;
 
-    @Valid
     @NotNull(message = Constants.systemError.PARAM_MISS)
     @ApiModelProperty( required=true, value = "添加的集合,L(1~64)")
-    List<AddDeivceDTO> addDeivceDTOList;
+    List<AddDeivceDTO> addDeviceDTOList;
 
     public Short getClassification() {
         return classification;
@@ -63,13 +62,11 @@ public class UserAddDeviceDTO extends IdDTO {
         this.roomId = roomId;
     }
 
-    public List<AddDeivceDTO> getAddDeivceDTOList() {
-        return addDeivceDTOList;
+    public List<AddDeivceDTO> getAddDeviceDTOList() {
+        return addDeviceDTOList;
     }
 
-    public void setAddDeivceDTOList(List<AddDeivceDTO> addDeivceDTOList) {
-        this.addDeivceDTOList = addDeivceDTOList;
+    public void setAddDeviceDTOList(List<AddDeivceDTO> addDeviceDTOList) {
+        this.addDeviceDTOList = addDeviceDTOList;
     }
-
-
 }

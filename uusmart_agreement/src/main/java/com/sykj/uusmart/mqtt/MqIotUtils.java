@@ -105,9 +105,10 @@ public class MqIotUtils {
     public void isRespHandleMessage(MqIotMessage mqIotMessage){
         if (mqIotMessage != null && mqIotMessage.getRespBody() != null) {
             setRespDestId(mqIotMessage.getRespBody());
-            mqIotPushMsg(mqIotMessage.getRespBody());
+            mqIotPushMsg(mqIotMessage.getDeviceInfo(), mqIotMessage.getRespBody());
         }
     }
+
 
     /**
      * 发送透传的消息
@@ -218,7 +219,7 @@ public class MqIotUtils {
                 ExecutorUtils.cachedThreadPool.execute(new Runnable() {
                     @Override
                     public void run() {
-                        mqIotPushMsg(mqIotMessageDTO);
+//                        mqIotPushMsg(mqIotMessageDTO);
                     }
                 });
             }
@@ -272,10 +273,23 @@ public class MqIotUtils {
     /**
      * 发送智能家居消息格式的消息
      */
-    public void mqIotPushMsg(MqIotMessageDTO mqIotMessage) {
+//    public void mqIotPushMsg(MqIotMessageDTO mqIotMessage) {
+//        //从redis里面获取id 设置msgId
+//        setMsgId(mqIotMessage);
+//        MQTTUtils.push(mqIotMessage.getHeader().getDestId(), GsonUtils.toJSON(mqIotMessage));
+//    }
+
+    /**
+     * 根据设备来发送消息
+     */
+    public void mqIotPushMsg(DeviceInfo deviceInfo, MqIotMessageDTO mqIotMessage) {
         //从redis里面获取id 设置msgId
         setMsgId(mqIotMessage);
-        MQTTUtils.push(mqIotMessage.getHeader().getDestId(), GsonUtils.toJSON(mqIotMessage));
+        String pushTopic = mqIotMessage.getHeader().getDestId();
+        if(deviceInfo.getClassification().equals(Constants.shortNumber.TWO) && deviceInfo.getMainDeviceId() != null){
+            pushTopic = getRole(Constants.shortNumber.TWO) + deviceInfo.getMainDeviceId();
+        }
+        MQTTUtils.push(pushTopic, GsonUtils.toJSON(mqIotMessage));
     }
 
     /**
@@ -395,7 +409,7 @@ public class MqIotUtils {
 
             MqIotMessageDTO mqIotMessageDTO1 = new MqIotMessageDTO(CmdListEnum.upgrade, clientName, mqIotMessageDTO.getHeader().getSourceId(), deviceVersionInfo);
             setRespDestId(mqIotMessageDTO1);
-            mqIotPushMsg(mqIotMessageDTO1);
+            mqIotPushMsg(deviceInfo, mqIotMessageDTO1);
             throw new CustomRunTimeException(Constants.resultCode.PARAM_AGREEMENT_ERROR, Constants.systemError.PARAM_AGREEMENT_ERROR, new Object[]{"tcp"}, mqIotMessageDTO);
         }
 

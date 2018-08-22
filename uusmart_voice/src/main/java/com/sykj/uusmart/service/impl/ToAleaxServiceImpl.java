@@ -112,7 +112,7 @@ public class ToAleaxServiceImpl implements ToAleaxService {
         Long uid = redisFindId(aleaxPushDeviceMsgDTO.getToken());
         CustomRunTimeException.checkNull(nexusUserDeviceRepository.findByUserIdAndDeviceId(uid, Long.parseLong(aleaxPushDeviceMsgDTO.getDeviceId()))," Nexus ");
 
-        Map contBody = MqIotMessageUtils.getOnOffCmd(aleaxPushDeviceMsgDTO.getCmd());
+        Map contBody = MqIotMessageUtils.getOnOffCmd(aleaxPushDeviceMsgDTO.getCmd(),null);
         MqIotMessageDTO mqIotMessageDTO = MqIotMessageUtils.getControllor(serviceConfig.getMQTT_CLIENT_NAME(), MqIotUtils.getRole(Constants.shortNumber.TWO) + aleaxPushDeviceMsgDTO.getDeviceId(), contBody);
         mqIotUtils.mqIotPushMsg(mqIotMessageDTO);
 

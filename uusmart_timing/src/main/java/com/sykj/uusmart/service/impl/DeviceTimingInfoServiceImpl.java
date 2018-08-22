@@ -99,6 +99,7 @@ public class DeviceTimingInfoServiceImpl implements DeviceTimingInfoService {
         deviceTimingInfo.setDtDays(userAddDeviceTimingDTO.getDtDays());
         deviceTimingInfo.setDtName(userAddDeviceTimingDTO.getDtName());
         deviceTimingInfo.setUpdateNum(0);
+        deviceTimingInfo.setDtStatus(Constants.shortNumber.ONE);
         deviceTimingInfo.setStartInfo(GsonUtils.toJSON(userAddDeviceTimingDTO.getStartInfo()));
         deviceTimingInfo.setEndInfo(GsonUtils.toJSON(userAddDeviceTimingDTO.getEndInfo()));
         deviceTimingInfo.setDeviceId(userAddDeviceTimingDTO.getId());

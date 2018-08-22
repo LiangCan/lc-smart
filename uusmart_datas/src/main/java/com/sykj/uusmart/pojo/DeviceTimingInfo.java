@@ -69,9 +69,6 @@ public class DeviceTimingInfo {
         this.userId = userId;
     }
 
-    public short getDtStatus() {
-        return dtStatus;
-    }
 
     public void setDtStatus(short dtStatus) {
         this.dtStatus = dtStatus;
