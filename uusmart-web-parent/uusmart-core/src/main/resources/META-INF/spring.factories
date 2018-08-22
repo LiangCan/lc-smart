@@ -1,0 +1,6 @@
+# AutoConfiguration
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.sykj.uusmart.core.base.controller.GlobalController,\
+com.sykj.uusmart.core.config.DefaultFastjsonConfig,\
+com.sykj.uusmart.core.config.DefaultProperties,\
+com.sykj.uusmart.core.config.DefaultWebConfig

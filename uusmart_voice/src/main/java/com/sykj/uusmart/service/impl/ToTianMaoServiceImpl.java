@@ -190,7 +190,7 @@ public class ToTianMaoServiceImpl implements ToTiamMaoService {
         }
 
         mqIotMessageDTO = MqIotMessageUtils.getControllor(serviceConfig.getMQTT_CLIENT_NAME(), MqIotUtils.getRole(Constants.shortNumber.TWO) + deviceInfo.getDeviceId(), body);
-        mqIotUtils.mqIotPushMsg(mqIotMessageDTO);
+        mqIotUtils.mqIotPushMsg(deviceInfo, mqIotMessageDTO);
         Map<String, String> map3 = new HashMap<>();
         map3.put("deviceId", String.valueOf(deviceInfo.getDeviceId()));
         reqTianMaoBaseDTO.getHeader().setName(reqTianMaoBaseDTO.getHeader().getNamespace() + "Response");

@@ -111,7 +111,7 @@ public class ToBaiDuServiceImpl implements ToBaiDuService {
         }
 
         MqIotMessageDTO mqIotMessageDTO = MqIotMessageUtils.getControllor(serviceConfig.getMQTT_CLIENT_NAME(), MqIotUtils.getRole(Constants.shortNumber.TWO) + deviceInfo.getDeviceId(), body);
-        mqIotUtils.mqIotPushMsg(mqIotMessageDTO);
+        mqIotUtils.mqIotPushMsg(deviceInfo, mqIotMessageDTO);
 
         Map<String, List<BDAttributesDTO>> map = new HashMap<>();
         map.put("attributes", new ArrayList<>());

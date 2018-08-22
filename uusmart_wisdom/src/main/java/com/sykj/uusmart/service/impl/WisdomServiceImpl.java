@@ -186,13 +186,14 @@ public class WisdomServiceImpl implements WisdomService {
     public ResponseDTO userDeleteDeviceWisdom(IdDTO idDTO) {
         userInfoService.getUserId(true);
         List<Long> wids = wisdomConditionRepository.findWidByDid(idDTO.getId());
+        DeviceInfo deviceInfo = deviceInfoRepository.findOne(idDTO.getId());
         for (Long wid : wids) {
             Map<String, String> deleteObjectMsg = MqIotMessageUtils.getDeleteWisdomCondition(wid);
             MqIotMessageDTO mqIotMessage1 = new MqIotMessageDTO(CmdListEnum.deleteObject, serviceConfig.getMQTT_CLIENT_NAME(), Constants.role.DEVICE + Constants.specialSymbol.URL_SEPARATE + idDTO.getId(), deleteObjectMsg);
             ExecutorUtils.cachedThreadPool.execute(new Runnable() {
                 @Override
                 public void run() {
-                    mqIotUtils.mqIotPushMsg(mqIotMessage1);
+                    mqIotUtils.mqIotPushMsg(deviceInfo, mqIotMessage1);
                 }
             });
         }
@@ -205,7 +206,7 @@ public class WisdomServiceImpl implements WisdomService {
             ExecutorUtils.cachedThreadPool.execute(new Runnable() {
                 @Override
                 public void run() {
-                    mqIotUtils.mqIotPushMsg(mqIotMessage2);
+                    mqIotUtils.mqIotPushMsg(deviceInfo, mqIotMessage2);
                 }
             });
         }
@@ -335,13 +336,14 @@ public class WisdomServiceImpl implements WisdomService {
         for (WisdomCondition condition : conditions) {
             wisdomConditionRepository.deleteByIdAndWid(condition.getId(), wisdom.getWid());
             if (condition.getConditionType() == Constants.shortNumber.TWO) {
+                DeviceInfo deviceInfo = deviceInfoRepository.findOne(condition.getId());
                 ExecutorUtils.cachedThreadPool.execute(new Runnable() {
                     @Override
                     public void run() {
                         Map<String, String> deleteObjectMsg = MqIotMessageUtils.getDeleteWisdomCondition(wisdom.getWid());
                         MqIotMessageDTO mqIotMessage = new MqIotMessageDTO(CmdListEnum.deleteObject, serviceConfig.getMQTT_CLIENT_NAME(), Constants.role.DEVICE + Constants.specialSymbol.URL_SEPARATE + condition.getId(), deleteObjectMsg);
 //                        mqIotMessage.setCache(true);
-                        mqIotUtils.mqIotPushMsg(mqIotMessage);
+                        mqIotUtils.mqIotPushMsg(deviceInfo, mqIotMessage);
                     }
                 });
             }
@@ -350,12 +352,13 @@ public class WisdomServiceImpl implements WisdomService {
         for (WisdomImplement wisdomImplement : implementList) {
             wisdomImplementRepository.deleteByIdAndWid(wisdomImplement.getId(), wisdom.getWid());
             if (wisdomImplement.getImplementType() == Constants.shortNumber.TWO) {
+                DeviceInfo deviceInfo = deviceInfoRepository.findOne(wisdomImplement.getId());
                 ExecutorUtils.cachedThreadPool.execute(new Runnable() {
                     @Override
                     public void run() {
                         Map<String, String> deleteObjectMsg = MqIotMessageUtils.getDeleteWisdomImplement(wisdom.getWid());
                         MqIotMessageDTO mqIotMessage = new MqIotMessageDTO(CmdListEnum.deleteObject, serviceConfig.getMQTT_CLIENT_NAME(), MqIotUtils.getRole(wisdomImplement.getImplementType()) + wisdomImplement.getId(), deleteObjectMsg);
-                        mqIotUtils.mqIotPushMsg(mqIotMessage);
+                        mqIotUtils.mqIotPushMsg(deviceInfo, mqIotMessage);
                     }
                 });
             }
@@ -439,7 +442,7 @@ public class WisdomServiceImpl implements WisdomService {
         }
 
         for (MqIotMessageDTO pushMsg : pushMsgs) {
-            mqIotUtils.mqIotPushMsg(pushMsg);
+            mqIotUtils.mqIotPushMsg(deviceInfo, pushMsg);
         }
     }
 
@@ -472,7 +475,7 @@ public class WisdomServiceImpl implements WisdomService {
 //        MqIotThingMessage mqIotThingMessage = new MqIotThingMessage(pushMsgs, callbackMsgs);
 //        mqIotUtils.mqIotPushThingMsg(mqIotThingMessage);
         for (MqIotMessageDTO pushMsg : pushMsgs) {
-            mqIotUtils.mqIotPushMsg(pushMsg);
+            mqIotUtils.mqIotPushMsg(new MqIotMessage(pushMsg));
         }
         return Constants.mainStatus.SUCCESS;
     }

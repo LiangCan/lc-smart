@@ -1,0 +1,29 @@
+@layout("/common/_container.html"){
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal">
+
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                            <!--<#input id="brandId" name="品牌id" value="${item.brandId}" underline="true"/>-->
+                            <#input id="brandCode" name="品牌代码" value="${item.brandCode}" />
+                </div>
+
+                <div class="col-sm-6">
+                            <#input id="brandName" name="品牌名称" value="${item.brandName}" underline="true"/>
+                            <!--<#input id="createTime" name="创建时间" value="${item.createTime}" />-->
+                </div>
+            </div>
+
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="BrandInfoInfoDlg.editSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="BrandInfoInfoDlg.close()"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/product/brandInfo/brandInfo_info.js"></script>
+@}

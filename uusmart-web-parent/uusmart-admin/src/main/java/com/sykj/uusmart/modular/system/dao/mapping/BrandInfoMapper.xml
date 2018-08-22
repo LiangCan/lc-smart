@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sykj.uusmart.modular.system.dao.BrandInfoMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.sykj.uusmart.modular.system.model.BrandInfo">
+        <id column="brand_id" property="brandId" />
+        <result column="brand_code" property="brandCode" />
+        <result column="brand_name" property="brandName" />
+        <result column="create_time" property="createTime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        brand_id, brand_code, brand_name, create_time
+    </sql>
+
+</mapper>

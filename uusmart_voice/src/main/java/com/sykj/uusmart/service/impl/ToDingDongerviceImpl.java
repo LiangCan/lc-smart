@@ -71,17 +71,17 @@ public class ToDingDongerviceImpl implements ToDingDongService {
 
     @Override
     public ResponseDTO badingDingDong(ReqDDBaDingUserDTO reqDDBaDingUserDTO) {
-        UserInfo userInfo = userInfoRepository.findUserInfoByEmailAndPassword(reqDDBaDingUserDTO.getAccount(),  MD5Utils.toMD5(reqDDBaDingUserDTO.getPassword()));
+        UserInfo userInfo = userInfoRepository.findUserInfoByEmailAndPassword(reqDDBaDingUserDTO.getAccount(), MD5Utils.toMD5(reqDDBaDingUserDTO.getPassword()));
         String stateStr = DingDongAesUtil.decrypt(DINGDONG_KEY, reqDDBaDingUserDTO.getState());
         DingDongStateDTO dingDongStateDTO = GsonUtils.toObj(stateStr, DingDongStateDTO.class);
-        String redisKey  = serviceConfig.getDINGDONG_TOKEN() + Constants.specialSymbol.COLOM + dingDongStateDTO.getUserid();
+        String redisKey = serviceConfig.getDINGDONG_TOKEN() + Constants.specialSymbol.COLOM + dingDongStateDTO.getUserid();
         stringRedisTemplate.opsForValue().set(redisKey, String.valueOf(userInfo.getUserId()));
         return new ResponseDTO(Constants.mainStatus.REQUEST_SUCCESS);
     }
 
     @Override
     public RespDingDongCmd dingDongPushCmd(DingDongPushCmdDTO dingDongPushCmdDTO) {
-        String redisKey  = serviceConfig.getDINGDONG_TOKEN() + Constants.specialSymbol.COLOM + dingDongPushCmdDTO.getUser().getUser_id();
+        String redisKey = serviceConfig.getDINGDONG_TOKEN() + Constants.specialSymbol.COLOM + dingDongPushCmdDTO.getUser().getUser_id();
         String userIdStr = stringRedisTemplate.opsForValue().get(redisKey);
         CustomRunTimeException.checkNull(userIdStr, " UserID ");
 
@@ -89,21 +89,25 @@ public class ToDingDongerviceImpl implements ToDingDongService {
         UserHomeInfo homeInfo = userHomeInfoRepository.byUserIdQueryUseOne(uid);
         List<NexusUserDevice> nexusUserDeviceList = nexusUserDeviceRepository.findByUserIdAndHomeID(uid, homeInfo.getHid());
         NexusUserDevice nexusUserDevice = BoyerMoore.matchingDingDongNexusUserDevice(nexusUserDeviceList, dingDongPushCmdDTO.getSlots().getDeviceName());
+        if (nexusUserDevice == null) {
+            CustomRunTimeException.checkNull(userIdStr, " Nexus ");
+        }
         DeviceInfo deviceInfo = deviceInfoRepository.findOne(nexusUserDevice.getDeviceId());
         CustomRunTimeException.checkDeviceIsOffLine(deviceInfo, true);
 
 
-        Map contBody = MqIotMessageUtils.getOnOffCmd(this.getOnOff.get(dingDongPushCmdDTO.getSlots().getCmd()),null);
+        Map contBody = MqIotMessageUtils.getOnOffCmd(this.getOnOff.get(dingDongPushCmdDTO.getSlots().getCmd()), null);
         MqIotMessageDTO mqIotMessageDTO = MqIotMessageUtils.getControllor(serviceConfig.getMQTT_CLIENT_NAME(), MqIotUtils.getRole(Constants.shortNumber.TWO) + deviceInfo.getDeviceId(), contBody);
-        mqIotUtils.mqIotPushMsg(mqIotMessageDTO);
+        mqIotUtils.mqIotPushMsg(deviceInfo, mqIotMessageDTO);
 
-        return new RespDingDongCmd(dingDongPushCmdDTO.getVersionid(), System.currentTimeMillis(), new RespDingDongDirective("1", "好的," +deviceInfo.getDeviceName() + "已经" + dingDongPushCmdDTO.getSlots().getCmd()), true, dingDongPushCmdDTO.getSequence());
+        return new RespDingDongCmd(dingDongPushCmdDTO.getVersionid(), System.currentTimeMillis(), new RespDingDongDirective("1", "好的," + deviceInfo.getDeviceName() + "已经" + dingDongPushCmdDTO.getSlots().getCmd()), true, dingDongPushCmdDTO.getSequence());
     }
 
     private static Map<String, String> getOnOff;
+
     static {
         getOnOff = new HashMap<>();
-        getOnOff.put("打开","1");
-        getOnOff.put("关闭","0");
+        getOnOff.put("打开", "1");
+        getOnOff.put("关闭", "0");
     }
 }

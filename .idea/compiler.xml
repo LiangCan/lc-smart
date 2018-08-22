@@ -20,6 +20,7 @@
         <module name="uusmart_eureka" />
         <module name="uusmart_oauth" />
         <module name="uusmart_timing" />
+        <module name="uusmart_vivo_cloud" />
         <module name="uusmart_voice" />
         <module name="uusmart_wisdom" />
         <module name="uusmart_zuul" />
@@ -43,6 +44,7 @@
       <module name="uusmart_eureka" target="1.8" />
       <module name="uusmart_oauth" target="1.8" />
       <module name="uusmart_timing" target="1.8" />
+      <module name="uusmart_vivo_cloud" target="1.8" />
       <module name="uusmart_voice" target="1.8" />
       <module name="uusmart_wisdom" target="1.8" />
       <module name="uusmart_zuul" target="1.8" />

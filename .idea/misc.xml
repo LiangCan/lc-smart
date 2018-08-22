@@ -57,6 +57,7 @@
         <option value="$PROJECT_DIR$/uusmart-tx-manager/pom.xml" />
         <option value="$PROJECT_DIR$/tx-client/pom.xml" />
         <option value="$PROJECT_DIR$/uusmart-web-parent/pom.xml" />
+        <option value="$PROJECT_DIR$/uusmart_vivo_cloud/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
