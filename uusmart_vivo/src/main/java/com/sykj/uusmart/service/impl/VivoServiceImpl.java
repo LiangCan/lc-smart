@@ -63,22 +63,22 @@ public class VivoServiceImpl implements VivoService {
     @Autowired
     RedisTemplate redisTemplate;
 
-    @Value("${Sykj.vivo.publicKey}")
+    @Value("${sykj.vivo.publicKey}")
     private String vivoPublicKey;
 
-    @Value("${Sykj.vivo.appId}")
+    @Value("${sykj.vivo.appId}")
     private String vivoAppId;
 
-    @Value("${Sykj.vivo.clientId}")
+    @Value("${sykj.vivo.clientId}")
     private String vivoClientId;
 
-    @Value("${Sykj.vivo.clientSecret}")
+    @Value("${sykj.vivo.clientSecret}")
     private String clientSecret;
 
-    @Value("${Sykj.vivo.appKey}")
+    @Value("${sykj.vivo.appKey}")
     private String appKey;
 
-    @Value("${Sykj.vivo.reqAddress}")
+    @Value("${sykj.vivo.reqAddress}")
     private String reqAddress;
 
     @Override

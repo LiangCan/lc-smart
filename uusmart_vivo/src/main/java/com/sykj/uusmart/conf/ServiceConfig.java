@@ -40,17 +40,17 @@ public class ServiceConfig {
     private String REDIS_USER_LOGIN_TOKEN;
 
     //vivo.token.accessToken
-    @Value("${Sykj.vivo.redisAccessTokenName}")
+    @Value("${sykj.vivo.redisAccessTokenName}")
     private String REDIS_ACCESS_TOKEN_NAME;
 
     //vivo.token.refreshToken
-    @Value("${Sykj.vivo.redisRefreshTokenName}")
+    @Value("${sykj.vivo.redisRefreshTokenName}")
     private String REDIS_REFRESH_TOKEN_NAME;
 
-    @Value("${Sykj.vivo.accessTokenExpireIn}")
+    @Value("${sykj.vivo.accessTokenExpireIn}")
     private Long REDIS_ACCESS_TOKEN_INVALID_TIME;
 
-    @Value("${Sykj.vivo.refreshTokenExpireIn}")
+    @Value("${sykj.vivo.refreshTokenExpireIn}")
     private Long REDIS_REFRESH_TOKEN_INVALID_TIME;
 
     public String getDINGDONG_TOKEN() {

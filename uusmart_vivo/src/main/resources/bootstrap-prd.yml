@@ -29,7 +29,7 @@ eureka:
     serviceUrl:
       defaultZone: http://goodtime-iot.com:9001/eureka/
 
-Sykj:
+sykj:
   vivo:
     publicKey: 305c300d06092a864886f70d0101010500034b00304802410093538ff138e1aaa7abd394279079cde92fb117a4d5466b4d03e63362ecec66f5d47688df0ac76546f138b9fbc7f95adf3caa3d70577d5b927a0384c7f7d38fc90203010001
     clientId: 100000009
