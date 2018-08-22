@@ -44,7 +44,7 @@ public class ServiceConfig {
     private String REDIS_ACCESS_TOKEN_NAME;
 
     //vivo.token.refreshToken
-    @Value("${Sykj.vivo.redisRefreshTokennName}")
+    @Value("${Sykj.vivo.redisRefreshTokenName}")
     private String REDIS_REFRESH_TOKEN_NAME;
 
     @Value("${Sykj.vivo.accessTokenExpireIn}")

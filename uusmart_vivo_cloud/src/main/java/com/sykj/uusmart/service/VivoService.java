@@ -22,4 +22,6 @@ public interface VivoService {
     int registerUser(String vivoOpenId);
 
     GetTokenRespDTO vivoUserLogin(String vivoOpenId);
+
+    GetTokenRespDTO bindDerviceforVivo(String openId, String deviceId);
 }

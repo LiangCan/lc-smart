@@ -9,7 +9,7 @@
 	<packaging>jar</packaging>
 
 	<name>uusmart_vivo_cloud</name>
-	<description>Demo project for Spring Boot</description>
+	<description>VivoCloud</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>

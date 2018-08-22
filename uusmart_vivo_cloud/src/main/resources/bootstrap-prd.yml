@@ -1,6 +1,6 @@
 spring:
   application:
-    name: uusmart-voice
+    name: uusmart-vivo-cloud
   cloud:
     config:
       label: master
@@ -38,6 +38,8 @@ Sykj:
     appKey: e8e07d98054d47b5bd96b3f6b8751d80
     redisAccessTokenName: vivo:token:accessToken
     redisRefreshTokenName: vivo:token:refreshToken
+#    reqAddress: https://iot-api.vivo.com.cn/v1/
+    reqAddress: https://iot-api-test.vivo.com.cn/v1
 #    两个小时 （单位：秒）
     accessTokenExpireIn: 21600
 #    三十天 （单位：秒）

@@ -78,7 +78,8 @@ public class VivoServiceImpl implements VivoService {
     @Value("${Sykj.vivo.appKey}")
     private String appKey;
 
-
+    @Value("${Sykj.vivo.reqAddress}")
+    private String reqAddress;
 
     @Override
     public GetTokenRespDTO getTokenByVivoUser(String openId) {
@@ -130,7 +131,7 @@ public class VivoServiceImpl implements VivoService {
         headMap.put("timestamp",new Date().getTime()+"");
 //        headMap.put("signature","");
         headMap.put("nonce",SYStringUtils.getUUIDNotExistSymbol());
-        String result = VivoHttpUtils.httpPost(reqJson,"https://iot-api.vivo.com.cn/v1/user/getOpenId",headMap,appKey);
+        String result = VivoHttpUtils.httpPost(reqJson,reqAddress+"/user/getOpenId",headMap,appKey);
         return result;
     }
 
@@ -139,10 +140,31 @@ public class VivoServiceImpl implements VivoService {
         GetTokenRespDTO result = new GetTokenRespDTO();
         //注册用户
         String vivoOpenId = getOpenIdJson.getJSONObject("data").getString("openId");
+        String accessTokenCP = getOpenIdJson.getJSONObject("data").getString("accsssToken");
         int registerUserResult = this.registerUser(vivoOpenId);
         if (registerUserResult == 1 ){
             result = this.vivoUserLogin(vivoOpenId);
+            String sendResult = this.sendUserBindingForVivo(result ,vivoOpenId , accessTokenCP);
         }
+        return result;
+    }
+
+    private String sendUserBindingForVivo(GetTokenRespDTO reqDTO ,String vivoOpenId , String accessTokenCP) {
+        String result = "";
+        JSONObject reqJson = new JSONObject();
+        reqJson.put("clientId",vivoAppId);
+        reqJson.put("openId",vivoOpenId);
+        reqJson.put("accessToken",reqDTO.getAccessToken());
+        reqJson.put("refreshToken",reqDTO.getRefreshToken());
+        reqJson.put("expireIn",reqDTO.getExpireIn());
+        reqJson.put("accessTokenCP",accessTokenCP);
+
+        Map<String,String> headMap = new HashMap<>();
+        headMap.put("appId",vivoAppId);
+        headMap.put("timestamp",new Date().getTime()+"");
+        headMap.put("nonce",SYStringUtils.getUUIDNotExistSymbol());
+
+        result = VivoHttpUtils.httpPost(reqJson,reqAddress+"/v1/user/getOpenId",headMap,appKey);
         return result;
     }
 
@@ -216,6 +238,31 @@ public class VivoServiceImpl implements VivoService {
         respDTO.setExpireIn(serviceConfig.getREDIS_ACCESS_TOKEN_INVALID_TIME().toString());
         redisTemplate.opsForValue().set(serviceConfig.getREDIS_ACCESS_TOKEN_NAME()+ Constants.specialSymbol.COLOM + vivoOpenId, respDTO, serviceConfig.getREDIS_ACCESS_TOKEN_INVALID_TIME(), TimeUnit.SECONDS);
         redisTemplate.opsForValue().set(serviceConfig.getREDIS_REFRESH_TOKEN_NAME()+ Constants.specialSymbol.COLOM + vivoOpenId, respDTO, serviceConfig.getREDIS_REFRESH_TOKEN_INVALID_TIME(), TimeUnit.SECONDS);
+        return respDTO;
+    }
+
+    @Override
+    public GetTokenRespDTO bindDerviceforVivo(String openId, String deviceId) {
+        GetTokenRespDTO respDTO = new GetTokenRespDTO();
+        respDTO.setMsg("");
+        respDTO.setCode("0");
+
+        JSONObject reqJson = new JSONObject();
+        reqJson.put("openId",openId);
+        reqJson.put("deviceId",deviceId);
+//        reqJson.put("series",reqDTO.getRefreshToken());
+//        reqJson.put("categoryCode",reqDTO.getExpireIn());
+
+//        附件参数，OV服务端不做处理，如果要处理，传json格式的字符串；
+//        reqJson.put("attachment",accessTokenCP);
+
+        Map<String,String> headMap = new HashMap<>();
+        headMap.put("appId",vivoAppId);
+        headMap.put("timestamp",new Date().getTime()+"");
+        headMap.put("nonce",SYStringUtils.getUUIDNotExistSymbol());
+
+//        result = VivoHttpUtils.httpPost(reqJson,reqAddress+"/v1/user/getOpenId",headMap,appKey);
+
         return respDTO;
     }
 
