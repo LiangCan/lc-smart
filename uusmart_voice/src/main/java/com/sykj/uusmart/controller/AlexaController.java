@@ -1,11 +1,13 @@
 package com.sykj.uusmart.controller;
 
 
+import com.sykj.uusmart.Constants;
 import com.sykj.uusmart.exception.CustomRunTimeException;
 import com.sykj.uusmart.http.NameAndIdDTO;
 import com.sykj.uusmart.http.ReqBaseDTO;
 import com.sykj.uusmart.http.alexa.AleaxGetDeviceListDTO;
 import com.sykj.uusmart.http.alexa.AleaxPushDeviceMsgDTO;
+import com.sykj.uusmart.http.alexa.SaveAlexaOauthInfoDTO;
 import com.sykj.uusmart.http.dingdong.DingDongPushCmdDTO;
 import com.sykj.uusmart.http.dingdong.ReqDDBaDingUserDTO;
 import com.sykj.uusmart.service.ToAleaxService;
@@ -36,12 +38,21 @@ public class AlexaController extends BaseController{
     @Autowired
     ToAleaxService toAleaxService;
 
+    @ApiOperation(value="Alexa保持token")
+    @RequestMapping(value="/alexa/save/token", method = RequestMethod.POST)
+    public String alexaSaveToken(@RequestBody @Valid SaveAlexaOauthInfoDTO saveAlexaOauthInfoDTO, BindingResult bindingResult) throws CustomRunTimeException {
 
+        return GsonUtils.toJSON(toAleaxService.alexaSaveToken(saveAlexaOauthInfoDTO));
+    }
 
     @ApiOperation(value="Alexa获取设备列表")
     @RequestMapping(value="alexa/query/list", method = RequestMethod.POST)
     public String alexaGetDeviceList(@RequestBody @Valid AleaxGetDeviceListDTO aleaxGetDeviceListDTO, BindingResult bindingResult) throws CustomRunTimeException {
-        return GsonUtils.toJSON(toAleaxService.alexaGetDeviceList(aleaxGetDeviceListDTO));
+        //校验参数
+        return GsonUtils.toJSON(toAleaxService.alexaGetDeviceList(aleaxGetDeviceListDTO)).
+                replace("\\","").replace("\"properties\":\"","\"properties\":").
+                replace("\"retrievable\":true}\"","\"retrievable\":true}").replace("}}\"}","}}");
+
     }
 
 

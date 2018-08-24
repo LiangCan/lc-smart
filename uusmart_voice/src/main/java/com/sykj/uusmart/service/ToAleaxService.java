@@ -5,6 +5,7 @@ import com.sykj.uusmart.http.ReqBaseDTO;
 import com.sykj.uusmart.http.ResponseDTO;
 import com.sykj.uusmart.http.alexa.AleaxGetDeviceListDTO;
 import com.sykj.uusmart.http.alexa.AleaxPushDeviceMsgDTO;
+import com.sykj.uusmart.http.alexa.SaveAlexaOauthInfoDTO;
 import com.sykj.uusmart.http.dingdong.DingDongPushCmdDTO;
 import com.sykj.uusmart.http.dingdong.ReqDDBaDingUserDTO;
 import com.sykj.uusmart.http.dingdong.RespDingDongCmd;
@@ -14,6 +15,7 @@ import com.sykj.uusmart.http.dingdong.RespDingDongCmd;
  */
 public interface ToAleaxService {
 
+     ResponseDTO alexaSaveToken(SaveAlexaOauthInfoDTO saveAlexaOauthInfoDTO);
 
      ResponseDTO alexaGetDeviceList(AleaxGetDeviceListDTO aleaxGetDeviceListDTO) ;
 

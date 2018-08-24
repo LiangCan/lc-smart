@@ -41,6 +41,12 @@ public class ProductInfo {
     @Column(name="tianmao_type_name", columnDefinition=" varchar(32) DEFAULT NULL COMMENT ' 天猫精灵的名称 ' ")
     private String tiamMaoTypeName;
 
+    @Column(name="is_to_alexa", columnDefinition=" tinyint(1) DEFAULT NULL COMMENT ' 是否接入Alexa ' ")
+    private boolean isToAlexa;
+
+    @Column(name="alexa_type_name", columnDefinition=" varchar(32) DEFAULT NULL COMMENT ' 亚马逊的类型名称 ' ")
+    private String alexaTypeName;
+
     @Column(name="is_to_baidu", columnDefinition=" tinyint(1) DEFAULT NULL COMMENT '是否接入百度' ")
     private boolean isToBaiDu;
 
@@ -59,6 +65,21 @@ public class ProductInfo {
         this.tiamMaoTypeName = tiamMaoTypeName;
     }
 
+    public boolean isToAlexa() {
+        return isToAlexa;
+    }
+
+    public void setToAlexa(boolean toAlexa) {
+        isToAlexa = toAlexa;
+    }
+
+    public String getAlexaTypeName() {
+        return alexaTypeName;
+    }
+
+    public void setAlexaTypeName(String alexaTypeName) {
+        this.alexaTypeName = alexaTypeName;
+    }
 
     public boolean isToBaiDu() {
         return isToBaiDu;

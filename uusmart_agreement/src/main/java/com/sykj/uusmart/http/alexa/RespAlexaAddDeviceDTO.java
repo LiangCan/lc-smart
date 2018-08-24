@@ -1,6 +1,8 @@
 package com.sykj.uusmart.http.alexa;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Administrator on 2017/7/7 0007.
@@ -9,55 +11,34 @@ public class RespAlexaAddDeviceDTO {
     /**
      * 设备Id
      */
-    private String applianceId;
+    private String endpointId;
 
-    private String manufacturerName = "DotSdon";
+    /**
+     * 厂商
+     */
+    private String manufacturerName = "DotStone";
 
-    private String version = "1.0";
-
+    private Map<String, String> cookie  = new HashMap<>();
     /**
      * 设备名称
      */
-    private String friendlyName;
-    /**
-     * 是否在线
-     */
-    private boolean isReachable;
-
+    private String friendlyName ;
     /**
      * 描述
      */
-    private String friendlyDescription;
+    private String description = "DotStone Device";
 
-    /**
-     * 支持的指令
-     */
-    private List<String> actions ;
+    private String displayCategories []= {"SMARTPLUG"};
 
-    private String modelName;
+    private  List<Map<String, String>> capabilities ;
 
-    public String getModelName() {
-        return modelName;
+
+    public String getEndpointId() {
+        return endpointId;
     }
 
-    public String getFriendlyDescription() {
-        return friendlyDescription;
-    }
-
-    public void setFriendlyDescription(String friendlyDescription) {
-        this.friendlyDescription = friendlyDescription;
-    }
-
-    public void setModelName(String modelName) {
-        this.modelName = modelName;
-    }
-
-    public String getApplianceId() {
-        return applianceId;
-    }
-
-    public void setApplianceId(String applianceId) {
-        this.applianceId = applianceId;
+    public void setEndpointId(String endpointId) {
+        this.endpointId = endpointId;
     }
 
     public String getManufacturerName() {
@@ -68,14 +49,6 @@ public class RespAlexaAddDeviceDTO {
         this.manufacturerName = manufacturerName;
     }
 
-    public String getVersion() {
-        return version;
-    }
-
-    public void setVersion(String version) {
-        this.version = version;
-    }
-
     public String getFriendlyName() {
         return friendlyName;
     }
@@ -84,19 +57,35 @@ public class RespAlexaAddDeviceDTO {
         this.friendlyName = friendlyName;
     }
 
-    public boolean isReachable() {
-        return isReachable;
+    public String getDescription() {
+        return description;
     }
 
-    public void setReachable(boolean reachable) {
-        isReachable = reachable;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public List<String> getActions() {
-        return actions;
+    public String[] getDisplayCategories() {
+        return displayCategories;
     }
 
-    public void setActions(List<String> actions) {
-        this.actions = actions;
+    public void setDisplayCategories(String[] displayCategories) {
+        this.displayCategories = displayCategories;
+    }
+
+    public List<Map<String, String>> getCapabilities() {
+        return capabilities;
+    }
+
+    public void setCapabilities(List<Map<String, String>> capabilities) {
+        this.capabilities = capabilities;
+    }
+
+    public Map<String, String> getCookie() {
+        return cookie;
+    }
+
+    public void setCookie(Map<String, String> cookie) {
+        this.cookie = cookie;
     }
 }

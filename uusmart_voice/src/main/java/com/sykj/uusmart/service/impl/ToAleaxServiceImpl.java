@@ -5,15 +5,14 @@ import com.sykj.uusmart.Constants;
 import com.sykj.uusmart.conf.ServiceConfig;
 import com.sykj.uusmart.exception.CustomRunTimeException;
 import com.sykj.uusmart.http.ResponseDTO;
-import com.sykj.uusmart.http.alexa.AleaxGetDeviceListDTO;
-import com.sykj.uusmart.http.alexa.AleaxPushDeviceMsgDTO;
-import com.sykj.uusmart.http.alexa.RespAlexaAddDeviceDTO;
+import com.sykj.uusmart.http.alexa.*;
 import com.sykj.uusmart.hystric.HelloService;
 import com.sykj.uusmart.mqtt.MqIotMessageDTO;
 import com.sykj.uusmart.mqtt.MqIotMessageUtils;
 import com.sykj.uusmart.mqtt.MqIotUtils;
 import com.sykj.uusmart.pojo.DeviceInfo;
 import com.sykj.uusmart.pojo.NexusUserDevice;
+import com.sykj.uusmart.pojo.ProductInfo;
 import com.sykj.uusmart.pojo.UserHomeInfo;
 import com.sykj.uusmart.repository.DeviceInfoRepository;
 import com.sykj.uusmart.repository.NexusUserDeviceRepository;
@@ -22,10 +21,12 @@ import com.sykj.uusmart.repository.UserHomeInfoRepository;
 import com.sykj.uusmart.service.ToAleaxService;
 import com.sykj.uusmart.service.ToTiamMaoService;
 import com.sykj.uusmart.service.UserInfoService;
+import com.sykj.uusmart.utils.GsonUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.security.oauth2.common.DefaultOAuth2AccessToken;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
@@ -73,8 +74,14 @@ public class ToAleaxServiceImpl implements ToAleaxService {
     @Autowired
     RedisTemplate redisTemplate;
 
-
-
+    @Autowired
+    StringRedisTemplate stringRedisTemplate;
+    @Override
+    public ResponseDTO alexaSaveToken(SaveAlexaOauthInfoDTO saveAlexaOauthInfoDTO) {
+        Long uid = redisFindId(saveAlexaOauthInfoDTO.getAccessToken());
+        stringRedisTemplate.opsForValue().set("alexa:oauth:"+ uid, saveAlexaOauthInfoDTO.getOauthInfo() + System.currentTimeMillis());
+        return new ResponseDTO(Constants.mainStatus.REQUEST_SUCCESS);
+    }
 
     @Override
     public ResponseDTO alexaGetDeviceList(AleaxGetDeviceListDTO aleaxGetDeviceListDTO) {
@@ -82,26 +89,47 @@ public class ToAleaxServiceImpl implements ToAleaxService {
         UserHomeInfo homeInfo = userHomeInfoRepository.byUserIdQueryUseOne(uid);
         List<NexusUserDevice> nexusUserDeviceList = nexusUserDeviceRepository.findByUserIdAndHomeID(uid, homeInfo.getHid());
         List<RespAlexaAddDeviceDTO> lrugdls = new ArrayList<>();
-
-        for (NexusUserDevice nexusUserDevice : nexusUserDeviceList) {
+        for(NexusUserDevice nexusUserDevice : nexusUserDeviceList){
             DeviceInfo deviceInfo = deviceInfoRepository.findOne(nexusUserDevice.getDeviceId());
-            CustomRunTimeException.checkDeviceIsOffLine(deviceInfo, true);
-
-            RespAlexaAddDeviceDTO respAlexaAddDeviceDTO = new RespAlexaAddDeviceDTO();
-            respAlexaAddDeviceDTO.setApplianceId(String.valueOf(nexusUserDevice.getDeviceId()));
-            List<String> actions = new ArrayList<>();
-            actions.add("turnOn");
-            actions.add("turnOff");
-            actions.add("setColor");
-            respAlexaAddDeviceDTO.setActions(actions);
-            respAlexaAddDeviceDTO.setModelName("LS-W-SOCKET-1");
-            respAlexaAddDeviceDTO.setFriendlyDescription("NVC");
-            respAlexaAddDeviceDTO.setFriendlyName(nexusUserDevice.getRemarks());
-            boolean reachable = false;
-            if (deviceInfo.getDeviceStatus() == Constants.mainStatus.SUCCESS) {
-                reachable = true;
+            ProductInfo productInfo = productInfoRepository.findOne(deviceInfo.getProductId());
+            if(!productInfo.isToAlexa()){
+                continue;
             }
-            respAlexaAddDeviceDTO.setReachable(reachable);
+            CustomRunTimeException.checkNull(deviceInfo, " DeviceInfo ");
+            RespAlexaAddDeviceDTO respAlexaAddDeviceDTO = new RespAlexaAddDeviceDTO();
+            respAlexaAddDeviceDTO.setEndpointId(String.valueOf(nexusUserDevice.getDeviceId()));
+            respAlexaAddDeviceDTO.setFriendlyName(nexusUserDevice.getRemarks());
+            respAlexaAddDeviceDTO.setDisplayCategories(new String []{productInfo.getAlexaTypeName()});
+            List<Map<String, String>> capabilities  = new ArrayList<>();
+            Map<String, String> pam =  new HashMap<>();
+            pam.put("interface","Alexa.PowerController");
+            pam.put("version","3");
+            pam.put("type","AlexaInterface");
+            Map<String,String> names = new HashMap<>();
+//            names.put("name","powerState");
+            names.put("name","powerState");
+            PropertiesDTO propertiesDTO = new PropertiesDTO();
+            propertiesDTO.getSupported().add(names);
+            pam.put("properties", GsonUtils.toJSON(propertiesDTO));
+            capabilities.add(pam);
+
+            if(deviceInfo.getProductId() == 4){
+                Map<String, String> pam1 =  new HashMap<>();
+                pam1.put("type","AlexaInterface");
+                pam1.put("interface","Alexa.ColorController");
+                pam1.put("version","3");
+                pam1.put("properties","{\"supported\":[{\"name\":\"color\"}],\"proactivelyReported\":false,\"retrievable\":false}}");
+                capabilities.add(pam1);
+            }
+
+            Map<String, String> pam2 =  new HashMap<>();
+            pam2.put("type","AlexaInterface");
+            pam2.put("interface","Alexa.EndpointHealth");
+            pam2.put("version","3");
+            pam2.put("properties","{\"supported\":[{\"name\":\"connectivity\"}],\"proactivelyReported\":true,\"retrievable\":true}");
+            capabilities.add(pam2);
+
+            respAlexaAddDeviceDTO.setCapabilities(capabilities);
             lrugdls.add(respAlexaAddDeviceDTO);
         }
         return new ResponseDTO(lrugdls);

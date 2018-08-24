@@ -20,7 +20,6 @@
         <module name="uusmart_eureka" />
         <module name="uusmart_oauth" />
         <module name="uusmart_timing" />
-        <module name="uusmart_vivo_cloud" />
         <module name="uusmart_voice" />
         <module name="uusmart_wisdom" />
         <module name="uusmart_zuul" />

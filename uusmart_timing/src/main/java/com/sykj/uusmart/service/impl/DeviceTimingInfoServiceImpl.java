@@ -90,7 +90,8 @@ public class DeviceTimingInfoServiceImpl implements DeviceTimingInfoService {
         Long userId = userInfoService.getUserId(true);
 
         CustomRunTimeException.checkNull(nexusUserDeviceRepository.findByUserIdAndDeviceId(userId, userAddDeviceTimingDTO.getId()), "Nexus");
-        CustomRunTimeException.checkDeviceIsOffLine(deviceInfoRepository.findOne(userAddDeviceTimingDTO.getId()), true);
+        DeviceInfo deviceInfo = deviceInfoRepository.findOne(userAddDeviceTimingDTO.getId());
+        CustomRunTimeException.checkDeviceIsOffLine(deviceInfo, true);
 
         DeviceTimingInfo deviceTimingInfo = new DeviceTimingInfo();
         deviceTimingInfo.setCreateTime(System.currentTimeMillis());
@@ -107,7 +108,7 @@ public class DeviceTimingInfoServiceImpl implements DeviceTimingInfoService {
 
         MqIotAddTimingBaseDTO mqIotTimerTaskDTO = MqIotMessageUtils.getAddTimingBody(userAddDeviceTimingDTO.getDtDays(), deviceTimingInfo.getDtid(), userAddDeviceTimingDTO.getDtMode(), userAddDeviceTimingDTO.getStartInfo(), userAddDeviceTimingDTO.getEndInfo(), ROLE, 0);
         MqIotMessageDTO mqIotMessageDTO = MqIotMessageUtils.getAddObject(serviceConfig.getMQTT_CLIENT_NAME(), Constants.role.DEVICE + Constants.specialSymbol.URL_SEPARATE + userAddDeviceTimingDTO.getId(), mqIotTimerTaskDTO);
-        mqIotUtils.mqIotPushMsg(mqIotMessageDTO);
+        mqIotUtils.mqIotPushMsg(deviceInfo, mqIotMessageDTO);
 
         return new ResponseDTO(deviceTimingInfo.getDtid());
     }
@@ -115,9 +116,9 @@ public class DeviceTimingInfoServiceImpl implements DeviceTimingInfoService {
     @Override
     public ResponseDTO userUpdateDeviceTiming(UserUpdateDeviceTimingDTO userUpdateDeviceTimingDTO) {
         Long userId = userInfoService.getUserId(true);
-
+        DeviceInfo deviceInfo = deviceInfoRepository.findOne(userUpdateDeviceTimingDTO.getId());
         CustomRunTimeException.checkNull(nexusUserDeviceRepository.findByUserIdAndDeviceId(userId, userUpdateDeviceTimingDTO.getId()), "Nexus");
-        CustomRunTimeException.checkDeviceIsOffLine(deviceInfoRepository.findOne(userUpdateDeviceTimingDTO.getId()), true);
+        CustomRunTimeException.checkDeviceIsOffLine(deviceInfo, true);
         DeviceTimingInfo deviceTimingInfo = deviceTimingInfoRepository.findOne(userUpdateDeviceTimingDTO.getTimingId());
         CustomRunTimeException.checkNull(deviceTimingInfo," Timing ");
 
@@ -140,7 +141,7 @@ public class DeviceTimingInfoServiceImpl implements DeviceTimingInfoService {
 
         MqIotAddTimingBaseDTO mqIotTimerTaskDTO2 = MqIotMessageUtils.getAddTimingBody(userUpdateDeviceTimingDTO.getDtDays(), deviceTimingInfo.getDtid(), userUpdateDeviceTimingDTO.getDtMode(), userUpdateDeviceTimingDTO.getStartInfo(), userUpdateDeviceTimingDTO.getEndInfo(), ROLE, deviceTimingInfo.getUpdateNum());
         MqIotMessageDTO mqIotMessageDTO2 = MqIotMessageUtils.getAddObject(serviceConfig.getMQTT_CLIENT_NAME(), Constants.role.DEVICE + Constants.specialSymbol.URL_SEPARATE + userUpdateDeviceTimingDTO.getId(), mqIotTimerTaskDTO2);
-        mqIotUtils.mqIotPushMsg(mqIotMessageDTO2);
+        mqIotUtils.mqIotPushMsg(deviceInfo, mqIotMessageDTO2);
 
         return new ResponseDTO(deviceTimingInfo.getDtid());
     }
@@ -181,7 +182,7 @@ public class DeviceTimingInfoServiceImpl implements DeviceTimingInfoService {
 
 
         for (MqIotMessageDTO pushMsg : pushMsgs) {
-            mqIotUtils.mqIotPushMsg(pushMsg);
+            mqIotUtils.mqIotPushMsg(new MqIotMessage(pushMsg));
         }
     }
 
@@ -198,12 +199,14 @@ public class DeviceTimingInfoServiceImpl implements DeviceTimingInfoService {
         Long userId = userInfoService.getUserId(true);
         DeviceTimingInfo deviceTimingInfo = deviceTimingInfoRepository.queryByUserIdAndDtid(userId, idDTO.getId());
         CustomRunTimeException.checkNull(deviceTimingInfo, "Nexus");
+        DeviceInfo deviceInfo = deviceInfoRepository.findOne(deviceTimingInfo.getDeviceId());
         MqIotDeleteTimingBaseDTO mqIotTimerTaskDTO = MqIotMessageUtils.getDeleteTimingBody(deviceTimingInfo.getDtid(), ROLE);
         MqIotMessageDTO mqIotMessageDTO = MqIotMessageUtils.getDeletebject(serviceConfig.getMQTT_CLIENT_NAME(), Constants.role.DEVICE + Constants.specialSymbol.URL_SEPARATE + deviceTimingInfo.getDeviceId(), mqIotTimerTaskDTO);
         deviceTimingInfoRepository.delete(idDTO.getId());
 //        MqIotMessage mqIotMessage = new MqIotMessage(mqIotMessageDTO);
 //        mqIotMessage.setCache(true);
-        mqIotUtils.mqIotPushMsg(mqIotMessageDTO);
+
+        mqIotUtils.mqIotPushMsg(deviceInfo, mqIotMessageDTO);
         return new ResponseDTO(Constants.mainStatus.REQUEST_SUCCESS);
     }
 
@@ -211,11 +214,13 @@ public class DeviceTimingInfoServiceImpl implements DeviceTimingInfoService {
     @TxTransaction
     public ResponseDTO userDeleteDeviceTimingAll(IdDTO idDTO) {
         userInfoService.getUserId(true);
+        DeviceInfo deviceInfo = deviceInfoRepository.findOne(idDTO.getId());
+        CustomRunTimeException.checkNull(deviceInfo,"Device");
         List<DeviceTimingInfo> list = deviceTimingInfoRepository.queryByDeviceId(idDTO.getId());
         for (DeviceTimingInfo deviceTimingInfo : list) {
             MqIotDeleteTimingBaseDTO mqIotTimerTaskDTO = MqIotMessageUtils.getDeleteTimingBody(deviceTimingInfo.getDtid(), ROLE);
             MqIotMessageDTO mqIotMessageDTO = MqIotMessageUtils.getDeletebject(serviceConfig.getMQTT_CLIENT_NAME(), Constants.role.DEVICE + Constants.specialSymbol.URL_SEPARATE + idDTO.getId(), mqIotTimerTaskDTO);
-            mqIotUtils.mqIotPushMsg(mqIotMessageDTO);
+            mqIotUtils.mqIotPushMsg(deviceInfo, mqIotMessageDTO);
         }
         deviceTimingInfoRepository.deleteByDeviceId(idDTO.getId());
         return new ResponseDTO(Constants.mainStatus.REQUEST_SUCCESS);

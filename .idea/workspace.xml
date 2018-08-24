@@ -4,518 +4,23 @@
     <bookmark url="file://$PROJECT_DIR$/uusmart_device/src/main/java/com/sykj/uusmart/service/impl/UserServiceImpl.java" line="33" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="68fc77c8-3835-421e-8191-3aa763f24a20" name="Default" comment="1. 修改发送消息机制 + 蓝牙往 它的主设备（网关）发送消息&#10;2. 修改添加设备接口字段 addDeviceDTO">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/doc/Guns 技术文档 v1.0.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/css/patterns/header-profile-skin-1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/css/patterns/header-profile-skin-3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/css/patterns/header-profile.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/css/patterns/shattered.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/css/plugins/chosen/chosen-sprite.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/css/plugins/chosen/chosen-sprite@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/css/plugins/iCheck/green.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/css/plugins/iCheck/green@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/css/plugins/images/sprite-skin-flat.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/css/plugins/ztree/img/diy/1_close.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/css/plugins/ztree/img/diy/1_open.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/css/plugins/ztree/img/diy/2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/css/plugins/ztree/img/diy/3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/css/plugins/ztree/img/diy/4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/css/plugins/ztree/img/diy/5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/css/plugins/ztree/img/diy/6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/css/plugins/ztree/img/diy/7.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/css/plugins/ztree/img/diy/8.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/css/plugins/ztree/img/diy/9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/css/plugins/ztree/img/line_conn.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/css/plugins/ztree/img/loading.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/css/plugins/ztree/img/zTreeStandard.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/css/plugins/ztree/img/zTreeStandard.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/favicon.ico" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/fonts/FontAwesome.otf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/fonts/fontawesome-webfont.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/fonts/fontawesome-webfont.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/fonts/fontawesome-webfont.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/fonts/fontawesome-webfont.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/fonts/glyphicons-halflings-regular.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/fonts/glyphicons-halflings-regular.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/fonts/glyphicons-halflings-regular.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/fonts/glyphicons-halflings-regular.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/img/bg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/img/boy.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/img/girl.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/img/icons.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/img/loading-upload.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/img/locked.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/img/user.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/js/plugins/laydate/theme/default/font/iconfont.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/js/plugins/laydate/theme/default/font/iconfont.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/js/plugins/laydate/theme/default/font/iconfont.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/js/plugins/layer/theme/default/icon-ext.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/js/plugins/layer/theme/default/icon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/js/plugins/layer/theme/default/loading-0.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/js/plugins/layer/theme/default/loading-1.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/js/plugins/layer/theme/default/loading-2.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/js/plugins/webuploader/Uploader.swf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_fastjson_1_2_13.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/pom.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/pom.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/sql/guns.sql" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/GunsApplication.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/GunsServletInitializer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/config/EhCacheConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/config/SpringSessionConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/config/SwaggerConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/config/datasource/MultiDataSourceConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/config/datasource/SingleDataSourceConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/config/properties/BeetlProperties.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/config/properties/GunsProperties.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/config/web/BeetlConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/config/web/ShiroConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/config/web/WebConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/core/aop/GlobalExceptionHandler.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/core/aop/LogAop.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/core/aop/PermissionAop.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/core/beetl/BeetlConfiguration.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/core/beetl/ShiroExt.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/core/common/annotion/BussinessLog.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/core/common/annotion/Permission.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/core/common/constant/Const.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/core/common/constant/DatasourceEnum.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/core/common/constant/JwtConstants.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/core/common/constant/cache/Cache.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/core/common/constant/cache/CacheKey.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/core/common/constant/dictmap/DeleteDict.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/core/common/constant/dictmap/DeptDict.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/core/common/constant/dictmap/DictMap.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/core/common/constant/dictmap/LogDict.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/core/common/constant/dictmap/MenuDict.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/core/common/constant/dictmap/NoticeMap.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/core/common/constant/dictmap/RoleDict.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/core/common/constant/dictmap/UserDict.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/core/common/constant/dictmap/base/AbstractDictMap.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/core/common/constant/dictmap/base/SystemDict.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/core/common/constant/dictmap/factory/DictFieldWarpperFactory.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/core/common/constant/factory/ConstantFactory.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/core/common/constant/factory/IConstantFactory.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/core/common/constant/factory/MutiStrFactory.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/core/common/constant/factory/PageFactory.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/core/common/constant/state/BizLogType.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/core/common/constant/state/ExpenseState.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/core/common/constant/state/LogSucceed.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/core/common/constant/state/LogType.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/core/common/constant/state/ManagerStatus.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/core/common/constant/state/MenuOpenStatus.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/core/common/constant/state/MenuStatus.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/core/common/constant/state/Order.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/core/common/exception/BizExceptionEnum.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/core/common/exception/InvalidKaptchaException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/core/intercept/GunsUserFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/core/intercept/RestApiInteceptor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/core/intercept/SessionHolderInterceptor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/core/listener/ConfigListener.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/core/log/LogManager.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/core/log/LogObjectHolder.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/core/log/factory/LogFactory.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/core/log/factory/LogTaskFactory.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/core/shiro/ShiroDbRealm.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/core/shiro/ShiroKit.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/core/shiro/ShiroUser.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/core/shiro/check/ICheck.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/core/shiro/check/PermissionCheckFactory.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/core/shiro/check/PermissionCheckManager.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/core/shiro/factory/IShiro.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/core/shiro/factory/ShiroFactroy.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/core/tag/DictSelectorTag.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/core/util/ApiMenuFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/core/util/Contrast.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/core/util/JwtTokenUtil.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/core/util/KaptchaUtil.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/api/ApiController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/code/controller/CodeController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/code/factory/DefaultTemplateFactory.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/code/service/TableService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/product/controller/BrandInfoController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/product/service/IBrandInfoService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/product/service/impl/BrandInfoServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/controller/BlackboardController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/controller/DeptController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/controller/DictController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/controller/KaptchaController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/controller/LogController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/controller/LoginController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/controller/LoginLogController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/controller/MenuController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/controller/NoticeController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/controller/RoleController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/controller/UserMgrController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/dao/BrandInfoMapper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/dao/DeptMapper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/dao/DictMapper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/dao/ExpenseMapper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/dao/LoginLogMapper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/dao/MenuMapper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/dao/NoticeMapper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/dao/OperationLogMapper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/dao/RelationMapper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/dao/RoleMapper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/dao/UserMapper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/dao/mapping/BrandInfoMapper.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/dao/mapping/DeptMapper.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/dao/mapping/DictMapper.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/dao/mapping/ExpenseMapper.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/dao/mapping/LoginLogMapper.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/dao/mapping/MenuMapper.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/dao/mapping/NoticeMapper.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/dao/mapping/OperationLogMapper.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/dao/mapping/RelationMapper.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/dao/mapping/RoleMapper.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/dao/mapping/UserMapper.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/factory/UserFactory.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/model/BrandInfo.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/model/Dept.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/model/Dict.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/model/Expense.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/model/LoginLog.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/model/Menu.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/model/Notice.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/model/OperationLog.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/model/Relation.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/model/Role.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/model/User.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/service/IDeptService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/service/IDictService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/service/ILoginLogService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/service/IMenuService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/service/INoticeService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/service/IOperationLogService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/service/IRelationService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/service/IRoleService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/service/IUserService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/service/impl/DeptServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/service/impl/DictServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/service/impl/LoginLogServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/service/impl/MenuServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/service/impl/NoticeServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/service/impl/OperationLogServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/service/impl/RelationServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/service/impl/RoleServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/service/impl/UserServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/transfer/ManagerUser.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/transfer/ReqAddManager.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/transfer/ReqEditManager.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/transfer/UserDto.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/warpper/DeptWarpper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/warpper/DictWarpper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/warpper/LogWarpper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/warpper/MenuWarpper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/warpper/NoticeWrapper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/warpper/RoleWarpper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/java/com/sykj/uusmart/modular/system/warpper/UserWarpper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/resources/META-INF/spring-devtools.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/resources/application.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/resources/ehcache.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/resources/logback-spring.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/WEB-INF/view/404.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/WEB-INF/view/blackboard.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/WEB-INF/view/code/code.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/WEB-INF/view/common/_container.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/WEB-INF/view/common/_right.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/WEB-INF/view/common/_tab.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/WEB-INF/view/common/_theme.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/WEB-INF/view/common/tags/NameCon.tag" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/WEB-INF/view/common/tags/SelectCon.tag" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/WEB-INF/view/common/tags/TimeCon.tag" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/WEB-INF/view/common/tags/avatar.tag" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/WEB-INF/view/common/tags/button.tag" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/WEB-INF/view/common/tags/input.tag" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/WEB-INF/view/common/tags/select.tag" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/WEB-INF/view/common/tags/table.tag" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/WEB-INF/view/common/tags/tag_tips" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/WEB-INF/view/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/WEB-INF/view/login.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/WEB-INF/view/product/brandInfo/brandInfo.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/WEB-INF/view/product/brandInfo/brandInfo_add.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/WEB-INF/view/product/brandInfo/brandInfo_edit.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/WEB-INF/view/system/code/code.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/WEB-INF/view/system/dept/dept.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/WEB-INF/view/system/dept/dept_add.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/WEB-INF/view/system/dept/dept_edit.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/WEB-INF/view/system/dict/dict.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/WEB-INF/view/system/dict/dict_add.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/WEB-INF/view/system/dict/dict_edit.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/WEB-INF/view/system/log/log.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/WEB-INF/view/system/log/login_log.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/WEB-INF/view/system/menu/menu.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/WEB-INF/view/system/menu/menu_add.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/WEB-INF/view/system/menu/menu_edit.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/WEB-INF/view/system/notice/notice.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/WEB-INF/view/system/notice/notice_add.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/WEB-INF/view/system/notice/notice_edit.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/WEB-INF/view/system/role/role.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/WEB-INF/view/system/role/role_add.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/WEB-INF/view/system/role/role_assign.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/WEB-INF/view/system/role/role_edit.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/WEB-INF/view/system/user/user.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/WEB-INF/view/system/user/user_add.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/WEB-INF/view/system/user/user_chpwd.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/WEB-INF/view/system/user/user_edit.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/WEB-INF/view/system/user/user_roleassign.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/WEB-INF/view/system/user/user_view.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/css/_fstyle.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/css/bootstrap-rtl.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/css/bootstrap.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/css/font-awesome.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/css/font-awesome.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/css/login.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/css/plugins/bootstrap-table/bootstrap-table.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/css/plugins/bootstrap-treetable/bootstrap-treetable.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/css/plugins/chosen/chosen.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/css/plugins/iCheck/custom.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/css/plugins/validate/bootstrapValidator.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/css/plugins/webuploader/webuploader.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/css/plugins/ztree/demo.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/css/plugins/ztree/zTreeStyle.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/css/style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/fonts/fontawesome-webfont.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/fonts/glyphicons-halflings-regular.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/js/bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/js/common/DateUtils.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/js/common/Feng.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/js/common/ajax-object.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/js/common/bootstrap-table-object.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/js/common/select-list-object.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/js/common/tree-table-object.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/js/common/web-upload-object.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/js/common/ztree-object.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/js/contabs.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/js/content.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/js/hplus.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/js/jquery.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/js/jquery.min.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/js/plugins/bootstrap-table/bootstrap-table-mobile.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/js/plugins/bootstrap-table/bootstrap-table.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/js/plugins/bootstrap-treetable/bootstrap-treetable.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/js/plugins/chosen/chosen.jquery.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/js/plugins/iCheck/icheck.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/js/plugins/laydate/laydate.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/js/plugins/laydate/theme/default/font/iconfont.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/js/plugins/laydate/theme/default/laydate.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/js/plugins/layer/layer.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/js/plugins/layer/mobile/layer.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/js/plugins/layer/mobile/need/layer.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/js/plugins/layer/theme/default/layer.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/js/plugins/metisMenu/jquery.metisMenu.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/js/plugins/pace/pace.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/js/plugins/slimscroll/jquery.slimscroll.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/js/plugins/validate/additional-methods.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/js/plugins/validate/bootstrapValidator.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/js/plugins/validate/zh_CN.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/js/plugins/wangEditor/wangEditor.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/js/plugins/webuploader/webuploader.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/js/plugins/webuploader/webuploader.custom.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/js/plugins/webuploader/webuploader.custom.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/js/plugins/webuploader/webuploader.fis.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/js/plugins/webuploader/webuploader.flashonly.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/js/plugins/webuploader/webuploader.flashonly.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/js/plugins/webuploader/webuploader.html5only.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/js/plugins/webuploader/webuploader.html5only.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/js/plugins/webuploader/webuploader.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/js/plugins/webuploader/webuploader.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/js/plugins/webuploader/webuploader.noimage.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/js/plugins/webuploader/webuploader.noimage.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/js/plugins/webuploader/webuploader.nolog.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/js/plugins/webuploader/webuploader.nolog.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/js/plugins/webuploader/webuploader.withoutimage.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/js/plugins/webuploader/webuploader.withoutimage.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/js/plugins/ztree/jquery.ztree.all.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/modular/code/gen.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/modular/flowable/expense/expense.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/modular/flowable/expense/expense_info.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/modular/flowable/process/process.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/modular/flowable/process/process_info.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/modular/product/brandInfo/brandInfo.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/modular/product/brandInfo/brandInfo_info.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/modular/system/code/code.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/modular/system/dept/dept.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/modular/system/dept/dept_info.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/modular/system/dict/dict.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/modular/system/dict/dict_info.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/modular/system/log/log.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/modular/system/log/login_log.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/modular/system/menu/menu.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/modular/system/menu/menu_info.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/modular/system/notice/notice.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/modular/system/notice/notice_info.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/modular/system/role/role.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/modular/system/role/role_info.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/modular/system/user/user.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/webapp/static/modular/system/user/user_info.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/test/java/com/sykj/uusmart/base/BaseJunit.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/test/java/com/sykj/uusmart/multi/entity/Test.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/test/java/com/sykj/uusmart/multi/mapper/TestMapper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/test/java/com/sykj/uusmart/multi/mapper/mapping/TestMapper.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/test/java/com/sykj/uusmart/multi/service/TestService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/test/java/com/sykj/uusmart/multi/service/impl/TestServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/test/java/com/sykj/uusmart/multi/test/BizTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/test/java/com/sykj/uusmart/shiro/Base64Test.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/test/java/com/sykj/uusmart/system/BlackBoardTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/test/java/com/sykj/uusmart/system/DeptTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/test/java/com/sykj/uusmart/system/DictTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/test/java/com/sykj/uusmart/system/MenuTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/test/java/com/sykj/uusmart/system/UserTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/test/java/com/sykj/uusmart/testaa.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/test/sql/test.sql" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/uusmart-admin.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/pom.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/src/main/java/com/sykj/uusmart/core/CoreFlag.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/src/main/java/com/sykj/uusmart/core/aop/BaseControllerExceptionHandler.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/src/main/java/com/sykj/uusmart/core/base/controller/BaseController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/src/main/java/com/sykj/uusmart/core/base/controller/GlobalController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/src/main/java/com/sykj/uusmart/core/base/controller/GunsErrorView.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/src/main/java/com/sykj/uusmart/core/base/tips/ErrorTip.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/src/main/java/com/sykj/uusmart/core/base/tips/SuccessTip.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/src/main/java/com/sykj/uusmart/core/base/tips/Tip.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/src/main/java/com/sykj/uusmart/core/base/warpper/BaseControllerWarpper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/src/main/java/com/sykj/uusmart/core/cache/BaseCacheFactory.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/src/main/java/com/sykj/uusmart/core/cache/CacheKit.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/src/main/java/com/sykj/uusmart/core/cache/EhcacheFactory.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/src/main/java/com/sykj/uusmart/core/cache/ICache.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/src/main/java/com/sykj/uusmart/core/cache/ILoader.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/src/main/java/com/sykj/uusmart/core/config/DefaultFastjsonConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/src/main/java/com/sykj/uusmart/core/config/DefaultMultiConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/src/main/java/com/sykj/uusmart/core/config/DefaultProperties.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/src/main/java/com/sykj/uusmart/core/config/DefaultWebConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/src/main/java/com/sykj/uusmart/core/config/properties/DruidProperties.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/src/main/java/com/sykj/uusmart/core/config/properties/MutiDataSourceProperties.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/src/main/java/com/sykj/uusmart/core/constant/IsMenu.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/src/main/java/com/sykj/uusmart/core/datascope/DataScope.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/src/main/java/com/sykj/uusmart/core/datascope/DataScopeInterceptor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/src/main/java/com/sykj/uusmart/core/db/Db.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/src/main/java/com/sykj/uusmart/core/exception/GunsException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/src/main/java/com/sykj/uusmart/core/exception/GunsExceptionEnum.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/src/main/java/com/sykj/uusmart/core/exception/ServiceExceptionEnum.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/src/main/java/com/sykj/uusmart/core/mutidatasource/DataSourceContextHolder.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/src/main/java/com/sykj/uusmart/core/mutidatasource/DynamicDataSource.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/src/main/java/com/sykj/uusmart/core/mutidatasource/annotion/DataSource.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/src/main/java/com/sykj/uusmart/core/mutidatasource/aop/MultiSourceExAop.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/src/main/java/com/sykj/uusmart/core/node/MenuNode.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/src/main/java/com/sykj/uusmart/core/node/ZTreeNode.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/src/main/java/com/sykj/uusmart/core/page/PageBT.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/src/main/java/com/sykj/uusmart/core/page/PageInfoBT.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/src/main/java/com/sykj/uusmart/core/qr/ImgQrTool.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/src/main/java/com/sykj/uusmart/core/qr/MatrixToImageConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/src/main/java/com/sykj/uusmart/core/qr/MatrixToImageWriter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/src/main/java/com/sykj/uusmart/core/qr/QrImage.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/src/main/java/com/sykj/uusmart/core/support/BasicType.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/src/main/java/com/sykj/uusmart/core/support/BeanKit.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/src/main/java/com/sykj/uusmart/core/support/ClassKit.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/src/main/java/com/sykj/uusmart/core/support/CollectionKit.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/src/main/java/com/sykj/uusmart/core/support/DateTime.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/src/main/java/com/sykj/uusmart/core/support/DateTimeKit.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/src/main/java/com/sykj/uusmart/core/support/HexKit.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/src/main/java/com/sykj/uusmart/core/support/HttpKit.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/src/main/java/com/sykj/uusmart/core/support/ObjectKit.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/src/main/java/com/sykj/uusmart/core/support/PageKit.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/src/main/java/com/sykj/uusmart/core/support/StrKit.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/src/main/java/com/sykj/uusmart/core/support/WafKit.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/src/main/java/com/sykj/uusmart/core/support/WafRequestWrapper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/src/main/java/com/sykj/uusmart/core/support/exception/ToolBoxException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/src/main/java/com/sykj/uusmart/core/util/Convert.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/src/main/java/com/sykj/uusmart/core/util/DateUtil.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/src/main/java/com/sykj/uusmart/core/util/FileUtil.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/src/main/java/com/sykj/uusmart/core/util/HttpSessionHolder.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/src/main/java/com/sykj/uusmart/core/util/IdGenerator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/src/main/java/com/sykj/uusmart/core/util/MD5Util.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/src/main/java/com/sykj/uusmart/core/util/NumUtil.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/src/main/java/com/sykj/uusmart/core/util/PingYinUtil.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/src/main/java/com/sykj/uusmart/core/util/RenderUtil.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/src/main/java/com/sykj/uusmart/core/util/ResKit.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/src/main/java/com/sykj/uusmart/core/util/SimpleContrast.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/src/main/java/com/sykj/uusmart/core/util/SpringContextHolder.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/src/main/java/com/sykj/uusmart/core/util/SqlUtil.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/src/main/java/com/sykj/uusmart/core/util/ToolUtil.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/src/main/java/com/sykj/uusmart/core/xss/XssFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/src/main/java/com/sykj/uusmart/core/xss/XssHttpServletRequestWrapper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/src/main/resources/META-INF/spring.factories" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/src/main/resources/default-config.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-core/uusmart-core.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-generator/pom.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-generator/src/main/java/com/sykj/uusmart/generator/action/GunsCodeGenerator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-generator/src/main/java/com/sykj/uusmart/generator/action/config/AbstractGeneratorConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-generator/src/main/java/com/sykj/uusmart/generator/action/config/GunsGeneratorConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-generator/src/main/java/com/sykj/uusmart/generator/action/config/WebGeneratorConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-generator/src/main/java/com/sykj/uusmart/generator/action/model/GenQo.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-generator/src/main/java/com/sykj/uusmart/generator/engine/SimpleTemplateEngine.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-generator/src/main/java/com/sykj/uusmart/generator/engine/base/AbstractTemplateEngine.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-generator/src/main/java/com/sykj/uusmart/generator/engine/base/GunsTemplateEngine.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-generator/src/main/java/com/sykj/uusmart/generator/engine/config/ContextConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-generator/src/main/java/com/sykj/uusmart/generator/engine/config/ControllerConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-generator/src/main/java/com/sykj/uusmart/generator/engine/config/DaoConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-generator/src/main/java/com/sykj/uusmart/generator/engine/config/Menu.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-generator/src/main/java/com/sykj/uusmart/generator/engine/config/PageConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-generator/src/main/java/com/sykj/uusmart/generator/engine/config/ServiceConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-generator/src/main/java/com/sykj/uusmart/generator/engine/config/SqlConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-generator/src/main/resources/gunsTemplate/advanced/Controller.java.btl" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-generator/src/main/resources/gunsTemplate/advanced/menu_sql.sql.btl" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-generator/src/main/resources/gunsTemplate/advanced/page.html.btl" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-generator/src/main/resources/gunsTemplate/advanced/page.js.btl" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-generator/src/main/resources/gunsTemplate/advanced/page_add.html.btl" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-generator/src/main/resources/gunsTemplate/advanced/page_edit.html.btl" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-generator/src/main/resources/gunsTemplate/advanced/page_info.js.btl" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-generator/uusmart-generator.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-rest/db/guns_rest.sql" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-rest/pom.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-rest/src/main/java/com/sykj/uusmart/rest/GunsRestApplication.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-rest/src/main/java/com/sykj/uusmart/rest/GunsRestServletInitializer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-rest/src/main/java/com/sykj/uusmart/rest/common/SimpleObject.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-rest/src/main/java/com/sykj/uusmart/rest/common/aop/GlobalExceptionHandler.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-rest/src/main/java/com/sykj/uusmart/rest/common/exception/BizExceptionEnum.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-rest/src/main/java/com/sykj/uusmart/rest/common/persistence/dao/UserMapper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-rest/src/main/java/com/sykj/uusmart/rest/common/persistence/dao/mapping/UserMapper.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-rest/src/main/java/com/sykj/uusmart/rest/common/persistence/model/User.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-rest/src/main/java/com/sykj/uusmart/rest/config/MessageConverConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-rest/src/main/java/com/sykj/uusmart/rest/config/MybatisPlusConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-rest/src/main/java/com/sykj/uusmart/rest/config/WebConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-rest/src/main/java/com/sykj/uusmart/rest/config/properties/JwtProperties.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-rest/src/main/java/com/sykj/uusmart/rest/config/properties/RestProperties.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-rest/src/main/java/com/sykj/uusmart/rest/modular/auth/controller/AuthController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-rest/src/main/java/com/sykj/uusmart/rest/modular/auth/controller/dto/AuthRequest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-rest/src/main/java/com/sykj/uusmart/rest/modular/auth/controller/dto/AuthResponse.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-rest/src/main/java/com/sykj/uusmart/rest/modular/auth/converter/BaseTransferEntity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-rest/src/main/java/com/sykj/uusmart/rest/modular/auth/converter/WithSignMessageConverter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-rest/src/main/java/com/sykj/uusmart/rest/modular/auth/filter/AuthFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-rest/src/main/java/com/sykj/uusmart/rest/modular/auth/security/DataSecurityAction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-rest/src/main/java/com/sykj/uusmart/rest/modular/auth/security/impl/Base64SecurityAction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-rest/src/main/java/com/sykj/uusmart/rest/modular/auth/util/JwtTokenUtil.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-rest/src/main/java/com/sykj/uusmart/rest/modular/auth/validator/IReqValidator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-rest/src/main/java/com/sykj/uusmart/rest/modular/auth/validator/dto/Credence.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-rest/src/main/java/com/sykj/uusmart/rest/modular/auth/validator/impl/DbValidator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-rest/src/main/java/com/sykj/uusmart/rest/modular/auth/validator/impl/SimpleValidator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-rest/src/main/java/com/sykj/uusmart/rest/modular/example/ExampleController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-rest/src/main/resources/application.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-rest/src/test/java/com/sykj/uusmart/GunsRestApplicationTests.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-rest/src/test/java/com/sykj/uusmart/fastjson/JsonTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-rest/src/test/java/com/sykj/uusmart/generator/EntityGenerator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-rest/src/test/java/com/sykj/uusmart/jwt/DecryptTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-rest/src/test/java/com/sykj/uusmart/jwt/JWTTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-rest/uusmart-rest.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart-web-parent/uusmart-web-parent.iml" />
+    <list default="true" id="68fc77c8-3835-421e-8191-3aa763f24a20" name="Default" comment="1. 完善发送消息机制 + 蓝牙往 它的主设备（网关）发送消息">
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_context_2_0_0_RELEASE.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_crypto_5_0_6_RELEASE.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uusmart_datas/target/classes/com/sykj/uusmart/repository/UserInfoRepository.class" afterPath="$PROJECT_DIR$/uusmart_datas/target/classes/com/sykj/uusmart/repository/UserInfoRepository.class" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/uusmart_app/sappSer16-tcpgoodtime-iotcom1883/.lck" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uusmart_agreement/target/classes/com/sykj/uusmart/http/alexa/RespAlexaAddDeviceDTO.class" afterPath="$PROJECT_DIR$/uusmart_agreement/target/classes/com/sykj/uusmart/http/alexa/RespAlexaAddDeviceDTO.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uusmart_datas/target/classes/com/sykj/uusmart/pojo/ProductInfo.class" afterPath="$PROJECT_DIR$/uusmart_datas/target/classes/com/sykj/uusmart/pojo/ProductInfo.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uusmart_agreement/src/main/java/com/sykj/uusmart/http/alexa/RespAlexaAddDeviceDTO.java" afterPath="$PROJECT_DIR$/uusmart_agreement/src/main/java/com/sykj/uusmart/http/alexa/RespAlexaAddDeviceDTO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uusmart_datas/src/main/java/com/sykj/uusmart/pojo/ProductInfo.java" afterPath="$PROJECT_DIR$/uusmart_datas/src/main/java/com/sykj/uusmart/pojo/ProductInfo.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uusmart_timing/src/main/java/com/sykj/uusmart/service/impl/DeviceTimingInfoServiceImpl.java" afterPath="$PROJECT_DIR$/uusmart_timing/src/main/java/com/sykj/uusmart/service/impl/DeviceTimingInfoServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uusmart_voice/src/main/java/com/sykj/uusmart/controller/AlexaController.java" afterPath="$PROJECT_DIR$/uusmart_voice/src/main/java/com/sykj/uusmart/controller/AlexaController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uusmart_voice/src/main/java/com/sykj/uusmart/service/ToAleaxService.java" afterPath="$PROJECT_DIR$/uusmart_voice/src/main/java/com/sykj/uusmart/service/ToAleaxService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uusmart_voice/src/main/java/com/sykj/uusmart/service/impl/ToAleaxServiceImpl.java" afterPath="$PROJECT_DIR$/uusmart_voice/src/main/java/com/sykj/uusmart/service/impl/ToAleaxServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uusmart_voice/src/main/java/com/sykj/uusmart/service/impl/ToBaiDuServiceImpl.java" afterPath="$PROJECT_DIR$/uusmart_voice/src/main/java/com/sykj/uusmart/service/impl/ToBaiDuServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uusmart_voice/src/main/java/com/sykj/uusmart/service/impl/ToDingDongerviceImpl.java" afterPath="$PROJECT_DIR$/uusmart_voice/src/main/java/com/sykj/uusmart/service/impl/ToDingDongerviceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uusmart_voice/src/main/java/com/sykj/uusmart/service/impl/ToTianMaoServiceImpl.java" afterPath="$PROJECT_DIR$/uusmart_voice/src/main/java/com/sykj/uusmart/service/impl/ToTianMaoServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uusmart_wisdom/src/main/java/com/sykj/uusmart/service/impl/WisdomServiceImpl.java" afterPath="$PROJECT_DIR$/uusmart_wisdom/src/main/java/com/sykj/uusmart/service/impl/WisdomServiceImpl.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/svoiceSer11-tcpgoodtime-iotcom1883/.lck" afterPath="$PROJECT_DIR$/uusmart_agreement/src/main/java/com/sykj/uusmart/http/alexa/PropertiesDTO.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/svoiceSer15-tcpgoodtime-iotcom1883/.lck" afterPath="$PROJECT_DIR$/uusmart_agreement/src/main/java/com/sykj/uusmart/http/alexa/SaveAlexaOauthInfoDTO.java" />
     </list>
     <ignored path="$PROJECT_DIR$/uusmart_device/target/" />
     <ignored path="$PROJECT_DIR$/uusmart_app/target/" />
@@ -567,24 +72,127 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ToDingDongerviceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/uusmart_voice/src/main/java/com/sykj/uusmart/service/impl/ToDingDongerviceImpl.java">
+      <file leaf-file-name="AlexaController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/uusmart_voice/src/main/java/com/sykj/uusmart/controller/AlexaController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
-              <caret line="93" column="9" lean-forward="true" selection-start-line="93" selection-start-column="9" selection-end-line="93" selection-end-column="9" />
+            <state relative-caret-position="378">
+              <caret line="38" column="13" lean-forward="false" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SaveAlexaOauthInfoDTO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/uusmart_agreement/src/main/java/com/sykj/uusmart/http/alexa/SaveAlexaOauthInfoDTO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="567">
+              <caret line="25" column="5" lean-forward="false" selection-start-line="23" selection-start-column="34" selection-end-line="25" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#646#647#0" expanded="true" />
+                <element signature="e#680#681#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TimingController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/uusmart_timing/src/main/java/com/sykj/uusmart/controller/TimingController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="648">
+              <caret line="61" column="65" lean-forward="false" selection-start-line="61" selection-start-column="65" selection-end-line="61" selection-end-column="65" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WisdomServiceImpl.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/uusmart_wisdom/src/main/java/com/sykj/uusmart/service/impl/WisdomServiceImpl.java">
+      <file leaf-file-name="DeviceTimingInfoServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/uusmart_timing/src/main/java/com/sykj/uusmart/service/impl/DeviceTimingInfoServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="576">
-              <caret line="444" column="55" lean-forward="false" selection-start-line="444" selection-start-column="55" selection-end-line="444" selection-end-column="55" />
+            <state relative-caret-position="545">
+              <caret line="222" column="28" lean-forward="false" selection-start-line="222" selection-start-column="28" selection-end-line="222" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MqIotUtils.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/uusmart_agreement/src/main/java/com/sykj/uusmart/mqtt/MqIotUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="266" column="0" lean-forward="false" selection-start-line="266" selection-start-column="0" selection-end-line="266" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UusmartDeviceApplication.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/uusmart_device/src/main/java/com/sykj/uusmart/UusmartDeviceApplication.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ToAleaxServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/uusmart_voice/src/main/java/com/sykj/uusmart/service/impl/ToAleaxServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1188">
+              <caret line="79" column="45" lean-forward="false" selection-start-line="79" selection-start-column="45" selection-end-line="79" selection-end-column="45" />
               <folding>
-                <element signature="e#8379#8380#0" expanded="true" />
-                <element signature="e#8469#8470#0" expanded="true" />
+                <element signature="imports" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ToAleaxService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/uusmart_voice/src/main/java/com/sykj/uusmart/service/ToAleaxService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="15" column="24" lean-forward="false" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MqIotMessageUtils.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/uusmart_agreement/src/main/java/com/sykj/uusmart/mqtt/MqIotMessageUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2565">
+              <caret line="108" column="45" lean-forward="false" selection-start-line="108" selection-start-column="45" selection-end-line="108" selection-end-column="45" />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AleaxPushDeviceMsgDTO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/uusmart_agreement/src/main/java/com/sykj/uusmart/http/alexa/AleaxPushDeviceMsgDTO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="486">
+              <caret line="23" column="55" lean-forward="false" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="55" />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#827#828#0" expanded="false" />
+                <element signature="e#855#856#0" expanded="false" />
+                <element signature="e#897#898#0" expanded="false" />
+                <element signature="e#931#932#0" expanded="false" />
+                <element signature="e#966#967#0" expanded="false" />
+                <element signature="e#997#998#0" expanded="false" />
+                <element signature="e#1045#1046#0" expanded="false" />
+                <element signature="e#1085#1086#0" expanded="false" />
+                <element signature="e#1115#1116#0" expanded="false" />
+                <element signature="e#1141#1142#0" expanded="false" />
+                <element signature="e#1179#1180#0" expanded="false" />
+                <element signature="e#1209#1210#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -659,12 +267,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/uusmart_wisdom/src/main/resources/bootstrap-test.yml" />
-        <option value="$PROJECT_DIR$/mqttTest/mqtt/src/main/java/com/mqtt/test/Test.java" />
-        <option value="$PROJECT_DIR$/uusmart_app/src/main/resources/bootstrap-test.yml" />
-        <option value="$PROJECT_DIR$/uusmart_app/src/main/java/com/sykj/uusmart/service/impl/UserInfoServiceImpl.java" />
-        <option value="$PROJECT_DIR$/uusmart_app/src/main/resources/bootstrap.yml" />
-        <option value="$PROJECT_DIR$/uusmart_config/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/uusmart_config/src/main/resources/application-test.yml" />
         <option value="$PROJECT_DIR$/uusmart_voice/src/main/resources/bootstrap-prd.yml" />
         <option value="$PROJECT_DIR$/uusmart_agreement/src/main/java/com/sykj/uusmart/exception/CustomRunTimeException.java" />
@@ -688,7 +290,6 @@
         <option value="$PROJECT_DIR$/uusmart-web-parent/pom.xml" />
         <option value="$PROJECT_DIR$/uusmart_wisdom/src/main/java/com/sykj/uusmart/mqtt/CallBack.java" />
         <option value="$PROJECT_DIR$/uusmart_datas/src/main/java/com/sykj/uusmart/pojo/DeviceTimingInfo.java" />
-        <option value="$PROJECT_DIR$/uusmart_timing/src/main/java/com/sykj/uusmart/service/impl/DeviceTimingInfoServiceImpl.java" />
         <option value="$PROJECT_DIR$/uusmart_agreement/src/main/java/com/sykj/uusmart/validator/ValidatorUtils.java" />
         <option value="$PROJECT_DIR$/uusmart_wisdom/src/main/java/com/sykj/uusmart/controller/WisdomController.java" />
         <option value="$PROJECT_DIR$/uusmart_agreement/src/main/java/com/sykj/uusmart/http/tianmao/TMDevice.java" />
@@ -708,8 +309,15 @@
         <option value="$PROJECT_DIR$/uusmart_voice/src/main/java/com/sykj/uusmart/service/impl/ToDingDongerviceImpl.java" />
         <option value="$PROJECT_DIR$/uusmart_voice/src/main/java/com/sykj/uusmart/service/impl/ToTianMaoServiceImpl.java" />
         <option value="$PROJECT_DIR$/uusmart_voice/src/main/java/com/sykj/uusmart/service/impl/ToBaiDuServiceImpl.java" />
-        <option value="$PROJECT_DIR$/uusmart_voice/src/main/java/com/sykj/uusmart/service/impl/ToAleaxServiceImpl.java" />
         <option value="$PROJECT_DIR$/uusmart_wisdom/src/main/java/com/sykj/uusmart/service/impl/WisdomServiceImpl.java" />
+        <option value="$PROJECT_DIR$/uusmart_agreement/src/main/java/com/sykj/uusmart/http/alexa/RespAlexaAddDeviceDTO.java" />
+        <option value="$PROJECT_DIR$/uusmart_datas/src/main/java/com/sykj/uusmart/pojo/ProductInfo.java" />
+        <option value="$PROJECT_DIR$/uusmart_agreement/src/main/java/com/sykj/uusmart/http/alexa/PropertiesDTO.java" />
+        <option value="$PROJECT_DIR$/uusmart_agreement/src/main/java/com/sykj/uusmart/http/alexa/SaveAlexaOauthInfoDTO.java" />
+        <option value="$PROJECT_DIR$/uusmart_voice/src/main/java/com/sykj/uusmart/controller/AlexaController.java" />
+        <option value="$PROJECT_DIR$/uusmart_voice/src/main/java/com/sykj/uusmart/service/ToAleaxService.java" />
+        <option value="$PROJECT_DIR$/uusmart_voice/src/main/java/com/sykj/uusmart/service/impl/ToAleaxServiceImpl.java" />
+        <option value="$PROJECT_DIR$/uusmart_timing/src/main/java/com/sykj/uusmart/service/impl/DeviceTimingInfoServiceImpl.java" />
       </list>
     </option>
   </component>
@@ -753,36 +361,12 @@
           <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$LifecycleNode" />
         </PATH_ELEMENT>
       </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="uusmart_agreement" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="uusmart_agreement" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="Lifecycle" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$LifecycleNode" />
-        </PATH_ELEMENT>
-      </PATH>
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1866" />
+    <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1874" />
+    <option name="width" value="1848" />
     <option name="height" value="1096" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -801,9 +385,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -826,7 +410,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="uusmart_wisdom" />
+              <option name="myItemId" value="uusmart_timing" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -840,13 +424,21 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="uusmart_wisdom" />
+              <option name="myItemId" value="uusmart_timing" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -858,7 +450,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="uusmart_wisdom" />
+              <option name="myItemId" value="uusmart_timing" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -880,7 +472,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="uusmart_wisdom" />
+              <option name="myItemId" value="uusmart_timing" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -949,7 +541,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.UusmartWisdomApplication">
+  <component name="RunManager" selected="Spring Boot.UusmartTimingApplication">
     <configuration default="false" name="UusmartTimingApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -1526,8 +1118,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Spring Boot.TxManagerApplication" />
-        <item index="1" class="java.lang.String" itemvalue="Spring Boot.UusmartTimingApplication" />
+        <item index="0" class="java.lang.String" itemvalue="Spring Boot.UusmartTimingApplication" />
+        <item index="1" class="java.lang.String" itemvalue="Spring Boot.TxManagerApplication" />
         <item index="2" class="java.lang.String" itemvalue="Spring Boot.UusmartConfigApplication" />
         <item index="3" class="java.lang.String" itemvalue="Application.Test" />
         <item index="4" class="java.lang.String" itemvalue="Application.Test (1)" />
@@ -1630,7 +1222,9 @@
       <workItem from="1534491436422" duration="2270000" />
       <workItem from="1534814190870" duration="19774000" />
       <workItem from="1534907489186" duration="5172000" />
-      <workItem from="1534920544860" duration="2673000" />
+      <workItem from="1534920544860" duration="5494000" />
+      <workItem from="1534991704609" duration="9737000" />
+      <workItem from="1535078049474" duration="11793000" />
     </task>
     <task id="LOCAL-00001" summary="asdserfrersgfvadsvfaergergadf">
       <created>1532672609181</created>
@@ -1723,11 +1317,18 @@
       <option name="project" value="LOCAL" />
       <updated>1534917556353</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="1. 完善发送消息机制 + 蓝牙往 它的主设备（网关）发送消息">
+      <created>1534923750376</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1534923750376</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="952670000" />
+    <option name="totallyTimeSpent" value="977021000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1739,12 +1340,12 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1866" y="-8" width="1874" height="1096" extended-state="6" />
+    <frame x="-8" y="-8" width="1848" height="1096" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.48128897" sideWeight="0.16508114" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12293275" sideWeight="0.8643868" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12527964" sideWeight="0.8643868" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1752,20 +1353,20 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18711019" sideWeight="0.83491886" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.017671518" sideWeight="0.83491886" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32848233" sideWeight="0.49804142" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.028066529" sideWeight="0.42865136" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19750519" sideWeight="0.68047005" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2827443" sideWeight="0.82745314" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12889813" sideWeight="0.68047005" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27962577" sideWeight="0.82745314" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3253638" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2783903" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28914988" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1864,7 +1465,8 @@
     <MESSAGE value="1. 修复 校验码通用问题；&#10;2.  删除设备的时候 条件或者执行 状态修改，而不是删除 逻辑修改；&#10;3. 绑定 自己的设备的时候 也会删除定时， 智能数据" />
     <MESSAGE value="1. 删除设备得时候发送指令&#10;2. 修复智能删除接口" />
     <MESSAGE value="1. 修改发送消息机制 + 蓝牙往 它的主设备（网关）发送消息&#10;2. 修改添加设备接口字段 addDeviceDTO" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. 修改发送消息机制 + 蓝牙往 它的主设备（网关）发送消息&#10;2. 修改添加设备接口字段 addDeviceDTO" />
+    <MESSAGE value="1. 完善发送消息机制 + 蓝牙往 它的主设备（网关）发送消息" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. 完善发送消息机制 + 蓝牙往 它的主设备（网关）发送消息" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1875,8 +1477,14 @@
           <properties />
           <option name="timeStamp" value="195" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/uusmart_agreement/src/main/java/com/sykj/uusmart/mqtt/MqIotUtils.java</url>
+          <line>266</line>
+          <properties />
+          <option name="timeStamp" value="201" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="201" />
+      <option name="time" value="202" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1885,89 +1493,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/uusmart_agreement/src/main/java/com/sykj/uusmart/utils/ExecutorUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uusmart_agreement/src/main/java/com/sykj/uusmart/utils/GsonUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uusmart_agreement/src/main/java/com/sykj/uusmart/utils/MD5Utils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uusmart_agreement/src/main/java/com/sykj/uusmart/utils/RegularExpressionUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uusmart_agreement/src/main/java/com/sykj/uusmart/utils/SerializeUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uusmart_agreement/src/main/java/com/sykj/uusmart/utils/ServiceGetUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uusmart_agreement/src/main/java/com/sykj/uusmart/utils/TimeUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="15" column="34" lean-forward="false" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uusmart_agreement/uusmart_agreement.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uusmart_agreement/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="16" column="34" lean-forward="false" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uusmart_agreement/src/main/java/com/sykj/uusmart/cmdtype/baidu/BaiDuCmdListEmun.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="6" column="25" lean-forward="true" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uusmart_agreement/src/main/java/com/sykj/uusmart/Constants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="636">
-          <caret line="171" column="50" lean-forward="false" selection-start-line="171" selection-start-column="33" selection-end-line="171" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/uusmart_agreement/src/main/java/com/sykj/uusmart/exception/CustomRunTimeException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1134">
@@ -1982,7 +1507,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1990,7 +1514,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-66">
           <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1998,7 +1521,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
           <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2006,7 +1528,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2014,7 +1535,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-891">
           <caret line="23" column="13" lean-forward="false" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2050,7 +1570,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2125,7 +1644,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="22" column="11" lean-forward="false" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2141,8 +1659,8 @@
         <state relative-caret-position="1610">
           <caret line="89" column="28" lean-forward="false" selection-start-line="89" selection-start-column="13" selection-end-line="89" selection-end-column="28" />
           <folding>
-            <element signature="e#2162#2163#0" expanded="true" />
-            <element signature="e#2216#2217#0" expanded="true" />
+            <element signature="e#2162#2163#0" expanded="false" />
+            <element signature="e#2216#2217#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2158,15 +1676,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1242">
           <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uusmart_agreement/src/main/java/com/sykj/uusmart/mqtt/MqIotUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6291">
-          <caret line="267" column="30" lean-forward="false" selection-start-line="267" selection-start-column="30" selection-end-line="267" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2174,15 +1683,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="29" column="13" lean-forward="false" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uusmart_app/src/main/java/com/sykj/uusmart/service/impl/DeviceaInfoServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1512">
-          <caret line="88" column="50" lean-forward="false" selection-start-line="88" selection-start-column="50" selection-end-line="88" selection-end-column="50" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2190,73 +1690,24 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="837">
           <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1360#1361#0" expanded="false" />
-            <element signature="e#1397#1398#0" expanded="false" />
-            <element signature="e#1456#1457#0" expanded="false" />
-            <element signature="e#1508#1509#0" expanded="false" />
-            <element signature="e#1549#1550#0" expanded="false" />
-            <element signature="e#1586#1587#0" expanded="false" />
-            <element signature="e#1646#1647#0" expanded="false" />
-            <element signature="e#1698#1699#0" expanded="false" />
-            <element signature="e#1729#1730#0" expanded="false" />
-            <element signature="e#1758#1759#0" expanded="false" />
-            <element signature="e#1800#1801#0" expanded="false" />
-            <element signature="e#1836#1837#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/uusmart_vivo_cloud/src/main/java/com/sykj/uusmart/UusmartVivoCloudApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uusmart_vivo_cloud/src/main/resources/bootstrap.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/uusmart_vivo_cloud/src/main/java/com/sykj/uusmart/UusmartVivoCloudApplication.java" />
+    <entry file="file://$PROJECT_DIR$/uusmart_vivo_cloud/src/main/resources/bootstrap.yml" />
     <entry file="file://$PROJECT_DIR$/uusmart_app/src/main/java/com/sykj/uusmart/UusmartAppApplication.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="594">
           <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/uusmart_vivo_cloud/src/main/resources/bootstrap-test.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="7" column="16" lean-forward="false" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uusmart_vivo_cloud/src/main/resources/bootstrap-prd.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="23" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/uusmart_vivo_cloud/src/main/resources/bootstrap-test.yml" />
+    <entry file="file://$PROJECT_DIR$/uusmart_vivo_cloud/src/main/resources/bootstrap-prd.yml" />
     <entry file="file://$PROJECT_DIR$/uusmart_voice/src/main/java/com/sykj/uusmart/service/impl/ToTianMaoServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="43">
           <caret line="192" column="44" lean-forward="false" selection-start-line="192" selection-start-column="44" selection-end-line="192" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2264,42 +1715,216 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="559">
           <caret line="113" column="44" lean-forward="false" selection-start-line="113" selection-start-column="44" selection-end-line="113" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uusmart_voice/src/main/java/com/sykj/uusmart/service/impl/ToAleaxServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="112" column="0" lean-forward="false" selection-start-line="112" selection-start-column="0" selection-end-line="133" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uusmart_datas/src/main/java/com/sykj/uusmart/pojo/ProductInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-729">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/uusmart_voice/src/main/java/com/sykj/uusmart/service/impl/ToDingDongerviceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="93" column="9" lean-forward="true" selection-start-line="93" selection-start-column="9" selection-end-line="93" selection-end-column="9" />
-          <folding />
+        <state relative-caret-position="1728">
+          <caret line="93" column="9" lean-forward="false" selection-start-line="93" selection-start-column="9" selection-end-line="93" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/uusmart_wisdom/src/main/java/com/sykj/uusmart/service/impl/WisdomServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="444" column="55" lean-forward="false" selection-start-line="444" selection-start-column="55" selection-end-line="444" selection-end-column="55" />
+        <state relative-caret-position="603">
+          <caret line="397" column="0" lean-forward="true" selection-start-line="397" selection-start-column="0" selection-end-line="397" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uusmart_voice/src/main/resources/bootstrap-prd.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uusmart_datas/src/main/java/com/sykj/uusmart/pojo/ProductInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1485">
+          <caret line="56" column="32" lean-forward="false" selection-start-line="56" selection-start-column="32" selection-end-line="56" selection-end-column="32" />
           <folding>
-            <element signature="e#8379#8380#0" expanded="true" />
-            <element signature="e#8469#8470#0" expanded="true" />
+            <element signature="e#2335#2336#0" expanded="false" />
+            <element signature="e#2367#2368#0" expanded="false" />
+            <element signature="e#2414#2415#0" expanded="false" />
+            <element signature="e#2449#2450#0" expanded="false" />
+            <element signature="e#2489#2490#0" expanded="false" />
+            <element signature="e#2525#2526#0" expanded="false" />
+            <element signature="e#2583#2584#0" expanded="false" />
+            <element signature="e#2633#2634#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uusmart_app/src/main/java/com/sykj/uusmart/service/impl/DeviceaInfoServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4077">
+          <caret line="183" column="9" lean-forward="false" selection-start-line="99" selection-start-column="81" selection-end-line="183" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uusmart_agreement/src/main/java/com/sykj/uusmart/http/alexa/RespAlexaAddDeviceDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding>
+            <element signature="e#685#686#0" expanded="false" />
+            <element signature="e#718#719#0" expanded="false" />
+            <element signature="e#770#771#0" expanded="false" />
+            <element signature="e#814#815#0" expanded="false" />
+            <element signature="e#857#858#0" expanded="false" />
+            <element signature="e#896#897#0" expanded="false" />
+            <element signature="e#960#961#0" expanded="false" />
+            <element signature="e#1016#1017#0" expanded="false" />
+            <element signature="e#1055#1056#0" expanded="false" />
+            <element signature="e#1090#1091#0" expanded="false" />
+            <element signature="e#1146#1147#0" expanded="false" />
+            <element signature="e#1194#1195#0" expanded="false" />
+            <element signature="e#1232#1233#0" expanded="false" />
+            <element signature="e#1266#1267#0" expanded="false" />
+            <element signature="e#1320#1321#0" expanded="false" />
+            <element signature="e#1366#1367#0" expanded="false" />
+            <element signature="e#1412#1413#0" expanded="false" />
+            <element signature="e#1452#1453#0" expanded="false" />
+            <element signature="e#1520#1521#0" expanded="false" />
+            <element signature="e#1578#1579#0" expanded="false" />
+            <element signature="e#1636#1637#0" expanded="false" />
+            <element signature="e#1671#1672#0" expanded="false" />
+            <element signature="e#1746#1747#0" expanded="false" />
+            <element signature="e#1794#1795#0" expanded="false" />
+            <element signature="e#1840#1841#0" expanded="false" />
+            <element signature="e#1869#1870#0" expanded="false" />
+            <element signature="e#1926#1927#0" expanded="false" />
+            <element signature="e#1962#1963#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uusmart_agreement/src/main/java/com/sykj/uusmart/http/alexa/PropertiesDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="7" column="50" lean-forward="false" selection-start-line="7" selection-start-column="50" selection-end-line="7" selection-end-column="50" />
+          <folding>
+            <element signature="e#328#329#0" expanded="false" />
+            <element signature="e#360#361#0" expanded="false" />
+            <element signature="e#429#430#0" expanded="false" />
+            <element signature="e#471#472#0" expanded="false" />
+            <element signature="e#517#518#0" expanded="false" />
+            <element signature="e#559#560#0" expanded="false" />
+            <element signature="e#630#631#0" expanded="false" />
+            <element signature="e#692#693#0" expanded="false" />
+            <element signature="e#730#731#0" expanded="false" />
+            <element signature="e#764#765#0" expanded="false" />
+            <element signature="e#819#820#0" expanded="false" />
+            <element signature="e#865#866#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uusmart_agreement/src/main/java/com/sykj/uusmart/http/alexa/AleaxPushDeviceMsgDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="23" column="55" lean-forward="false" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#827#828#0" expanded="false" />
+            <element signature="e#855#856#0" expanded="false" />
+            <element signature="e#897#898#0" expanded="false" />
+            <element signature="e#931#932#0" expanded="false" />
+            <element signature="e#966#967#0" expanded="false" />
+            <element signature="e#997#998#0" expanded="false" />
+            <element signature="e#1045#1046#0" expanded="false" />
+            <element signature="e#1085#1086#0" expanded="false" />
+            <element signature="e#1115#1116#0" expanded="false" />
+            <element signature="e#1141#1142#0" expanded="false" />
+            <element signature="e#1179#1180#0" expanded="false" />
+            <element signature="e#1209#1210#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uusmart_agreement/src/main/java/com/sykj/uusmart/mqtt/MqIotMessageUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2565">
+          <caret line="108" column="45" lean-forward="false" selection-start-line="108" selection-start-column="45" selection-end-line="108" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uusmart_voice/src/main/java/com/sykj/uusmart/controller/AlexaController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="38" column="13" lean-forward="false" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uusmart_voice/src/main/java/com/sykj/uusmart/service/ToAleaxService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="15" column="24" lean-forward="false" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uusmart_voice/src/main/java/com/sykj/uusmart/service/impl/ToAleaxServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1188">
+          <caret line="79" column="45" lean-forward="false" selection-start-line="79" selection-start-column="45" selection-end-line="79" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uusmart_agreement/src/main/java/com/sykj/uusmart/http/alexa/SaveAlexaOauthInfoDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="25" column="5" lean-forward="false" selection-start-line="23" selection-start-column="34" selection-end-line="25" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#646#647#0" expanded="true" />
+            <element signature="e#680#681#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uusmart_timing/src/main/java/com/sykj/uusmart/controller/TimingController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="61" column="65" lean-forward="false" selection-start-line="61" selection-start-column="65" selection-end-line="61" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uusmart_device/src/main/java/com/sykj/uusmart/UusmartDeviceApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uusmart_timing/src/main/java/com/sykj/uusmart/service/impl/DeviceTimingInfoServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="545">
+          <caret line="222" column="28" lean-forward="false" selection-start-line="222" selection-start-column="28" selection-end-line="222" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uusmart_agreement/src/main/java/com/sykj/uusmart/mqtt/MqIotUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="266" column="0" lean-forward="false" selection-start-line="266" selection-start-column="0" selection-end-line="266" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
