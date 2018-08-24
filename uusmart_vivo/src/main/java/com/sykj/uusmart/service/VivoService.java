@@ -1,9 +1,9 @@
 package com.sykj.uusmart.service;
 
 import com.alibaba.fastjson.JSONObject;
-import com.sykj.uusmart.http.vivo.VivoCommonRespDTO;
-import com.sykj.uusmart.http.vivo.getOpenId.GetOpenIdReqDTO;
+import com.sykj.uusmart.http.ResponseDTO;
 import com.sykj.uusmart.http.vivo.tokenManager.GetTokenRespDTO;
+import com.sykj.uusmart.pojo.UserInfo;
 
 public interface VivoService {
 
@@ -13,15 +13,15 @@ public interface VivoService {
 
     String getOpenIdForVivo(String code);
 
-    GetTokenRespDTO userBinding(JSONObject getOpenIdJson);
+    ResponseDTO userBinding(JSONObject getOpenIdJson);
 
     /**
      * 注册用户
      * @return
      */
-    int registerUser(String vivoOpenId);
+    UserInfo registerUser(String vivoOpenId);
 
-    GetTokenRespDTO vivoUserLogin(String vivoOpenId);
+    ResponseDTO vivoUserLogin(UserInfo userInfo , String vivoOpenId);
 
     GetTokenRespDTO bindDerviceforVivo(String openId, String deviceId);
 }

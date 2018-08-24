@@ -2,12 +2,15 @@ package com.sykj.uusmart.controller;
 
 
 import com.alibaba.fastjson.JSONObject;
+import com.sykj.uusmart.Constants;
 import com.sykj.uusmart.exception.CustomRunTimeException;
+import com.sykj.uusmart.http.ResponseDTO;
 import com.sykj.uusmart.http.vivo.VivoCommonReqDTO;
 import com.sykj.uusmart.http.vivo.VivoCommonRespDTO;
 import com.sykj.uusmart.http.vivo.bindDervice.BindDerviceReq;
 import com.sykj.uusmart.http.vivo.getOpenId.GetOpenIdReqDTO;
 import com.sykj.uusmart.http.vivo.tokenManager.GetTokenRespDTO;
+import com.sykj.uusmart.pojo.UserInfo;
 import com.sykj.uusmart.service.VivoService;
 import com.sykj.uusmart.utils.GsonUtils;
 import io.swagger.annotations.Api;
@@ -35,24 +38,20 @@ public class VivoController extends BaseController{
 
 
     @ApiOperation(value="获取用户访问令牌")
-    @RequestMapping(value="/user/getOpenId", method = RequestMethod.POST)
+    @RequestMapping(value="user/getOpenId", method = RequestMethod.POST)
     public String getOpenId(@RequestBody @Valid GetOpenIdReqDTO reqDTO   ) throws CustomRunTimeException {
         String getOpenIdResult = vivoService.getOpenIdForVivo(reqDTO.getCode());
         JSONObject getOpenIdJson = JSONObject.parseObject( getOpenIdResult );
 
-        GetTokenRespDTO result = new GetTokenRespDTO();
+        ResponseDTO result = new ResponseDTO();
         if(getOpenIdJson.getString("code").equals("0")){
             //成功
             result = vivoService.userBinding(getOpenIdJson);
-            result.setCode("0");
-            result.setMsg("success");
         }else{
             //失败；
-            result.setCode("-1");
-            result.setMsg("error!");
+            throw new CustomRunTimeException(Constants.resultCode.SYSTEM_ERROR, Constants.systemError.SYSTEM_ERROR);
         }
         return GsonUtils.toJSON(result);
-//        return GsonUtils.toJSON(respDTO);
     }
 
     @ApiOperation(value="获取用户访问令牌")
@@ -62,7 +61,7 @@ public class VivoController extends BaseController{
         log.info(appId);
         log.info(reqDTO.getOpenId()+"-------------------------------------");
 //        log.info(" reqPam "+ GsonUtils.toJSON(pushDeviceMsgDTO));
-        GetTokenRespDTO respDTO = vivoService.vivoUserLogin(reqDTO.getOpenId());
+        ResponseDTO respDTO = vivoService.vivoUserLogin(null,reqDTO.getOpenId());
         return GsonUtils.toJSON(respDTO);
     }
 
@@ -78,15 +77,6 @@ public class VivoController extends BaseController{
         return GsonUtils.toJSON(respDTO);
     }
 
-    @ApiOperation(value="设备绑定到Vivo 云平台 ")
-    @RequestMapping(value="device/bind", method = RequestMethod.POST)
-    public String bindDerviceforVivo(@RequestBody @Valid BindDerviceReq reqDTO ) throws CustomRunTimeException {
-//        redisTemplate.opsForList().leftPush( "", )
-        log.info("openId 为："+ reqDTO.getOpenId() + ";drevice 为 ："+reqDTO.getDeviceId() );
-//        log.info(" reqPam "+ GsonUtils.toJSON(pushDeviceMsgDTO));
-//        GetTokenRespDTO respDTO = vivoService.bindDerviceforVivo(reqDTO.getOpenId() ,reqDTO.getDeviceId());
-//        return GsonUtils.toJSON(respDTO);
-        return GsonUtils.toJSON("");
-    }
+
 
 }
