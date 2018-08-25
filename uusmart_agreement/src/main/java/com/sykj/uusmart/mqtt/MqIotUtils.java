@@ -267,7 +267,7 @@ public class MqIotUtils {
         handleAdditionalData(mqIotMessage);
         //从redis里面获取id 设置msgId
         setMsgId(mqIotMessage.getMqIotMessageDTO());
-        MQTTUtils.push(mqIotMessage.getMqIotMessageDTO().getHeader().getDestId(), GsonUtils.toJSON(mqIotMessage.getMqIotMessageDTO()));
+        MQTTUtils.push(mqIotMessage.getMqIotMessageDTO().getHeader().getDestId() , GsonUtils.toJSON(mqIotMessage.getMqIotMessageDTO()) );
     }
 
     /**

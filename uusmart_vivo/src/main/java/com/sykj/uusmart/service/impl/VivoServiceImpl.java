@@ -4,16 +4,12 @@ import com.alibaba.fastjson.JSONObject;
 import com.google.gson.Gson;
 import com.sykj.uusmart.Constants;
 import com.sykj.uusmart.conf.ServiceConfig;
-import com.sykj.uusmart.controller.VivoController;
 import com.sykj.uusmart.exception.CustomRunTimeException;
 import com.sykj.uusmart.http.ResponseDTO;
 import com.sykj.uusmart.http.vivo.VivoCommonRespDTO;
+import com.sykj.uusmart.http.vivo.eventReport.EventReportDeviceReqDTO;
 import com.sykj.uusmart.http.vivo.tokenManager.GetTokenRespDTO;
 import com.sykj.uusmart.http.vivo.vivoUserLogin.VivoUserLoginRespDTO;
-import com.sykj.uusmart.mqtt.MQTTUtils;
-import com.sykj.uusmart.mqtt.MqIotMessageDTO;
-import com.sykj.uusmart.mqtt.MqIotUtils;
-import com.sykj.uusmart.mqtt.cmd.CmdListEnum;
 import com.sykj.uusmart.pojo.*;
 import com.sykj.uusmart.pojo.redis.UserLogin;
 import com.sykj.uusmart.repository.DeviceInfoRepository;
@@ -35,10 +31,7 @@ import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 @Service
@@ -105,15 +98,22 @@ public class VivoServiceImpl implements VivoService {
 //        GetTokenRespDTO respDTO = vivoUserTokenRedis.get(openId);
         GetTokenRespDTO respDTO = new GetTokenRespDTO();
         String refreshTokenName = serviceConfig.getREDIS_REFRESH_TOKEN_NAME()+ Constants.specialSymbol.COLOM + openId;
-        if(redisTemplate.hasKey(refreshTokenName) && refreshToken.equals(redisTemplate.opsForValue().get(refreshTokenName))){
-            respDTO.setAccessToken(SYStringUtils.getUUIDNotExistSymbol());
-            redisTemplate.opsForValue().set(serviceConfig.getREDIS_ACCESS_TOKEN_NAME()+ Constants.specialSymbol.COLOM + openId, respDTO, serviceConfig.getREDIS_ACCESS_TOKEN_INVALID_TIME(), TimeUnit.SECONDS);
-            respDTO.setCode("0");
-            respDTO.setMsg("success");
-        }else{
-            respDTO.setCode("3156");
-            respDTO.setMsg("refreshToken不存在");
+        if(redisTemplate.hasKey(refreshTokenName) ){
+            GetTokenRespDTO getTokenRespDTO = (GetTokenRespDTO)redisTemplate.opsForValue().get(refreshTokenName) ;
+            if(refreshToken.equals(getTokenRespDTO.getRefreshToken())){
+                respDTO.setAccessToken(SYStringUtils.getUUIDNotExistSymbol());
+                redisTemplate.opsForValue().set(serviceConfig.getREDIS_ACCESS_TOKEN_NAME()+ Constants.specialSymbol.COLOM + openId, respDTO, serviceConfig.getREDIS_ACCESS_TOKEN_INVALID_TIME(), TimeUnit.SECONDS);
+                respDTO.setCode("0");
+                respDTO.setMsg("success");
+
+                UserInfo userInfo = userInfoRepository.findUserInfoByVivoOpenId( openId);
+                userInfoRepository.updateUserTokenByUserId(respDTO.getAccessToken() , userInfo.getUserId());
+                return  respDTO;
+            }
         }
+        respDTO.setCode("3156");
+        respDTO.setMsg("refreshToken不存在");
+
         return respDTO;
     }
 
@@ -263,32 +263,22 @@ public class VivoServiceImpl implements VivoService {
         return new ResponseDTO(vivoUserLoginRespDTO);
     }
 
+
+
     @Override
-    public GetTokenRespDTO bindDerviceforVivo(String openId, String deviceId) {
-        GetTokenRespDTO respDTO = new GetTokenRespDTO();
-
-        DeviceInfo deviceinfo = deviceInfoRepository.findOne(Long.valueOf(deviceId));
-        respDTO.setMsg("");
-        respDTO.setCode("0");
-
-        JSONObject reqJson = new JSONObject();
-        reqJson.put("openId",openId);
-        reqJson.put("deviceId",deviceId);
-//        reqJson.put("series",reqDTO.getRefreshToken());
-//        reqJson.put("categoryCode",reqDTO.getExpireIn());
-
-//        附件参数，OV服务端不做处理，如果要处理，传json格式的字符串；
-//        reqJson.put("attachment",accessTokenCP);
-
-        Map<String,String> headMap = new HashMap<>();
-        headMap.put("appId",vivoAppId);
-        headMap.put("timestamp",new Date().getTime()+"");
-        headMap.put("nonce",SYStringUtils.getUUIDNotExistSymbol());
-
-//        result = VivoHttpUtils.httpPost(reqJson,reqAddress+"/v1/user/getOpenId",headMap,appKey);
-
-        return respDTO;
+    public boolean checkAccsssTokenNicety(String openId, String accessToken) {
+        boolean result = false;
+        String accessTokenName =  serviceConfig.getREDIS_ACCESS_TOKEN_NAME()+ Constants.specialSymbol.COLOM + openId;
+        if(redisTemplate.hasKey(accessTokenName)){
+            UserInfo userInfo = (UserInfo)redisTemplate.opsForValue().get(accessTokenName);
+            if(accessToken.equals(userInfo.getLoginToken())){
+                result = true;
+            }
+        }
+        return result;
     }
+
+
 
     public Short getOs(){
         Short os = 0;

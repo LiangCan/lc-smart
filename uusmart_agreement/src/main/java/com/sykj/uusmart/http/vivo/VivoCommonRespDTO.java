@@ -1,34 +1,65 @@
 package com.sykj.uusmart.http.vivo;
 
-import com.sykj.uusmart.Constants;
-import com.sykj.uusmart.utils.RegularExpressionUtils;
 import io.swagger.annotations.ApiModelProperty;
 
-import javax.validation.constraints.Pattern;
+import java.io.Serializable;
 
-public class VivoCommonRespDTO {
-    @ApiModelProperty(example = "返回码", required =true, value="返回码")
-    @Pattern(regexp= RegularExpressionUtils.PEGEX_EX_STR , message= Constants.systemError.PARAM_VALUE_INVALID )
-    private String code ;
-    @ApiModelProperty(example = "返回消息", required =true, value="返回消息 ")
-    @Pattern(regexp= RegularExpressionUtils.PEGEX_EX_STR , message= Constants.systemError.PARAM_VALUE_INVALID )
-    private String msg;
 
-    public String getCode() {
-        return code;
-    }
+public class VivoCommonRespDTO<T> implements Serializable {
 
-    public void setCode(String code) {
-        this.code = code;
-    }
+	private static final long serialVersionUID = 3997124446365032582L;
+	
+	/**
+	 * 错误码
+	 */
+	@ApiModelProperty(value = "错误码", required = true)
+	private String code = "1000";
+	@ApiModelProperty(value = "数据", required = true)
+	private T data;
+	@ApiModelProperty(value = "消息提示")
+	private String msg;
 
-    public String getMsg() {
-        return msg;
-    }
+	public VivoCommonRespDTO() {
+		super();
+	}
 
-    public void setMsg(String msg) {
-        this.msg = msg;
-    }
+	public VivoCommonRespDTO(String code, String msg ) {
+		super();
+		this.code = code;
+//		this.bizCode = bizCode;
+		this.msg = msg;
+	}
+
+	public VivoCommonRespDTO(String code, String msg, T data ) {
+		super();
+		this.code = code;
+		this.msg = msg;
+		this.data = data;
+	}
+
+	public String getCode() {
+		return code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getMsg() {
+		return msg;
+	}
+
+	public void setMsg(String msg) {
+		this.msg = msg;
+	}
+
+	public T getData() {
+		return data;
+	}
+
+	public void setData(T data) {
+		this.data = data;
+	}
 
 
 }

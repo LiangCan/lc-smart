@@ -23,5 +23,7 @@ public interface VivoService {
 
     ResponseDTO vivoUserLogin(UserInfo userInfo , String vivoOpenId);
 
-    GetTokenRespDTO bindDerviceforVivo(String openId, String deviceId);
+
+    boolean checkAccsssTokenNicety(String openId , String accsssToken);
+
 }

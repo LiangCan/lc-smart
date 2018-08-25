@@ -22,14 +22,6 @@ public interface UserInfoService {
     /** API 校验手机号码 */
     ResponseDTO checkAccount(AccountDTO acountDTO);
 
-    /** API 用户注册 */
-    ResponseDTO userRgister(UserRegisterDTO registerDTO);
-
-    /** API  获取校验码*/
-    ResponseDTO userGetCheckCOde(UserGetCheckCodeDTO userGetCheckCodeDTO);
-
-    /** API 用户登录 */
-    ResponseDTO userLogin(UserLoginDTO userLoginDTO);
 
     /** API 用户退出登录 */
     ResponseDTO userLoginOut(String token);

@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 
 import javax.persistence.Table;
 import java.util.List;
+import java.util.Map;
 
 @Repository
 @Table(name="t_device_info")
@@ -46,5 +47,6 @@ public interface DeviceInfoRepository extends CrudRepository<DeviceInfo, Long>{
     @Modifying(clearAutomatically = true)
     void updateMainDeviceId(@Param("deviceId") Long deviceId, @Param("mainDeviceId") Long mainDeviceId);
 
-
+    @Query(" FROM DeviceInfo WHERE  userId = :userId ")
+    List<Map<String ,Object>> findDeviceListByUserId(@Param("userId") Long userId);
 }

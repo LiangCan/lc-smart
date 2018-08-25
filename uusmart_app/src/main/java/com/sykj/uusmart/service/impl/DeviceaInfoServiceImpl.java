@@ -12,7 +12,10 @@ import com.sykj.uusmart.http.req.UserUpdateDeviceDTO;
 import com.sykj.uusmart.http.req.input.AddDeivceDTO;
 import com.sykj.uusmart.http.resp.RespDeviceListDTO;
 import com.sykj.uusmart.exception.CustomRunTimeException;
+import com.sykj.uusmart.http.vivo.bindDervice.BindDerviceReq;
 import com.sykj.uusmart.hystric.TimingServiceAPI;
+//import com.sykj.uusmart.hystric.VivoServiceAPI;
+import com.sykj.uusmart.hystric.VivoServiceAPI;
 import com.sykj.uusmart.hystric.WisdomServiceAPI;
 import com.sykj.uusmart.mqtt.MqIotMessageDTO;
 import com.sykj.uusmart.mqtt.MqIotMessageUtils;
@@ -84,10 +87,15 @@ public class DeviceaInfoServiceImpl implements DeviceInfoService {
     @Autowired
     WisdomServiceAPI wisdomServiceAPI;
 
+    @Autowired
+    VivoServiceAPI vivoServiceAPI;
+
     @Override
     @TxTransaction(isStart = true)
     public ResponseDTO userRisterDevice(UserAddDeviceDTO userAddDeviceDTO, ReqBaseDTO<IdDTO> timingReq) {
         Long uid = userInfoService.getUserId(true);
+
+        UserInfo userInfo = userInfoRepository.findOne(uid);
 
         Long hid = userAddDeviceDTO.getId();
         //家庭鉴权
@@ -167,6 +175,8 @@ public class DeviceaInfoServiceImpl implements DeviceInfoService {
             deviceInfoRepository.save(deviceInfo);
 
 
+//          获取设备的产品信息；
+            ProductInfo productInfo = productInfoRepository.findOne(addDeivceDTO.getPid());
 
             NexusUserDevice nexusUserDevic = new NexusUserDevice();
             nexusUserDevic.setDeviceId(deviceInfo.getDeviceId());
@@ -174,12 +184,20 @@ public class DeviceaInfoServiceImpl implements DeviceInfoService {
             nexusUserDevic.setCreateTime(System.currentTimeMillis());
             nexusUserDevic.setNudStatus(Constants.shortNumber.ONE);
             nexusUserDevic.setHid(hid);
-            nexusUserDevic.setDeviceIcon(deviceIcon);
+            nexusUserDevic.setDeviceIcon(productInfo.getProductIcon());
             nexusUserDevic.setRoomId(userAddDeviceDTO.getRoomId());
             nexusUserDevic.setRole(Constants.shortNumber.ONE);
             nexusUserDevic.setRemarks(deviceInfo.getDeviceName());
             nexusUserDeviceRepository.save(nexusUserDevic);
             dids.put(addDeivceDTO.getDeviceAddress(), deviceInfo.getDeviceId());
+
+            //            判断设备是否支持 vivi 和添加的用户是否属有vivo open ID
+            if(productInfo.isSupportVivo() &&  userInfo.getVivoOpenId() != null){
+                BindDerviceReq bindDerviceReq = new BindDerviceReq();
+                bindDerviceReq.setDeviceId(addDeivceDTO.getMainDeviceId().toString());
+                bindDerviceReq.setOpenId(userInfo.getVivoOpenId());
+//                vivoServiceAPI.bindDeviceForVivo(bindDerviceReq);
+            }
 
         }
         ExecutorUtils.cachedThreadPool.execute(new Runnable() {
