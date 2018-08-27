@@ -10,7 +10,7 @@ public class GetDeviceListForVivoResponseDTO {
 
     private String categoryCode;
 
-    private JsonObject attachment;
+//    private JsonObject attachment;
 //    attachment
 
 
@@ -39,11 +39,11 @@ public class GetDeviceListForVivoResponseDTO {
     }
 
 
-    public JsonObject getAttachment() {
-        return attachment;
-    }
-
-    public void setAttachment(JsonObject attachment) {
-        this.attachment = attachment;
-    }
+//    public JsonObject getAttachment() {
+//        return attachment;
+//    }
+//
+//    public void setAttachment(JsonObject attachment) {
+//        this.attachment = attachment;
+//    }
 }

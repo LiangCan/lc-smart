@@ -15,7 +15,7 @@ public class VivoCommonRespDTO<T> implements Serializable {
 	@ApiModelProperty(value = "错误码", required = true)
 	private String code = "1000";
 	@ApiModelProperty(value = "数据", required = true)
-	private T data;
+	private T devices;
 	@ApiModelProperty(value = "消息提示")
 	private String msg;
 
@@ -30,11 +30,11 @@ public class VivoCommonRespDTO<T> implements Serializable {
 		this.msg = msg;
 	}
 
-	public VivoCommonRespDTO(String code, String msg, T data ) {
+	public VivoCommonRespDTO(String code, String msg, T devices ) {
 		super();
 		this.code = code;
 		this.msg = msg;
-		this.data = data;
+		this.devices = devices;
 	}
 
 	public String getCode() {
@@ -53,13 +53,11 @@ public class VivoCommonRespDTO<T> implements Serializable {
 		this.msg = msg;
 	}
 
-	public T getData() {
-		return data;
+	public T getDevices() {
+		return devices;
 	}
 
-	public void setData(T data) {
-		this.data = data;
+	public void setDevices(T devices) {
+		this.devices = devices;
 	}
-
-
 }

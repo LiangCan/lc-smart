@@ -47,6 +47,6 @@ public interface DeviceInfoRepository extends CrudRepository<DeviceInfo, Long>{
     @Modifying(clearAutomatically = true)
     void updateMainDeviceId(@Param("deviceId") Long deviceId, @Param("mainDeviceId") Long mainDeviceId);
 
-    @Query(" FROM DeviceInfo WHERE  userId = :userId ")
-    List<Map<String ,Object>> findDeviceListByUserId(@Param("userId") Long userId);
+    @Query("FROM DeviceInfo WHERE  userId = :userId ")
+    List<DeviceInfo> findDeviceListByUserId(@Param("userId") Long userId);
 }
