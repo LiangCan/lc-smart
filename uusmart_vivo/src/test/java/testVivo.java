@@ -12,7 +12,8 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-public class testVivo {
+public class
+testVivo {
 
     private static final String vivoAppId = "8559240518239140180";
     private static final String clientId = "100000009";

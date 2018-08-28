@@ -4,6 +4,9 @@ import com.sykj.uusmart.Constants;
 import com.sykj.uusmart.http.vivo.VivoCommonReqDTO;
 import org.hibernate.validator.constraints.NotEmpty;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+
 public class BindDerviceReq extends VivoCommonReqDTO {
 
     @NotEmpty(message = Constants.systemError.PARAM_MISS)
@@ -16,4 +19,5 @@ public class BindDerviceReq extends VivoCommonReqDTO {
     public void setDeviceId(String deviceId) {
         this.deviceId = deviceId;
     }
+
 }

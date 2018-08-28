@@ -63,7 +63,7 @@ public class AuthFilter extends ZuulFilter {
         fileStatic.add("swagger");
         fileStatic.add("v2");
         fileStatic.add("upload");
-}
+    }
 
     @Override
     public Object run() {
