@@ -3,6 +3,7 @@ package com.sykj.uusmart.controller;
 
 import com.sykj.uusmart.Constants;
 import com.sykj.uusmart.exception.CustomRunTimeException;
+import com.sykj.uusmart.http.IdDTO;
 import com.sykj.uusmart.http.NameAndIdDTO;
 import com.sykj.uusmart.http.ReqBaseDTO;
 import com.sykj.uusmart.http.alexa.AleaxGetDeviceListDTO;
@@ -41,7 +42,6 @@ public class AlexaController extends BaseController{
     @ApiOperation(value="Alexa保持token")
     @RequestMapping(value="/alexa/save/token", method = RequestMethod.POST)
     public String alexaSaveToken(@RequestBody @Valid SaveAlexaOauthInfoDTO saveAlexaOauthInfoDTO, BindingResult bindingResult) throws CustomRunTimeException {
-
         return GsonUtils.toJSON(toAleaxService.alexaSaveToken(saveAlexaOauthInfoDTO));
     }
 
@@ -55,6 +55,11 @@ public class AlexaController extends BaseController{
 
     }
 
+    @ApiOperation(value="查询设备状态")
+    @RequestMapping(value="query/device/status", method = RequestMethod.POST)
+    public String userQueryStatus(@RequestBody @Valid IdDTO idDTO, BindingResult bindingResult) throws CustomRunTimeException {
+        return GsonUtils.toJSON(toAleaxService.userQueryStatus(idDTO));
+    }
 
     @ApiOperation(value="Alexa用户发送消息到设备中去")
     @RequestMapping(value="alexa/push/msg", method = RequestMethod.POST)

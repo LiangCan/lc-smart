@@ -8,6 +8,7 @@ import com.sykj.uusmart.http.NameAndIdDTO;
 import com.sykj.uusmart.http.ReqBaseDTO;
 import com.sykj.uusmart.http.ResponseDTO;
 import com.sykj.uusmart.http.req.UserAddWisdomDTO;
+import com.sykj.uusmart.http.req.UserOnOffObjectDTO;
 import com.sykj.uusmart.http.req.UserUpdateWisdomDTO;
 import com.sykj.uusmart.service.WisdomService;
 import com.sykj.uusmart.utils.GsonUtils;
@@ -77,4 +78,10 @@ public class WisdomController extends BaseController{
         return GsonUtils.toJSON(wisdomService.userUpdateWisdom(reqBaseDTO.gethG()));
     }
 
+    @ApiOperation(value="用户开关某个智能")
+    @RequestMapping(value="user/on/off.do")
+    public String userOnOffWisdom(@RequestBody @Valid ReqBaseDTO<UserOnOffObjectDTO> reqBaseDTO, BindingResult bindingResult)throws CustomRunTimeException {
+        validataBind(bindingResult);
+        return GsonUtils.toJSON(wisdomService.userOnOffWisdom(reqBaseDTO.gethG()));
+    }
 }

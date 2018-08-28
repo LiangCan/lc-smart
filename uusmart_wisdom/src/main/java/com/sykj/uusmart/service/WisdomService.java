@@ -5,6 +5,7 @@ import com.sykj.uusmart.http.IdDTO;
 import com.sykj.uusmart.http.NameAndIdDTO;
 import com.sykj.uusmart.http.ResponseDTO;
 import com.sykj.uusmart.http.req.UserAddWisdomDTO;
+import com.sykj.uusmart.http.req.UserOnOffObjectDTO;
 import com.sykj.uusmart.http.req.UserUpdateWisdomDTO;
 import com.sykj.uusmart.mqtt.MqIotMessage;
 import com.sykj.uusmart.mqtt.MqIotMessageDTO;
@@ -19,6 +20,8 @@ import java.util.Map;
  * Created by Liang on 2017/3/22.
  */
 public interface WisdomService {
+    ResponseDTO userOnOffWisdom(UserOnOffObjectDTO userOnOffObjectDTO);
+
     /** API  测试事务接口*/
     ResponseDTO testDelete(IdDTO idDTO);
 

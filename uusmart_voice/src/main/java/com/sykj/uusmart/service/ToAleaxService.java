@@ -1,5 +1,6 @@
 package com.sykj.uusmart.service;
 
+import com.sykj.uusmart.http.IdDTO;
 import com.sykj.uusmart.http.NameAndIdDTO;
 import com.sykj.uusmart.http.ReqBaseDTO;
 import com.sykj.uusmart.http.ResponseDTO;
@@ -14,6 +15,7 @@ import com.sykj.uusmart.http.dingdong.RespDingDongCmd;
  * Created by Administrator on 2018/7/12 0012.
  */
 public interface ToAleaxService {
+     ResponseDTO userQueryStatus(IdDTO dto);
 
      ResponseDTO alexaSaveToken(SaveAlexaOauthInfoDTO saveAlexaOauthInfoDTO);
 

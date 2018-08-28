@@ -4,6 +4,7 @@ package com.sykj.uusmart.service.impl;
 import com.sykj.uusmart.Constants;
 import com.sykj.uusmart.conf.ServiceConfig;
 import com.sykj.uusmart.exception.CustomRunTimeException;
+import com.sykj.uusmart.http.IdDTO;
 import com.sykj.uusmart.http.ResponseDTO;
 import com.sykj.uusmart.http.alexa.*;
 import com.sykj.uusmart.hystric.HelloService;
@@ -22,6 +23,7 @@ import com.sykj.uusmart.service.ToAleaxService;
 import com.sykj.uusmart.service.ToTiamMaoService;
 import com.sykj.uusmart.service.UserInfoService;
 import com.sykj.uusmart.utils.GsonUtils;
+import org.apache.http.util.TextUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -76,6 +78,22 @@ public class ToAleaxServiceImpl implements ToAleaxService {
 
     @Autowired
     StringRedisTemplate stringRedisTemplate;
+
+    @Override
+    public ResponseDTO userQueryStatus(IdDTO dto) {
+        DeviceInfo deviceInfo = deviceInfoRepository.findOne(dto.getId());
+        CustomRunTimeException.checkDeviceIsOffLine(deviceInfo,false);
+        DeviceStatusDTO deviceStatusDTO = new DeviceStatusDTO();
+        if(deviceInfo != null  & deviceInfo.getDeviceStatus() == Constants.mainStatus.SUCCESS && !TextUtils.isEmpty(deviceInfo.getStatusInfo())){
+            deviceStatusDTO.setS("1");
+
+        }else{
+            deviceStatusDTO.setS("0");
+            deviceStatusDTO.setConnectivity("UNREACHABLE");
+        }
+        return new ResponseDTO(deviceStatusDTO);
+    }
+
     @Override
     public ResponseDTO alexaSaveToken(SaveAlexaOauthInfoDTO saveAlexaOauthInfoDTO) {
         Long uid = redisFindId(saveAlexaOauthInfoDTO.getAccessToken());

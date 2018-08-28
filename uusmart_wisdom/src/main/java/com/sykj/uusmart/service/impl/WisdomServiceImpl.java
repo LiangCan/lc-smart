@@ -9,6 +9,7 @@ import com.sykj.uusmart.http.IdDTO;
 import com.sykj.uusmart.http.NameAndIdDTO;
 import com.sykj.uusmart.http.ResponseDTO;
 import com.sykj.uusmart.http.req.UserAddWisdomDTO;
+import com.sykj.uusmart.http.req.UserOnOffObjectDTO;
 import com.sykj.uusmart.http.req.UserUpdateWisdomDTO;
 import com.sykj.uusmart.http.req.input.AddWisdomConditionDTO;
 import com.sykj.uusmart.http.req.input.AddWisdomImplementDTO;
@@ -94,6 +95,29 @@ public class WisdomServiceImpl implements WisdomService {
     TestInfoRepository testInfoRepository;
 
     @Override
+    public ResponseDTO userOnOffWisdom(UserOnOffObjectDTO userOnOffObjectDTO) {
+        Long uid = userInfoService.getUserId(true);
+
+        Wisdom wisdom = wisdomRepository.findOne(userOnOffObjectDTO.getId());
+        CustomRunTimeException.checkNull(wisdom, " Wisdom ");
+
+        if(wisdom.getUserId() != uid){
+            CustomRunTimeException.checkQX(null, " Wisdom ");
+        }
+
+        if(userOnOffObjectDTO.getStatus().equals(Constants.shortNumber.ONE)){
+            List<WisdomCondition> conditionIds = wisdomConditionRepository.findByWidAndImplementTypeAndImplementStatus(wisdom.getWid());
+            List<WisdomImplement> implementIds = wisdomImplementRepository.findByWidAndImplementTypeAndImplementStatus(wisdom.getWid());
+            pushAddObjectDTO(wisdom, conditionIds, implementIds);
+        }else if(userOnOffObjectDTO.getStatus().equals(Constants.shortNumber.NINE)){
+            pushDeleteWisdomCmd(wisdom);
+        }
+
+        wisdomRepository.updateStatus(userOnOffObjectDTO.getStatus(), wisdom.getWid());
+        return new ResponseDTO(Constants.mainStatus.REQUEST_SUCCESS);
+    }
+
+    @Override
     @TxTransaction
     public ResponseDTO testDelete(IdDTO idDTO) {
         TestInfo testInfo = new TestInfo();
@@ -125,7 +149,7 @@ public class WisdomServiceImpl implements WisdomService {
         wisdom.setUpdateNum(wisdom.getUpdateNum().intValue() + Constants.shortNumber.ONE);
         wisdom.setCreateTime(System.currentTimeMillis());
         wisdom.setWisdomName(userUpdateWisdomDTO.getName());
-        wisdom.setWisdomStatus(userUpdateWisdomDTO.getWisdomStatus());
+//        wisdom.setWisdomStatus(userUpdateWisdomDTO.getWisdomStatus());
         wisdom.setWisdomType(userUpdateWisdomDTO.getType());
         wisdom.setWisdomIcon(userUpdateWisdomDTO.getWisdomIcon());
         wisdom.setAndOr(userUpdateWisdomDTO.getAndOrRun());
@@ -153,7 +177,7 @@ public class WisdomServiceImpl implements WisdomService {
         for (AddWisdomConditionDTO wisdomConditionDTO : wisdomConditionDTOList) {
             WisdomCondition wisdomCondition = new WisdomCondition();
             wisdomCondition.setWid(wisdom.getWid());
-            wisdomCondition.setConditionStatus(Constants.shortNumber.NINE);
+            wisdomCondition.setConditionStatus(Constants.shortNumber.ONE);
             wisdomCondition.setAppointment(wisdomConditionDTO.getAppointment());
             wisdomCondition.setConditionType(wisdomConditionDTO.getConditionType());
             wisdomCondition.setConditionName(wisdomConditionDTO.getConditionName());
@@ -330,11 +354,18 @@ public class WisdomServiceImpl implements WisdomService {
         Long uid = userInfoService.getUserId(true);
 
         Wisdom wisdom = wisdomRepository.byUserIdAndWidQuery(uid, idDTO.getId());
-
         CustomRunTimeException.checkNull(wisdom, "wisdom");
+        wisdomConditionRepository.deleteByWid(wisdom.getWid());
+        wisdomImplementRepository.deleteByWid(wisdom.getWid());
+        wisdomRepository.delete(wisdom.getWid());
+        pushDeleteWisdomCmd(wisdom);
+        return new ResponseDTO(Constants.mainStatus.REQUEST_SUCCESS);
+    }
+
+    public void pushDeleteWisdomCmd(Wisdom wisdom){
         List<WisdomCondition> conditions = wisdomConditionRepository.findIdsAllByWid(wisdom.getWid());
         for (WisdomCondition condition : conditions) {
-            wisdomConditionRepository.deleteByIdAndWid(condition.getId(), wisdom.getWid());
+
             if (condition.getConditionType() == Constants.shortNumber.TWO) {
                 DeviceInfo deviceInfo = deviceInfoRepository.findOne(condition.getId());
                 ExecutorUtils.cachedThreadPool.execute(new Runnable() {
@@ -350,7 +381,7 @@ public class WisdomServiceImpl implements WisdomService {
         }
         List<WisdomImplement> implementList = wisdomImplementRepository.findIdsAllByWid(wisdom.getWid());
         for (WisdomImplement wisdomImplement : implementList) {
-            wisdomImplementRepository.deleteByIdAndWid(wisdomImplement.getId(), wisdom.getWid());
+
             if (wisdomImplement.getImplementType() == Constants.shortNumber.TWO) {
                 DeviceInfo deviceInfo = deviceInfoRepository.findOne(wisdomImplement.getId());
                 ExecutorUtils.cachedThreadPool.execute(new Runnable() {
@@ -363,8 +394,6 @@ public class WisdomServiceImpl implements WisdomService {
                 });
             }
         }
-        wisdomRepository.delete(wisdom.getWid());
-        return new ResponseDTO(Constants.mainStatus.REQUEST_SUCCESS);
     }
 
 

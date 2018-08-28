@@ -37,11 +37,11 @@ public class UserUpdateWisdomDTO extends NameAndIdDTO {
     @ApiModelProperty(example = "name", required =true, value="名字,L(2~36)")
     private String wisdomIcon;
 
-    @NotNull( message = Constants.systemError.PARAM_MISS)
-    @Min(value = 1)
-    @Max(value = 2)
-    @ApiModelProperty(example = "1", required =true, value="状态,L(1~2)")
-    private Short wisdomStatus;
+//    @NotNull( message = Constants.systemError.PARAM_MISS)
+//    @Min(value = 1)
+//    @Max(value = 2)
+//    @ApiModelProperty(example = "1", required =true, value="状态,L(1~2)")
+//    private Short wisdomStatus;
 
     @NotNull( message = Constants.systemError.PARAM_MISS)
     @CheckLong(min=1, max =16)
@@ -70,13 +70,13 @@ public class UserUpdateWisdomDTO extends NameAndIdDTO {
         this.wisdomImplementDTOList = wisdomImplementDTOList;
     }
 
-    public Short getWisdomStatus() {
-        return wisdomStatus;
-    }
-
-    public void setWisdomStatus(Short wisdomStatus) {
-        this.wisdomStatus = wisdomStatus;
-    }
+//    public Short getWisdomStatus() {
+//        return wisdomStatus;
+//    }
+//
+//    public void setWisdomStatus(Short wisdomStatus) {
+//        this.wisdomStatus = wisdomStatus;
+//    }
 
     public Short getType() {
         return type;

@@ -30,8 +30,11 @@ public interface WisdomConditionRepository extends CrudRepository<WisdomConditio
     List<Long> findWidByDid(Long did);
 
 
-    @Query("SELECT   NEW WisdomCondition(id, wcid, conditionType) FROM WisdomCondition WHERE wid = ? ")
+    @Query("SELECT   NEW WisdomCondition(id, wcid, conditionType) FROM WisdomCondition WHERE wid = ?  AND conditionStatus = 1 AND  conditionType = 2 ")
     List<WisdomCondition> findIdsAllByWid(Long wid);
+
+    @Query("FROM WisdomCondition WHERE wid = ?  AND conditionStatus = 1 AND  conditionType = 2 ")
+    List<WisdomCondition>  findByWidAndImplementTypeAndImplementStatus(Long wid);
 
     @Modifying(clearAutomatically = true)
     @Query("DELETE FROM WisdomCondition WHERE id = ? AND wid = ? ")

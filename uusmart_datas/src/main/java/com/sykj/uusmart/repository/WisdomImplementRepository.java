@@ -25,6 +25,9 @@ public interface WisdomImplementRepository extends CrudRepository<WisdomImplemen
     @Query("SELECT NEW WisdomImplement(id, wiid, implementType) FROM WisdomImplement WHERE wid = ? AND implementType = 2 AND implementStatus = 1")
     List<WisdomImplement> findIdsAllByWid(Long wid);
 
+    @Query("FROM WisdomImplement WHERE wid = ? AND implementType = 2 AND implementStatus = 1")
+    List<WisdomImplement> findByWidAndImplementTypeAndImplementStatus(Long wid);
+
     @Modifying(clearAutomatically = true)
     @Query("DELETE FROM WisdomImplement WHERE id = ? AND wid = ? ")
     void deleteByIdAndWid(Long id, Long wid);

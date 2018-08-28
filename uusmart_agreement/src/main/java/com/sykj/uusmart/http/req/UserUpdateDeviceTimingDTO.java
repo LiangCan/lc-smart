@@ -19,7 +19,7 @@ public class UserUpdateDeviceTimingDTO extends IdDTO{
     @NotNull(message = Constants.systemError.PARAM_MISS)
     @CheckLong(max = 16, min = 1)
     @ApiModelProperty(example = "1", required=true, value = "定时任务的ID ,L(1~16)")
-    private Long timingId;
+    private Long dtId;
 
     @NotNull(message = Constants.systemError.PARAM_MISS)
     @Size(max = 32, min = 2, message = Constants.systemError.PARAM_VALUE_LENGTH)
@@ -44,26 +44,26 @@ public class UserUpdateDeviceTimingDTO extends IdDTO{
     @ApiModelProperty(example = "self", required=true, value = "模型(once,every,week,rest,self) ,L(2~32)")
     private String dtMode;
 
-    @NotNull( message = Constants.systemError.PARAM_MISS)
-    @Min(value = 1)
-    @Max(value = 2)
-    @ApiModelProperty(example = "1", required =true, value="状态,L(1~2)")
-    private Short dtStatus;
+//    @NotNull( message = Constants.systemError.PARAM_MISS)
+//    @Min(value = 1)
+//    @Max(value = 2)
+//    @ApiModelProperty(example = "1", required =true, value="状态,L(1~2)")
+//    private Short dtStatus;
 
-    public Short getDtStatus() {
-        return dtStatus;
+//    public Short getDtStatus() {
+//        return dtStatus;
+//    }
+//
+//    public void setDtStatus(Short dtStatus) {
+//        this.dtStatus = dtStatus;
+//    }
+
+    public Long getDtId() {
+        return dtId;
     }
 
-    public void setDtStatus(Short dtStatus) {
-        this.dtStatus = dtStatus;
-    }
-
-    public Long getTimingId() {
-        return timingId;
-    }
-
-    public void setTimingId(Long timingId) {
-        this.timingId = timingId;
+    public void setDtId(Long dtId) {
+        this.dtId = dtId;
     }
 
     public String getDtDays() {
