@@ -8,13 +8,13 @@ import java.util.List;
 @ApiModel
 public class VivoStatusQueryReqDTO extends VivoCommonReqDTO {
 
-    List<GetDeviceListForVivoResponseDTO> devices;
+    List<VivoStatusQueryRequestDTO> devices;
 
-    public List<GetDeviceListForVivoResponseDTO> getDevices() {
+    public List<VivoStatusQueryRequestDTO> getDevices() {
         return devices;
     }
 
-    public void setDevices(List<GetDeviceListForVivoResponseDTO> devices) {
+    public void setDevices(List<VivoStatusQueryRequestDTO> devices) {
         this.devices = devices;
     }
 }

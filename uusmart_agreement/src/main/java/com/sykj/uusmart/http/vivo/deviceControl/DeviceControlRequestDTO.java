@@ -1,10 +1,11 @@
 package com.sykj.uusmart.http.vivo.deviceControl;
+import  java.util.*;
 
 public class DeviceControlRequestDTO {
 
     private String deviceId;
 
-    private DevicePropertiesData properties;
+    private Map<String,String> properties;
 
     public String getDeviceId() {
         return deviceId;
@@ -14,11 +15,11 @@ public class DeviceControlRequestDTO {
         this.deviceId = deviceId;
     }
 
-    public DevicePropertiesData getProperties() {
+    public Map<String, String> getProperties() {
         return properties;
     }
 
-    public void setProperties(DevicePropertiesData properties) {
+    public void setProperties(Map<String, String> properties) {
         this.properties = properties;
     }
 }

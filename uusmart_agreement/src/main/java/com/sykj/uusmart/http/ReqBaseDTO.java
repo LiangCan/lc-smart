@@ -27,7 +27,7 @@ public class ReqBaseDTO<T>{
 
     private T hG;//请求体
 
-    @Size(max = 36, min = 36, message =  Constants.systemError.PARAM_VALUE_LENGTH)
+    @Size(max = 36, min = 32, message =  Constants.systemError.PARAM_VALUE_LENGTH)
     @ApiModelProperty(value="用户token,  L(36)", example ="54d5f2b6-889c-40dd-bd62-2b16031ba474")
     private String hC;
 
