@@ -49,7 +49,7 @@ public interface WisdomImplementRepository extends CrudRepository<WisdomImplemen
     /**
      * 查找设备的所有相关的WID
      */
-    @Query("SELECT DISTINCT(wid) FROM WisdomImplement WHERE id = ? AND implementType = 2")
+    @Query("SELECT DISTINCT(wid) FROM WisdomImplement WHERE id = ? AND implementType = 2 AND implementStatus = 1")
     List<Long> findWidByDid(Long did);
 
     /**

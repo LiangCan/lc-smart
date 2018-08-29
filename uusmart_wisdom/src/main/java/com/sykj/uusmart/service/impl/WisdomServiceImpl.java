@@ -420,6 +420,9 @@ public class WisdomServiceImpl implements WisdomService {
             for (Long wid : wids) {
                 if (!mqIotSysObjectDTO.getDatas().containsKey(wid)) {
                     Wisdom wisdom = wisdomRepository.findOne(wid);
+                    if(wisdom == null || wisdom.getWisdomStatus().equals(Constants.shortNumber.NINE)){
+                        continue;
+                    }
                     List<WisdomCondition> wisdomConditionList = wisdomConditionRepository.findAllByWidAndId(wisdom.getWid(), deviceInfo.getDeviceId());
                     handleCondition(wisdom, wisdomConditionList, pushMsgs, eventCodeS);
                 }
@@ -431,7 +434,10 @@ public class WisdomServiceImpl implements WisdomService {
             for (Long wid : wids) {
                 if (!mqIotSysObjectDTO.getDatas().containsKey(wid)) {
                     Wisdom wisdom = wisdomRepository.findOne(wid);
-
+                    if(wisdom == null || wisdom.getWisdomStatus().equals(Constants.shortNumber.NINE)){
+                        continue;
+                    }
+                    getWisdomEventCodes(eventCodeS, wid);
                     List<WisdomImplement> wisdomImplementList = wisdomImplementRepository.findAllByWidAndId(wisdom.getWid(), deviceInfo.getDeviceId());
                     handleImplent(wisdom, wisdomImplementList, pushMsgs, eventCodeS);
                 }
@@ -444,9 +450,8 @@ public class WisdomServiceImpl implements WisdomService {
         for (Long wid : mqIotSysObjectDTO.getDatas().keySet()) {
             Wisdom wisdom = wisdomRepository.findOne(wid);
 
-
             //没有这个ID 的智能,就发送删除
-            if (wisdom == null || !wids.contains(wid)) {
+            if (wisdom == null || !wids.contains(wid) || wisdom.getWisdomStatus().equals(Constants.shortNumber.NINE)) {
                 Map<String, String> deleteWisdomBody = MqIotMessageUtils.getDeleteWisdomCmd(wid, mqIotSysObjectDTO.getRole());
                 MqIotMessageDTO deleteWisdom = new MqIotMessageDTO(CmdListEnum.deleteObject, serviceConfig.getMQTT_CLIENT_NAME(), Constants.role.DEVICE + Constants.specialSymbol.URL_SEPARATE + deviceInfo.getDeviceId(), deleteWisdomBody, wid);
                 pushMsgs.add(deleteWisdom);
@@ -482,6 +487,7 @@ public class WisdomServiceImpl implements WisdomService {
         orAndS.put(Constants.shortNumber.ONE, "and");
         orAndS.put(Constants.shortNumber.TWO, "or");
     }
+
 
     public void getWisdomEventCodes(List<String> eventCodes, Long wid) {
         List<WisdomCondition> conditions = wisdomConditionRepository.findIdsAllByWid(wid);
@@ -590,7 +596,7 @@ public class WisdomServiceImpl implements WisdomService {
             role = Constants.role.APP;
 //            CustomRunTimeException.checkNull(userInfoRepository.findOne(id), "user");
         } else {
-            CustomRunTimeException.checkDeviceIsOffLine(deviceInfoRepository.findOne(id), true);
+            CustomRunTimeException.checkDeviceIsOffLine(deviceInfoRepository.findOne(id), false);
         }
 
         StringBuilder eventCode = new StringBuilder();

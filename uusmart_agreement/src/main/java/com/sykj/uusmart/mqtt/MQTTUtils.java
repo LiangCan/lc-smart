@@ -40,9 +40,9 @@ public class MQTTUtils {
             MQTT_CONNECT_STATUS = Constants.mainStatus.SUCCESS;
             log.info("MQTT "+ clientId +" 初始连接 " + tcp + " 成功 ");
             for(String subtopic:sub){
-//                MQTTUtils.sub("$queue/"+subtopic);
                 MQTTUtils.sub(subtopic);
             }
+//            MQTTUtils.sub("");
         } catch (Exception e) {
             log.error("MQTT 初始连接异常 正在重连", e);
             try {

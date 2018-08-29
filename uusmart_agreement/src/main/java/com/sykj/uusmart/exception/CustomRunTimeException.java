@@ -206,7 +206,7 @@ public class CustomRunTimeException extends RuntimeException {
             throw new CustomRunTimeException(Constants.resultCode.API_DATA_IS_NOT_NULL, Constants.systemError.API_DATA_IS_NOT_NULL, new Object[]{" Device "});
         }
         if(checkOffline){
-            if(deviceInfo.getDeviceStatus() != 1){
+            if(!deviceInfo.getDeviceStatus().equals(Constants.shortNumber.ONE) ){
                 throw new CustomRunTimeException(Constants.resultCode.DEVICE_IS_OFF_LINE, Constants.systemError.DEVICE_IS_OFF_LINE, new Object[]{String.valueOf(deviceInfo.getDeviceId())});
             }
         }

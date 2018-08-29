@@ -23,10 +23,17 @@ public interface DeviceTimingInfoRepository extends CrudRepository<DeviceTimingI
     @Query(" FROM DeviceTimingInfo WHERE deviceId = ? AND dtStatus = ?")
     List<DeviceTimingInfo> queryByDeviceIdAndDtStatus(Long deviceId, Short DtStatus);
 
+    @Query(" FROM DeviceTimingInfo WHERE dtid = ? AND dtStatus = ?")
+    DeviceTimingInfo findOneAndDtStauts(Long dtid, Short dtStatus);
+
     @Query(" FROM DeviceTimingInfo WHERE userId = ? AND dtId = ? ")
     DeviceTimingInfo queryByUserIdAndDtid(Long userId, Long dtId);
 
     @Modifying(clearAutomatically = true)
     @Query("DELETE FROM DeviceTimingInfo WHERE deviceId = ? ")
     void deleteByDeviceId(Long deviceId);
+
+    @Modifying(clearAutomatically = true)
+    @Query("UPDATE   DeviceTimingInfo SET dtStatus = ?  WHERE dtId = ? ")
+    void updateDtStatusByDtId(Short dtStatus, Long dtId);
 }

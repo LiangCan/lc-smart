@@ -96,6 +96,7 @@ public class DeviceTimingInfoServiceImpl implements DeviceTimingInfoService {
             MqIotMessageDTO mqIotMessageDTO = MqIotMessageUtils.getDeletebject(serviceConfig.getMQTT_CLIENT_NAME(), Constants.role.DEVICE + Constants.specialSymbol.URL_SEPARATE + deviceTimingInfo.getDeviceId(), mqIotTimerTaskDTO);
             mqIotUtils.mqIotPushMsg(deviceInfo, mqIotMessageDTO);
         }
+        deviceTimingInfoRepository.updateDtStatusByDtId(userOnOffObjectDTO.getStatus(), deviceTimingInfo.getDtid());
         return new ResponseDTO(Constants.mainStatus.REQUEST_SUCCESS);
     }
 
@@ -170,7 +171,7 @@ public class DeviceTimingInfoServiceImpl implements DeviceTimingInfoService {
 
         if (Constants.TIMING_ROLE.equals(mqIotSysObjectDTO.getRole())){
             for(Long timingId : mqIotSysObjectDTO.getDatas().keySet()){
-                DeviceTimingInfo deviceTimingInfo = deviceTimingInfoRepository.findOne(timingId);
+                DeviceTimingInfo deviceTimingInfo = deviceTimingInfoRepository.findOneAndDtStauts(timingId, Constants.shortNumber.ONE);
                 if(deviceTimingInfo == null){
                     MqIotDeleteTimingBaseDTO mqIotTimerTaskDTO = MqIotMessageUtils.getDeleteTimingBody(timingId, ROLE);
                     pushMsgs.add(MqIotMessageUtils.getDeletebject(serviceConfig.getMQTT_CLIENT_NAME(), Constants.role.DEVICE + Constants.specialSymbol.URL_SEPARATE + deviceInfo.getDeviceId(), mqIotTimerTaskDTO));

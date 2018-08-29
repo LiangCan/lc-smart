@@ -47,10 +47,11 @@ public class WisdomCondition {
     public WisdomCondition() {
     }
 
-    public WisdomCondition(Long id, Long wcid, Short conditionType) {
+    public WisdomCondition(Long id, Long wcid, Short conditionType, Long wid) {
         this.wcid = wcid;
         this.id = id;
         this.conditionType = conditionType;
+        this.wid = wid;
     }
 
 //    public int getUpdateNum() {

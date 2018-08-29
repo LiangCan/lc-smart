@@ -4,24 +4,42 @@
     <bookmark url="file://$PROJECT_DIR$/uusmart_device/src/main/java/com/sykj/uusmart/service/impl/UserServiceImpl.java" line="33" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="68fc77c8-3835-421e-8191-3aa763f24a20" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uusmart_agreement/src/main/java/com/sykj/uusmart/http/req/UserOnOffObjectDTO.java" />
+    <list default="true" id="68fc77c8-3835-421e-8191-3aa763f24a20" name="Default" comment="1. 添加开关定时， 开关智能 接口">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mqttTest/.idea/compiler.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mqttTest/.idea/encodings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mqttTest/.idea/kotlinc.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mqttTest/.idea/libraries/Maven__com_google_code_gson_gson_2_8_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mqttTest/.idea/libraries/Maven__org_eclipse_paho_org_eclipse_paho_client_mqttv3_1_0_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mqttTest/.idea/misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mqttTest/.idea/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mqttTest/.idea/mqttTest.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mqttTest/.idea/workspace.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mqttTest/mqtt/mqtt.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mqttTest/mqtt/pom.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mqttTest/mqtt/src/main/java/com/mqtt/test/CallBack.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mqttTest/mqtt/src/main/java/com/mqtt/test/HandeMqIotMsgTimeOut.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mqttTest/mqtt/src/main/java/com/mqtt/test/MQTTUtils.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mqttTest/mqtt/src/main/java/com/mqtt/test/MqIotHeaderDTO.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mqttTest/mqtt/src/main/java/com/mqtt/test/MqIotMessageDTO.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mqttTest/mqtt/src/main/java/com/mqtt/test/ScheduledFutureTask.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mqttTest/mqtt/src/main/java/com/mqtt/test/Test.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mqttTest/mqtt/target/classes/com/mqtt/test/CallBack.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mqttTest/mqtt/target/classes/com/mqtt/test/HandeMqIotMsgTimeOut.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mqttTest/mqtt/target/classes/com/mqtt/test/MQTTUtils.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mqttTest/mqtt/target/classes/com/mqtt/test/MqIotHeaderDTO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mqttTest/mqtt/target/classes/com/mqtt/test/MqIotMessageDTO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mqttTest/mqtt/target/classes/com/mqtt/test/Test.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uusmart_agreement/target/classes/com/sykj/uusmart/exception/CustomRunTimeException.class" afterPath="$PROJECT_DIR$/uusmart_agreement/target/classes/com/sykj/uusmart/exception/CustomRunTimeException.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uusmart_agreement/target/classes/com/sykj/uusmart/mqtt/MQTTUtils.class" afterPath="$PROJECT_DIR$/uusmart_agreement/target/classes/com/sykj/uusmart/mqtt/MQTTUtils.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uusmart_agreement/src/main/java/com/sykj/uusmart/http/ReqBaseDTO.java" afterPath="$PROJECT_DIR$/uusmart_agreement/src/main/java/com/sykj/uusmart/http/ReqBaseDTO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uusmart_agreement/src/main/java/com/sykj/uusmart/http/req/UserUpdateDeviceTimingDTO.java" afterPath="$PROJECT_DIR$/uusmart_agreement/src/main/java/com/sykj/uusmart/http/req/UserUpdateDeviceTimingDTO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uusmart_agreement/src/main/java/com/sykj/uusmart/http/req/UserUpdateWisdomDTO.java" afterPath="$PROJECT_DIR$/uusmart_agreement/src/main/java/com/sykj/uusmart/http/req/UserUpdateWisdomDTO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uusmart_agreement/src/main/java/com/sykj/uusmart/exception/CustomRunTimeException.java" afterPath="$PROJECT_DIR$/uusmart_agreement/src/main/java/com/sykj/uusmart/exception/CustomRunTimeException.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uusmart_agreement/src/main/java/com/sykj/uusmart/mqtt/MQTTUtils.java" afterPath="$PROJECT_DIR$/uusmart_agreement/src/main/java/com/sykj/uusmart/mqtt/MQTTUtils.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uusmart_datas/src/main/java/com/sykj/uusmart/pojo/WisdomCondition.java" afterPath="$PROJECT_DIR$/uusmart_datas/src/main/java/com/sykj/uusmart/pojo/WisdomCondition.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uusmart_datas/src/main/java/com/sykj/uusmart/repository/DeviceTimingInfoRepository.java" afterPath="$PROJECT_DIR$/uusmart_datas/src/main/java/com/sykj/uusmart/repository/DeviceTimingInfoRepository.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uusmart_datas/src/main/java/com/sykj/uusmart/repository/WisdomConditionRepository.java" afterPath="$PROJECT_DIR$/uusmart_datas/src/main/java/com/sykj/uusmart/repository/WisdomConditionRepository.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uusmart_datas/src/main/java/com/sykj/uusmart/repository/WisdomImplementRepository.java" afterPath="$PROJECT_DIR$/uusmart_datas/src/main/java/com/sykj/uusmart/repository/WisdomImplementRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uusmart_timing/src/main/java/com/sykj/uusmart/controller/TimingController.java" afterPath="$PROJECT_DIR$/uusmart_timing/src/main/java/com/sykj/uusmart/controller/TimingController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uusmart_timing/src/main/java/com/sykj/uusmart/service/DeviceTimingInfoService.java" afterPath="$PROJECT_DIR$/uusmart_timing/src/main/java/com/sykj/uusmart/service/DeviceTimingInfoService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uusmart_timing/src/main/java/com/sykj/uusmart/service/impl/DeviceTimingInfoServiceImpl.java" afterPath="$PROJECT_DIR$/uusmart_timing/src/main/java/com/sykj/uusmart/service/impl/DeviceTimingInfoServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uusmart_voice/src/main/java/com/sykj/uusmart/controller/AlexaController.java" afterPath="$PROJECT_DIR$/uusmart_voice/src/main/java/com/sykj/uusmart/controller/AlexaController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uusmart_voice/src/main/java/com/sykj/uusmart/service/ToAleaxService.java" afterPath="$PROJECT_DIR$/uusmart_voice/src/main/java/com/sykj/uusmart/service/ToAleaxService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uusmart_voice/src/main/java/com/sykj/uusmart/service/impl/ToAleaxServiceImpl.java" afterPath="$PROJECT_DIR$/uusmart_voice/src/main/java/com/sykj/uusmart/service/impl/ToAleaxServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uusmart_wisdom/src/main/java/com/sykj/uusmart/controller/WisdomController.java" afterPath="$PROJECT_DIR$/uusmart_wisdom/src/main/java/com/sykj/uusmart/controller/WisdomController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uusmart_wisdom/src/main/java/com/sykj/uusmart/service/WisdomService.java" afterPath="$PROJECT_DIR$/uusmart_wisdom/src/main/java/com/sykj/uusmart/service/WisdomService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uusmart_wisdom/src/main/java/com/sykj/uusmart/service/impl/WisdomServiceImpl.java" afterPath="$PROJECT_DIR$/uusmart_wisdom/src/main/java/com/sykj/uusmart/service/impl/WisdomServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uusmart_zuul/src/main/java/com/sykj/uusmart/filter/AuthFilter.java" afterPath="$PROJECT_DIR$/uusmart_zuul/src/main/java/com/sykj/uusmart/filter/AuthFilter.java" />
     </list>
     <ignored path="$PROJECT_DIR$/uusmart_device/target/" />
     <ignored path="$PROJECT_DIR$/uusmart_app/target/" />
@@ -76,8 +94,8 @@
       <file leaf-file-name="DeviceTimingInfoServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/uusmart_timing/src/main/java/com/sykj/uusmart/service/impl/DeviceTimingInfoServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-104">
-              <caret line="176" column="29" lean-forward="false" selection-start-line="176" selection-start-column="29" selection-end-line="176" selection-end-column="29" />
+            <state relative-caret-position="226">
+              <caret line="163" column="86" lean-forward="false" selection-start-line="163" selection-start-column="86" selection-end-line="163" selection-end-column="86" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -85,91 +103,93 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AuthFilter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/uusmart_zuul/src/main/java/com/sykj/uusmart/filter/AuthFilter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1570">
-              <caret line="89" column="12" lean-forward="false" selection-start-line="89" selection-start-column="12" selection-end-line="89" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ReqBaseDTO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/uusmart_agreement/src/main/java/com/sykj/uusmart/http/ReqBaseDTO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="34" column="50" lean-forward="false" selection-start-line="34" selection-start-column="50" selection-end-line="34" selection-end-column="50" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bootstrap.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/uusmart_timing/src/main/resources/bootstrap.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bootstrap-test.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/uusmart_timing/src/main/resources/bootstrap-test.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bootstrap-prd.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/uusmart_timing/src/main/resources/bootstrap-prd.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="15" column="12" lean-forward="false" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MqIotMessageUtils.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/uusmart_agreement/src/main/java/com/sykj/uusmart/mqtt/MqIotMessageUtils.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="75" column="105" lean-forward="false" selection-start-line="75" selection-start-column="92" selection-end-line="75" selection-end-column="105" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TimingController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/uusmart_timing/src/main/java/com/sykj/uusmart/controller/TimingController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
-              <caret line="63" column="5" lean-forward="true" selection-start-line="63" selection-start-column="5" selection-end-line="63" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DeviceTimingInfoService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/uusmart_timing/src/main/java/com/sykj/uusmart/service/DeviceTimingInfoService.java">
+      <file leaf-file-name="WisdomRepository.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/uusmart_datas/src/main/java/com/sykj/uusmart/repository/WisdomRepository.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="189">
-              <caret line="16" column="31" lean-forward="false" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+              <caret line="17" column="17" lean-forward="false" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserUpdateDeviceTimingDTO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/uusmart_agreement/src/main/java/com/sykj/uusmart/http/req/UserUpdateDeviceTimingDTO.java">
+      <file leaf-file-name="WisdomImplementRepository.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/uusmart_datas/src/main/java/com/sykj/uusmart/repository/WisdomImplementRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="548">
-              <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="2" selection-end-line="58" selection-end-column="7" />
+            <state relative-caret-position="1134">
+              <caret line="52" column="38" lean-forward="false" selection-start-line="52" selection-start-column="38" selection-end-line="52" selection-end-column="38" />
+              <folding>
+                <marker date="1535509638971" expanded="true" signature="2433:2734" ph="SELECT i.id,... t_wisdom_implement" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DeviceTimingInfoRepository.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/uusmart_datas/src/main/java/com/sykj/uusmart/repository/DeviceTimingInfoRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="387">
+              <caret line="26" column="27" lean-forward="false" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DeviceVersionInfoRepository.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/uusmart_datas/src/main/java/com/sykj/uusmart/repository/DeviceVersionInfoRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="648">
+              <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DeviceInfo.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/uusmart_datas/src/main/java/com/sykj/uusmart/pojo/DeviceInfo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="513">
+              <caret line="43" column="32" lean-forward="false" selection-start-line="43" selection-start-column="18" selection-end-line="43" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CacheMessageRepository.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/uusmart_datas/src/main/java/com/sykj/uusmart/repository/CacheMessageRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="16" column="17" lean-forward="false" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DeviceInfoRepository.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/uusmart_datas/src/main/java/com/sykj/uusmart/repository/DeviceInfoRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-221">
+              <caret line="17" column="17" lean-forward="false" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DeviceMesgLogRepository.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/uusmart_datas/src/main/java/com/sykj/uusmart/repository/DeviceMesgLogRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="14" column="17" lean-forward="false" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WisdomConditionRepository.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/uusmart_datas/src/main/java/com/sykj/uusmart/repository/WisdomConditionRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="353">
+              <caret line="33" column="34" lean-forward="false" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -188,11 +208,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>setSou</find>
-      <find>setSource</find>
-      <find>setSourceI</find>
-      <find>setSourceId</find>
-      <find>setRespDestId</find>
       <find>getNotifyRefreshCmd</find>
       <find>`</find>
       <find>conditionType</find>
@@ -218,6 +233,11 @@
       <find>@Vi</find>
       <find>@Vl</find>
       <find>@V</find>
+      <find>sys</find>
+      <find>同步</find>
+      <find>p</find>
+      <find>pag</find>
+      <find>page</find>
     </findStrings>
     <replaceStrings>
       <replace>&gt;</replace>
@@ -247,16 +267,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/uusmart_agreement/src/main/java/com/sykj/uusmart/mqtt/cmd/timing/input/MqIotTimerTaskDTO.java" />
-        <option value="$PROJECT_DIR$/uusmart_datas/src/main/java/com/sykj/uusmart/repository/DeviceTimingInfoRepository.java" />
-        <option value="$PROJECT_DIR$/uusmart_timing/src/main/java/com/sykj/uusmart/handle/CmdHandle.java" />
-        <option value="$PROJECT_DIR$/uusmart_timing/src/main/java/com/sykj/uusmart/mqtt/CallBack.java" />
         <option value="$PROJECT_DIR$/uusmart_datas/src/main/java/com/sykj/uusmart/pojo/DeviceInfo.java" />
         <option value="$PROJECT_DIR$/uusmart_wisdom/src/main/resources/bootstrap.yml" />
         <option value="$PROJECT_DIR$/uusmart_agreement/src/main/java/com/sykj/uusmart/mqtt/cmd/CmdListEnum.java" />
         <option value="$PROJECT_DIR$/uusmart-web-parent/uusmart-admin/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/uusmart-web-parent/pom.xml" />
-        <option value="$PROJECT_DIR$/uusmart_wisdom/src/main/java/com/sykj/uusmart/mqtt/CallBack.java" />
         <option value="$PROJECT_DIR$/uusmart_datas/src/main/java/com/sykj/uusmart/pojo/DeviceTimingInfo.java" />
         <option value="$PROJECT_DIR$/uusmart_agreement/src/main/java/com/sykj/uusmart/validator/ValidatorUtils.java" />
         <option value="$PROJECT_DIR$/uusmart_agreement/src/main/java/com/sykj/uusmart/http/tianmao/TMDevice.java" />
@@ -290,14 +305,19 @@
         <option value="$PROJECT_DIR$/uusmart_wisdom/src/main/java/com/sykj/uusmart/controller/WisdomController.java" />
         <option value="$PROJECT_DIR$/uusmart_wisdom/src/main/java/com/sykj/uusmart/service/WisdomService.java" />
         <option value="$PROJECT_DIR$/uusmart_agreement/src/main/java/com/sykj/uusmart/http/req/UserUpdateWisdomDTO.java" />
-        <option value="$PROJECT_DIR$/uusmart_datas/src/main/java/com/sykj/uusmart/repository/WisdomImplementRepository.java" />
-        <option value="$PROJECT_DIR$/uusmart_datas/src/main/java/com/sykj/uusmart/repository/WisdomConditionRepository.java" />
-        <option value="$PROJECT_DIR$/uusmart_wisdom/src/main/java/com/sykj/uusmart/service/impl/WisdomServiceImpl.java" />
         <option value="$PROJECT_DIR$/uusmart_agreement/src/main/java/com/sykj/uusmart/http/req/UserUpdateDeviceTimingDTO.java" />
         <option value="$PROJECT_DIR$/uusmart_timing/src/main/java/com/sykj/uusmart/service/DeviceTimingInfoService.java" />
-        <option value="$PROJECT_DIR$/uusmart_timing/src/main/java/com/sykj/uusmart/service/impl/DeviceTimingInfoServiceImpl.java" />
         <option value="$PROJECT_DIR$/uusmart_agreement/src/main/java/com/sykj/uusmart/http/ReqBaseDTO.java" />
         <option value="$PROJECT_DIR$/uusmart_timing/src/main/java/com/sykj/uusmart/controller/TimingController.java" />
+        <option value="$PROJECT_DIR$/uusmart_wisdom/src/main/java/com/sykj/uusmart/mqtt/CallBack.java" />
+        <option value="$PROJECT_DIR$/uusmart_agreement/src/main/java/com/sykj/uusmart/mqtt/MQTTUtils.java" />
+        <option value="$PROJECT_DIR$/uusmart_datas/src/main/java/com/sykj/uusmart/repository/WisdomImplementRepository.java" />
+        <option value="$PROJECT_DIR$/uusmart_agreement/src/main/java/com/sykj/uusmart/exception/CustomRunTimeException.java" />
+        <option value="$PROJECT_DIR$/uusmart_wisdom/src/main/java/com/sykj/uusmart/service/impl/WisdomServiceImpl.java" />
+        <option value="$PROJECT_DIR$/uusmart_datas/src/main/java/com/sykj/uusmart/pojo/WisdomCondition.java" />
+        <option value="$PROJECT_DIR$/uusmart_datas/src/main/java/com/sykj/uusmart/repository/WisdomConditionRepository.java" />
+        <option value="$PROJECT_DIR$/uusmart_timing/src/main/java/com/sykj/uusmart/service/impl/DeviceTimingInfoServiceImpl.java" />
+        <option value="$PROJECT_DIR$/uusmart_datas/src/main/java/com/sykj/uusmart/repository/DeviceTimingInfoRepository.java" />
       </list>
     </option>
   </component>
@@ -389,6 +409,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -401,11 +424,160 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UUSmart" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UUSmart" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="uusmart_datas" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UUSmart" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UUSmart" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="uusmart_datas" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UUSmart" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UUSmart" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="uusmart_datas" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UUSmart" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UUSmart" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="uusmart_datas" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="uusmart" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UUSmart" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UUSmart" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="uusmart_datas" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="uusmart" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="repository" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UUSmart" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UUSmart" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="uusmart_datas" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="uusmart" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pojo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -453,7 +625,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.UusmartAppApplication">
+  <component name="RunManager" selected="Spring Boot.UusmartTimingApplication">
     <configuration default="false" name="UusmartTimingApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -1141,7 +1313,9 @@
       <workItem from="1535168844071" duration="5736000" />
       <workItem from="1535332729533" duration="4106000" />
       <workItem from="1535419403574" duration="490000" />
-      <workItem from="1535422189762" duration="12866000" />
+      <workItem from="1535422189762" duration="19402000" />
+      <workItem from="1535505666391" duration="11700000" />
+      <workItem from="1535532497011" duration="1439000" />
     </task>
     <task id="LOCAL-00001" summary="asdserfrersgfvadsvfaergergadf">
       <created>1532672609181</created>
@@ -1255,11 +1429,32 @@
       <option name="project" value="LOCAL" />
       <updated>1535100446814</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="1. 添加开关定时， 开关智能 接口">
+      <created>1535441059557</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1535441059557</updated>
+    </task>
+    <task id="LOCAL-00018" summary="1. 添加开关定时， 开关智能 接口">
+      <created>1535442417764</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1535442417764</updated>
+    </task>
+    <task id="LOCAL-00019" summary="1. 添加开关定时， 开关智能 接口">
+      <created>1535442450413</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1535442450413</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1008551000" />
+    <option name="totallyTimeSpent" value="1028226000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1284,29 +1479,29 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13929313" sideWeight="0.83491886" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17255718" sideWeight="0.83491886" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32848233" sideWeight="0.49804142" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1933472" sideWeight="0.42865136" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12889813" sideWeight="0.68047005" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27962577" sideWeight="0.82745314" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15800416" sideWeight="0.68047005" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952183" sideWeight="0.82745314" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3253638" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28691274" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20861298" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32917964" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1933472" sideWeight="0.42865136" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12758814" sideWeight="0.1356132" order="11" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32917964" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1400,7 +1595,8 @@
     <MESSAGE value="1. 修改发送消息机制 + 蓝牙往 它的主设备（网关）发送消息&#10;2. 修改添加设备接口字段 addDeviceDTO" />
     <MESSAGE value="1. 完善发送消息机制 + 蓝牙往 它的主设备（网关）发送消息" />
     <MESSAGE value="1. 完善定时的发送消息机制" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. 完善定时的发送消息机制" />
+    <MESSAGE value="1. 添加开关定时， 开关智能 接口" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. 添加开关定时， 开关智能 接口" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1411,14 +1607,8 @@
           <properties />
           <option name="timeStamp" value="195" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/uusmart_timing/src/main/java/com/sykj/uusmart/service/impl/DeviceTimingInfoServiceImpl.java</url>
-          <line>179</line>
-          <properties />
-          <option name="timeStamp" value="204" />
-        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="205" />
+      <option name="time" value="219" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1427,147 +1617,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/uusmart_voice/src/main/java/com/sykj/uusmart/service/impl/ToBaiDuServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="559">
-          <caret line="113" column="44" lean-forward="false" selection-start-line="113" selection-start-column="44" selection-end-line="113" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uusmart_voice/src/main/java/com/sykj/uusmart/service/impl/ToDingDongerviceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1728">
-          <caret line="93" column="9" lean-forward="false" selection-start-line="93" selection-start-column="9" selection-end-line="93" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uusmart_voice/src/main/resources/bootstrap-prd.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uusmart_datas/src/main/java/com/sykj/uusmart/pojo/ProductInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1485">
-          <caret line="56" column="32" lean-forward="false" selection-start-line="56" selection-start-column="32" selection-end-line="56" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uusmart_agreement/src/main/java/com/sykj/uusmart/http/alexa/RespAlexaAddDeviceDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uusmart_agreement/src/main/java/com/sykj/uusmart/http/alexa/PropertiesDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="7" column="50" lean-forward="false" selection-start-line="7" selection-start-column="50" selection-end-line="7" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uusmart_agreement/src/main/java/com/sykj/uusmart/http/alexa/AleaxPushDeviceMsgDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="23" column="55" lean-forward="false" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uusmart_agreement/src/main/java/com/sykj/uusmart/http/alexa/SaveAlexaOauthInfoDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="25" column="5" lean-forward="false" selection-start-line="23" selection-start-column="34" selection-end-line="25" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uusmart_device/src/main/java/com/sykj/uusmart/UusmartDeviceApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uusmart_agreement/src/main/java/com/sykj/uusmart/mqtt/MqIotUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4545">
-          <caret line="204" column="13" lean-forward="true" selection-start-line="204" selection-start-column="13" selection-end-line="204" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uusmart_voice/src/main/java/com/sykj/uusmart/service/ToAleaxService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="16" column="22" lean-forward="false" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uusmart_agreement/src/main/java/com/sykj/uusmart/http/alexa/DeviceStatusDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/4.3.14.RELEASE/spring-context-4.3.14.RELEASE.jar!/org/springframework/validation/BindingResult.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="2" column="47" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uusmart_app/src/main/java/com/sykj/uusmart/controller/HomeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="729">
-          <caret line="38" column="14" lean-forward="false" selection-start-line="38" selection-start-column="14" selection-end-line="38" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uusmart_app/src/main/java/com/sykj/uusmart/controller/BaseController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="11" column="25" lean-forward="false" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uusmart_app/src/main/java/com/sykj/uusmart/controller/DeviceController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="35" column="33" lean-forward="false" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uusmart_datas/src/main/java/com/sykj/uusmart/repository/NexusUserDeviceRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="48" column="9" lean-forward="false" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uusmart_vivo/src/main/java/com/sykj/uusmart/service/impl/ServiceLogServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uusmart_vivo/src/main/java/com/sykj/uusmart/service/impl/VivoServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4185">
-          <caret line="193" column="47" lean-forward="false" selection-start-line="193" selection-start-column="47" selection-end-line="193" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uusmart_app/src/main/java/com/sykj/uusmart/service/impl/DeviceaInfoServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2916">
-          <caret line="140" column="3" lean-forward="false" selection-start-line="140" selection-start-column="3" selection-end-line="140" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/uusmart_voice/src/main/java/com/sykj/uusmart/UusmartVoiceApplication.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="513">
@@ -1588,7 +1637,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2187">
           <caret line="104" column="9" lean-forward="false" selection-start-line="104" selection-start-column="9" selection-end-line="104" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1596,7 +1644,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1134">
           <caret line="67" column="56" lean-forward="false" selection-start-line="67" selection-start-column="56" selection-end-line="67" selection-end-column="56" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1608,27 +1655,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/uusmart_datas/src/main/java/com/sykj/uusmart/pojo/DeviceTimingInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uusmart_agreement/src/main/java/com/sykj/uusmart/http/req/UserAddDeviceTimingDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/uusmart_agreement/src/main/java/com/sykj/uusmart/http/req/UserAddDeviceDTO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="837">
           <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1636,7 +1666,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="12" column="38" lean-forward="false" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1644,7 +1673,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="20" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1660,20 +1688,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="16" column="31" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="31" />
-          <folding>
-            <element signature="e#712#713#0" expanded="true" />
-            <element signature="e#741#742#0" expanded="true" />
-            <element signature="e#784#785#0" expanded="true" />
-            <element signature="e#820#821#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uusmart_wisdom/src/main/java/com/sykj/uusmart/service/WisdomService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="21" column="23" lean-forward="false" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1681,33 +1695,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="72" column="0" lean-forward="false" selection-start-line="72" selection-start-column="2" selection-end-line="78" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uusmart_datas/src/main/java/com/sykj/uusmart/repository/WisdomImplementRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="28" column="69" lean-forward="false" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="69" />
-          <folding>
-            <marker date="1535423543511" expanded="true" signature="2409:2710" ph="SELECT i.id,... t_wisdom_implement" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uusmart_datas/src/main/java/com/sykj/uusmart/repository/WisdomConditionRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="44" column="20" lean-forward="false" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uusmart_wisdom/src/main/java/com/sykj/uusmart/UusmartWisdomApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1715,7 +1702,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1723,23 +1709,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-324">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uusmart_wisdom/src/main/java/com/sykj/uusmart/controller/WisdomController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="55" column="53" lean-forward="false" selection-start-line="55" selection-start-column="53" selection-end-line="55" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uusmart_wisdom/src/main/java/com/sykj/uusmart/service/impl/WisdomServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="190" column="0" lean-forward="false" selection-start-line="190" selection-start-column="0" selection-end-line="190" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1747,7 +1716,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="548">
           <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="2" selection-end-line="58" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1755,7 +1723,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="16" column="31" lean-forward="false" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1771,7 +1738,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1779,7 +1745,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1787,17 +1752,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
           <caret line="15" column="12" lean-forward="false" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uusmart_timing/src/main/java/com/sykj/uusmart/service/impl/DeviceTimingInfoServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-104">
-          <caret line="176" column="29" lean-forward="false" selection-start-line="176" selection-start-column="29" selection-end-line="176" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1805,7 +1759,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
           <caret line="34" column="50" lean-forward="false" selection-start-line="34" selection-start-column="50" selection-end-line="34" selection-end-column="50" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1813,14 +1766,240 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1570">
           <caret line="89" column="12" lean-forward="false" selection-start-line="89" selection-start-column="12" selection-end-line="89" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/uusmart_timing/src/main/java/com/sykj/uusmart/controller/TimingController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="63" column="5" lean-forward="true" selection-start-line="63" selection-start-column="5" selection-end-line="63" selection-end-column="5" />
+        <state relative-caret-position="484">
+          <caret line="71" column="0" lean-forward="true" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uusmart_app/src/main/java/com/sykj/uusmart/service/UserInfoService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="36" column="20" lean-forward="true" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uusmart_app/src/main/java/com/sykj/uusmart/service/impl/UserInfoServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="278" column="27" lean-forward="true" selection-start-line="278" selection-start-column="27" selection-end-line="278" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uusmart_app/src/main/java/com/sykj/uusmart/log/WebLogAspect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2214">
+          <caret line="106" column="5" lean-forward="false" selection-start-line="106" selection-start-column="5" selection-end-line="106" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uusmart_zuul/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="891">
+          <caret line="33" column="45" lean-forward="false" selection-start-line="33" selection-start-column="45" selection-end-line="34" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uusmart_agreement/src/main/java/com/sykj/uusmart/http/req/UserAddDeviceTimingDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="945">
+          <caret line="41" column="28" lean-forward="false" selection-start-line="41" selection-start-column="28" selection-end-line="41" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uusmart_wisdom/src/main/java/com/sykj/uusmart/UusmartWisdomApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="22" column="21" lean-forward="false" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uusmart_wisdom/src/main/java/com/sykj/uusmart/mqtt/CallBack.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="68" column="17" lean-forward="false" selection-start-line="68" selection-start-column="17" selection-end-line="68" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uusmart_agreement/src/main/java/com/sykj/uusmart/mqtt/MQTTUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="933">
+          <caret line="42" column="30" lean-forward="false" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uusmart_wisdom/src/main/java/com/sykj/uusmart/handle/CmdHandle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="43" column="6" lean-forward="false" selection-start-line="43" selection-start-column="6" selection-end-line="43" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uusmart_datas/src/main/java/com/sykj/uusmart/pojo/WisdomImplement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="29" column="33" lean-forward="false" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uusmart_wisdom/src/main/java/com/sykj/uusmart/service/WisdomService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/Application/Java/jdk/src.zip!/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="110" column="19" lean-forward="false" selection-start-line="110" selection-start-column="19" selection-end-line="110" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uusmart_agreement/src/main/java/com/sykj/uusmart/exception/CustomRunTimeException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="624">
+          <caret line="202" column="23" lean-forward="false" selection-start-line="202" selection-start-column="23" selection-end-line="202" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uusmart_wisdom/src/main/java/com/sykj/uusmart/controller/WisdomController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="381">
+          <caret line="55" column="51" lean-forward="false" selection-start-line="55" selection-start-column="51" selection-end-line="55" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uusmart_datas/src/main/java/com/sykj/uusmart/pojo/WisdomCondition.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="49" column="19" lean-forward="false" selection-start-line="49" selection-start-column="19" selection-end-line="49" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/1.13.10.RELEASE/spring-data-commons-1.13.10.RELEASE.jar!/org/springframework/data/repository/CrudRepository.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="12" column="6" lean-forward="false" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uusmart_datas/src/main/java/com/sykj/uusmart/pojo/DeviceTimingInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="38" column="26" lean-forward="false" selection-start-line="38" selection-start-column="18" selection-end-line="38" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uusmart_wisdom/src/main/java/com/sykj/uusmart/service/impl/WisdomServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="593" column="0" lean-forward="false" selection-start-line="593" selection-start-column="0" selection-end-line="593" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uusmart_timing/src/main/java/com/sykj/uusmart/service/impl/DeviceTimingInfoServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="163" column="86" lean-forward="false" selection-start-line="163" selection-start-column="86" selection-end-line="163" selection-end-column="86" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uusmart_datas/src/main/java/com/sykj/uusmart/repository/WisdomRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="17" column="17" lean-forward="false" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uusmart-web-parent/uusmart-core/src/main/java/com/sykj/uusmart/core/support/CollectionKit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3657">
+          <caret line="77" column="32" lean-forward="true" selection-start-line="77" selection-start-column="32" selection-end-line="77" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uusmart_datas/src/main/java/com/sykj/uusmart/repository/WisdomConditionRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353">
+          <caret line="33" column="34" lean-forward="false" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uusmart_datas/src/main/java/com/sykj/uusmart/repository/WisdomImplementRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1134">
+          <caret line="52" column="38" lean-forward="false" selection-start-line="52" selection-start-column="38" selection-end-line="52" selection-end-column="38" />
+          <folding>
+            <marker date="1535509638971" expanded="true" signature="2433:2734" ph="SELECT i.id,... t_wisdom_implement" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uusmart_datas/src/main/java/com/sykj/uusmart/repository/CacheMessageRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="16" column="17" lean-forward="false" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uusmart_datas/src/main/java/com/sykj/uusmart/repository/DeviceInfoRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-221">
+          <caret line="17" column="17" lean-forward="false" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uusmart_datas/src/main/java/com/sykj/uusmart/repository/DeviceMesgLogRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="14" column="17" lean-forward="false" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uusmart_datas/src/main/java/com/sykj/uusmart/repository/DeviceTimingInfoRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="387">
+          <caret line="26" column="27" lean-forward="false" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uusmart_datas/src/main/java/com/sykj/uusmart/repository/DeviceVersionInfoRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uusmart_datas/src/main/java/com/sykj/uusmart/pojo/DeviceInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="43" column="32" lean-forward="false" selection-start-line="43" selection-start-column="18" selection-end-line="43" selection-end-column="32" />
           <folding />
         </state>
       </provider>
